@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统 视频审核状态表(videoauditstatus)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoauditstatus_status_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 审核状态如待审核、审核通过、审核拒绝 ******************** pie_v2***/ init_echart("echart_videoauditstatus_status_pie_v2",'videoauditstatus.status_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoauditstatus_status_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 审核状态如待审核、审核通过、审核拒绝 ******************** pie_v1***/ init_echart("echart_videoauditstatus_status_pie_v1",'videoauditstatus.status_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoauditstatus_status_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 审核状态如待审核、审核通过、审核拒绝 ******************** pie***/ init_echart("echart_videoauditstatus_status_pie",'videoauditstatus.status_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoauditstatus_status_line" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 审核状态如待审核、审核通过、审核拒绝 ******************** line***/ init_echart("echart_videoauditstatus_status_line",'videoauditstatus.status_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoauditstatus_status_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 审核状态如待审核、审核通过、审核拒绝 ******************** bar***/ init_echart("echart_videoauditstatus_status_bar",'videoauditstatus.status_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoauditstatus_status_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 审核状态如待审核、审核通过、审核拒绝 ******************** bar_v1***/ init_echart("echart_videoauditstatus_status_bar_v1",'videoauditstatus.status_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoauditstatus_reviewtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 审核时间 ******************** pie_v2***/ init_echart("echart_videoauditstatus_reviewtime_pie_v2",'videoauditstatus.reviewtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoauditstatus_reviewtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 审核时间 ******************** pie_v1***/ init_echart("echart_videoauditstatus_reviewtime_pie_v1",'videoauditstatus.reviewtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoauditstatus_reviewtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 审核时间 ******************** pie***/ init_echart("echart_videoauditstatus_reviewtime_pie",'videoauditstatus.reviewtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoauditstatus_reviewtime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 审核时间 ******************** line***/ init_echart("echart_videoauditstatus_reviewtime_line",'videoauditstatus.reviewtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoauditstatus_reviewtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 审核时间 ******************** bar***/ init_echart("echart_videoauditstatus_reviewtime_bar",'videoauditstatus.reviewtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoauditstatus_reviewtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 审核时间 ******************** bar_v1***/ init_echart("echart_videoauditstatus_reviewtime_bar_v1",'videoauditstatus.reviewtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoauditstatus_rejectrekwkwason_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 拒绝原因如果状态为审核拒绝则记录拒绝的具体原因 ******************** pie_v2***/ init_echart("echart_videoauditstatus_rejectrekwkwason_pie_v2",'videoauditstatus.rejectrekwkwason_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoauditstatus_rejectrekwkwason_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 拒绝原因如果状态为审核拒绝则记录拒绝的具体原因 ******************** pie_v1***/ init_echart("echart_videoauditstatus_rejectrekwkwason_pie_v1",'videoauditstatus.rejectrekwkwason_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoauditstatus_rejectrekwkwason_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 拒绝原因如果状态为审核拒绝则记录拒绝的具体原因 ******************** pie***/ init_echart("echart_videoauditstatus_rejectrekwkwason_pie",'videoauditstatus.rejectrekwkwason_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoauditstatus_rejectrekwkwason_line" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 拒绝原因如果状态为审核拒绝则记录拒绝的具体原因 ******************** line***/ init_echart("echart_videoauditstatus_rejectrekwkwason_line",'videoauditstatus.rejectrekwkwason_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoauditstatus_rejectrekwkwason_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 拒绝原因如果状态为审核拒绝则记录拒绝的具体原因 ******************** bar***/ init_echart("echart_videoauditstatus_rejectrekwkwason_bar",'videoauditstatus.rejectrekwkwason_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoauditstatus_rejectrekwkwason_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 拒绝原因如果状态为审核拒绝则记录拒绝的具体原因 ******************** bar_v1***/ init_echart("echart_videoauditstatus_rejectrekwkwason_bar_v1",'videoauditstatus.rejectrekwkwason_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoauditstatus_comment_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 审核备注 ******************** pie_v2***/ init_echart("echart_videoauditstatus_comment_pie_v2",'videoauditstatus.comment_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoauditstatus_comment_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 审核备注 ******************** pie_v1***/ init_echart("echart_videoauditstatus_comment_pie_v1",'videoauditstatus.comment_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoauditstatus_comment_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 审核备注 ******************** pie***/ init_echart("echart_videoauditstatus_comment_pie",'videoauditstatus.comment_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoauditstatus_comment_line" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 审核备注 ******************** line***/ init_echart("echart_videoauditstatus_comment_line",'videoauditstatus.comment_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoauditstatus_comment_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 审核备注 ******************** bar***/ init_echart("echart_videoauditstatus_comment_bar",'videoauditstatus.comment_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoauditstatus_comment_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 审核备注 ******************** bar_v1***/ init_echart("echart_videoauditstatus_comment_bar_v1",'videoauditstatus.comment_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoauditstatus_createdat_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 创建时间 ******************** pie_v2***/ init_echart("echart_videoauditstatus_createdat_pie_v2",'videoauditstatus.createdat_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoauditstatus_createdat_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 创建时间 ******************** pie_v1***/ init_echart("echart_videoauditstatus_createdat_pie_v1",'videoauditstatus.createdat_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoauditstatus_createdat_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 创建时间 ******************** pie***/ init_echart("echart_videoauditstatus_createdat_pie",'videoauditstatus.createdat_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoauditstatus_createdat_line" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 创建时间 ******************** line***/ init_echart("echart_videoauditstatus_createdat_line",'videoauditstatus.createdat_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoauditstatus_createdat_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 创建时间 ******************** bar***/ init_echart("echart_videoauditstatus_createdat_bar",'videoauditstatus.createdat_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoauditstatus_createdat_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 创建时间 ******************** bar_v1***/ init_echart("echart_videoauditstatus_createdat_bar_v1",'videoauditstatus.createdat_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoauditstatus_updatedat_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 更新时间 ******************** pie_v2***/ init_echart("echart_videoauditstatus_updatedat_pie_v2",'videoauditstatus.updatedat_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoauditstatus_updatedat_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 更新时间 ******************** pie_v1***/ init_echart("echart_videoauditstatus_updatedat_pie_v1",'videoauditstatus.updatedat_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoauditstatus_updatedat_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 更新时间 ******************** pie***/ init_echart("echart_videoauditstatus_updatedat_pie",'videoauditstatus.updatedat_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoauditstatus_updatedat_line" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 更新时间 ******************** line***/ init_echart("echart_videoauditstatus_updatedat_line",'videoauditstatus.updatedat_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoauditstatus_updatedat_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 更新时间 ******************** bar***/ init_echart("echart_videoauditstatus_updatedat_bar",'videoauditstatus.updatedat_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoauditstatus_updatedat_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频审核状态表 更新时间 ******************** bar_v1***/ init_echart("echart_videoauditstatus_updatedat_bar_v1",'videoauditstatus.updatedat_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+    </div>
+  </body>
+</html>

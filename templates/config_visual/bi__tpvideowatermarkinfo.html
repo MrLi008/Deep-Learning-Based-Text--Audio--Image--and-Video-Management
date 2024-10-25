@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统 视频水印信息表(videowatermarkinfo)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarktext_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印文本 ******************** pie_v2***/ init_echart("echart_videowatermarkinfo_watermarktext_pie_v2",'videowatermarkinfo.watermarktext_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarktext_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印文本 ******************** pie_v1***/ init_echart("echart_videowatermarkinfo_watermarktext_pie_v1",'videowatermarkinfo.watermarktext_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarktext_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印文本 ******************** pie***/ init_echart("echart_videowatermarkinfo_watermarktext_pie",'videowatermarkinfo.watermarktext_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarktext_line" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印文本 ******************** line***/ init_echart("echart_videowatermarkinfo_watermarktext_line",'videowatermarkinfo.watermarktext_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarktext_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印文本 ******************** bar***/ init_echart("echart_videowatermarkinfo_watermarktext_bar",'videowatermarkinfo.watermarktext_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarktext_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印文本 ******************** bar_v1***/ init_echart("echart_videowatermarkinfo_watermarktext_bar_v1",'videowatermarkinfo.watermarktext_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarkposition_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印位置如左上角、右下角等 ******************** pie_v2***/ init_echart("echart_videowatermarkinfo_watermarkposition_pie_v2",'videowatermarkinfo.watermarkposition_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarkposition_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印位置如左上角、右下角等 ******************** pie_v1***/ init_echart("echart_videowatermarkinfo_watermarkposition_pie_v1",'videowatermarkinfo.watermarkposition_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarkposition_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印位置如左上角、右下角等 ******************** pie***/ init_echart("echart_videowatermarkinfo_watermarkposition_pie",'videowatermarkinfo.watermarkposition_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarkposition_line" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印位置如左上角、右下角等 ******************** line***/ init_echart("echart_videowatermarkinfo_watermarkposition_line",'videowatermarkinfo.watermarkposition_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarkposition_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印位置如左上角、右下角等 ******************** bar***/ init_echart("echart_videowatermarkinfo_watermarkposition_bar",'videowatermarkinfo.watermarkposition_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarkposition_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印位置如左上角、右下角等 ******************** bar_v1***/ init_echart("echart_videowatermarkinfo_watermarkposition_bar_v1",'videowatermarkinfo.watermarkposition_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarksize_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印大小如百分比或像素值 ******************** pie_v2***/ init_echart("echart_videowatermarkinfo_watermarksize_pie_v2",'videowatermarkinfo.watermarksize_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarksize_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印大小如百分比或像素值 ******************** pie_v1***/ init_echart("echart_videowatermarkinfo_watermarksize_pie_v1",'videowatermarkinfo.watermarksize_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarksize_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印大小如百分比或像素值 ******************** pie***/ init_echart("echart_videowatermarkinfo_watermarksize_pie",'videowatermarkinfo.watermarksize_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarksize_line" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印大小如百分比或像素值 ******************** line***/ init_echart("echart_videowatermarkinfo_watermarksize_line",'videowatermarkinfo.watermarksize_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarksize_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印大小如百分比或像素值 ******************** bar***/ init_echart("echart_videowatermarkinfo_watermarksize_bar",'videowatermarkinfo.watermarksize_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarksize_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印大小如百分比或像素值 ******************** bar_v1***/ init_echart("echart_videowatermarkinfo_watermarksize_bar_v1",'videowatermarkinfo.watermarksize_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarkopacity_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印透明度0100% ******************** pie_v2***/ init_echart("echart_videowatermarkinfo_watermarkopacity_pie_v2",'videowatermarkinfo.watermarkopacity_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarkopacity_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印透明度0100% ******************** pie_v1***/ init_echart("echart_videowatermarkinfo_watermarkopacity_pie_v1",'videowatermarkinfo.watermarkopacity_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarkopacity_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印透明度0100% ******************** pie***/ init_echart("echart_videowatermarkinfo_watermarkopacity_pie",'videowatermarkinfo.watermarkopacity_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarkopacity_line" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印透明度0100% ******************** line***/ init_echart("echart_videowatermarkinfo_watermarkopacity_line",'videowatermarkinfo.watermarkopacity_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarkopacity_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印透明度0100% ******************** bar***/ init_echart("echart_videowatermarkinfo_watermarkopacity_bar",'videowatermarkinfo.watermarkopacity_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videowatermarkinfo_watermarkopacity_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 水印透明度0100% ******************** bar_v1***/ init_echart("echart_videowatermarkinfo_watermarkopacity_bar_v1",'videowatermarkinfo.watermarkopacity_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videowatermarkinfo_createdat_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 创建时间 ******************** pie_v2***/ init_echart("echart_videowatermarkinfo_createdat_pie_v2",'videowatermarkinfo.createdat_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videowatermarkinfo_createdat_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 创建时间 ******************** pie_v1***/ init_echart("echart_videowatermarkinfo_createdat_pie_v1",'videowatermarkinfo.createdat_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videowatermarkinfo_createdat_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 创建时间 ******************** pie***/ init_echart("echart_videowatermarkinfo_createdat_pie",'videowatermarkinfo.createdat_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videowatermarkinfo_createdat_line" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 创建时间 ******************** line***/ init_echart("echart_videowatermarkinfo_createdat_line",'videowatermarkinfo.createdat_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videowatermarkinfo_createdat_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 创建时间 ******************** bar***/ init_echart("echart_videowatermarkinfo_createdat_bar",'videowatermarkinfo.createdat_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videowatermarkinfo_createdat_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 创建时间 ******************** bar_v1***/ init_echart("echart_videowatermarkinfo_createdat_bar_v1",'videowatermarkinfo.createdat_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videowatermarkinfo_updatedat_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 更新时间 ******************** pie_v2***/ init_echart("echart_videowatermarkinfo_updatedat_pie_v2",'videowatermarkinfo.updatedat_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videowatermarkinfo_updatedat_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 更新时间 ******************** pie_v1***/ init_echart("echart_videowatermarkinfo_updatedat_pie_v1",'videowatermarkinfo.updatedat_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videowatermarkinfo_updatedat_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 更新时间 ******************** pie***/ init_echart("echart_videowatermarkinfo_updatedat_pie",'videowatermarkinfo.updatedat_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videowatermarkinfo_updatedat_line" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 更新时间 ******************** line***/ init_echart("echart_videowatermarkinfo_updatedat_line",'videowatermarkinfo.updatedat_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videowatermarkinfo_updatedat_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 更新时间 ******************** bar***/ init_echart("echart_videowatermarkinfo_updatedat_bar",'videowatermarkinfo.updatedat_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videowatermarkinfo_updatedat_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频水印信息表 更新时间 ******************** bar_v1***/ init_echart("echart_videowatermarkinfo_updatedat_bar_v1",'videowatermarkinfo.updatedat_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

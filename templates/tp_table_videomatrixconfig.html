@@ -1,0 +1,122 @@
+
+<h1>
+语法介绍：
+</h1>
+<p>
+参考下述格式，以及附带的模板，实现自定义表格内容展示
+</p>
+<p>
+默认使用系统提供的接口展示所有的字段和数值，需要定制的可以在此基础上做修改
+</p>
+{% if ins%}
+<table class="table table-bordered table-hover table-striped text-nowrap">
+<thead>
+<tr>
+
+<th class="text-nowrap-cell">
+视频矩阵名称
+</th>
+
+<th class="text-nowrap-cell">
+描述信息
+</th>
+
+<th class="text-nowrap-cell">
+创建时间
+</th>
+
+<th class="text-nowrap-cell">
+更新时间
+</th>
+
+<th class="text-nowrap-cell">
+视频源ID关联视频源
+</th>
+
+<th class="text-nowrap-cell">
+输出通道ID关联输出通道
+</th>
+
+<th class="text-nowrap-cell">
+布局配置如1x4
+</th>
+
+<th class="text-nowrap-cell">
+是否激活用于控制视频矩阵的启用状态
+</th>
+
+<th>
+<span class="text-nowrap">
+操作
+</span>
+</th>
+</tr>
+</thead>
+<tbody>
+{% for record in ins.records%}
+<tr>
+
+<td class="text-nowrap-cell">
+<span title="{{record.matrixname}}">
+{{record.matrixname|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.description}}">
+{{record.description|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.createdat}}">
+{{record.createdat|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.updatedat}}">
+{{record.updatedat|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.videosourceid}}">
+{{record.videosourceid|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.outputchannelid}}">
+{{record.outputchannelid|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.layoutconfig}}">
+{{record.layoutconfig|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.kwkwisactive}}">
+{{record.kwkwisactive|truncatechars:20}}
+</span>
+</td>
+
+<td>
+<a href="/config_busi/videomatrixconfig?id_search={{record..id}}" class="btn btn-sm btn-primary">
+详情
+</a>
+</td>
+</tr>
+{% endfor%}
+</tbody>
+</table>
+{% else%}
+<h3>
+Empty Data
+</h3>
+{% endif%}
+
+In table....

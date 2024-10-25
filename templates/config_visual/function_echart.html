@@ -1,0 +1,105 @@
+<script>
+    
+    function init_echart(echart_id, optype, url, condition,polar={}) {
+        // 初始化图表
+        data = condition
+        data['optype'] = optype
+        data['csrfmiddlewaretoken'] = document.querySelector('[name=csrfmiddlewaretoken]').value
+        $.ajax({
+          url: url,
+          method: 'post',
+          data: data,
+          success: (res) => {
+            console.log(res)
+            let chart = echarts.init(document.getElementById(echart_id), 'infographic')
+            let chartoptions = {
+              title: {
+                text: res.title,
+                left: 'center', //水平居中
+                top: 'bottom' //垂直底部
+              },
+              tooltip: {
+                trigger: 'item'
+              },
+              toolbox: {
+                show: true,
+                feature: {
+                  mark: { show: true },
+                  dataView: { show: true, readOnly: false },
+                  restore: { show: true },
+                  saveAsImage: { show: true }
+                }
+              },
+              legend: {
+                top: '5%',
+                left: 'center',
+                data: res.legend,
+              },
+              xAxis: {
+                name: res.xaxisname,
+                data: res.xaxis,
+                axisLabel: {
+                  interval: 0,
+                  rotate: 45,
+                  overflow: 'truncate',
+                  truncate: '...',
+                },
+                axisLine: {
+                  lineStyle: {
+                    color: 'black'
+                  }
+                },
+                axisTick: {
+                  lineStyle: {
+                    color: 'black'
+                  }
+                },
+              },
+              yAxis: {
+                name: res.yaxisname,
+                nameLocation: 'middle',  // 名称显示位置  
+                nameGap: 30,  // 名称与轴线之间的距离  
+                nameRotate: 90,  // 名称旋转的角度  
+                axisLabel: {
+                  //显示每隔2个标签
+                  interval: res.interval,
+                  lineStyle: {
+                    color: 'black' //纵坐标轴线颜色为红色
+                  },
+                },
+                axisLabel: {
+                  color: 'black' //纵坐标轴标签颜色为绿色
+                }
+              },
+              series: res.series,
+              itemStyle: {
+                normal: {
+                  label: {
+                    show: true,
+                    position: 'inside'
+                  }
+                }
+              },
+            }
+            chart.setOption(chartoptions);
+          },
+          error: (err) => {}
+        })
+      }
+      function get_img_src(optype) {
+        $.ajax({
+            url: '/config_visual/bi',
+            type: 'POST',
+            data: {
+                'csrfmiddlewaretoken': '{{ csrf_token }}',
+                'optype': optype
+            },
+            success: function (res) {
+            let img = document.getElementById(optype);
+            img.src = res.imgbs64;
+            },
+            error: function (err) {
+            }
+        });
+        }
+</script>

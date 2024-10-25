@@ -1,0 +1,886 @@
+{% extends '../tp.html' %}
+
+{% block title %}
+视频广告播放记录表
+{% endblock %}
+
+{% block body %}
+  <div class="my-container-margin">
+    <div class="divider"></div>
+    {% csrf_token %}
+    <div class="section">
+      <h4>视频广告播放记录表</h4>
+      <div>
+        <div class="row">
+          
+          {% if has_add %}
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modalinsert" class="waves-effect waves-light btn">添加</button>
+          {% endif %}
+          <div class="divider"></div>
+        
+        
+          
+<div class="col-sm-10">
+</div>
+<div class="col-sm-2">
+<a href="/config_visual/bi_tpvideoadplayreckwkword" target="_blank" class="waves-effect waves-light btn">
+统计分析
+</a>
+</div>
+        </div>  
+        <div class="section">
+          {% if record %}
+            <h3>Empty Data</h3>
+          {% else %}
+          
+<div class="row custom-form">
+<form action="" method="get">
+
+
+
+
+
+
+<div class="form-group">
+<label for="playduration">播放时长(playduration)</label>
+<input type="text" class="form-control" name="playduration_search" id="playduration_search">
+</div>
+</div>
+
+
+
+<div class="form-group">
+<label for="userid">用户ID关联用户(userid)</label>
+<select name="userid_search" id="userid_search">
+<option value="">未选择</option>
+{% for record in data_mc_userinfo_58110 %}
+<option value="{{record.value}}">
+<p>{{record.value}}:{{record.label }}</p>
+</option>
+{% endfor %}
+</select>
+</div>
+
+
+
+<div class="form-group">
+<label for="devicetype">设备类型(devicetype)</label>
+<input type="text" class="form-control" name="devicetype_search" id="devicetype_search">
+</div>
+</div>
+
+
+
+
+
+<div class="form-group">
+<label for="location">地理位置(location)</label>
+<input type="text" class="form-control" name="location_search" id="location_search">
+</div>
+</div>
+
+
+
+<div class="form-group">
+<label for="playstatus">播放状态如成功、失败、中断等(playstatus)</label>
+<input type="text" class="form-control" name="playstatus_search" id="playstatus_search">
+</div>
+</div>
+
+
+<div class="col-sm-2">
+<button type="submit" class="btn btn-primary" >
+<i class="fas fa-search">搜索</i>
+</button>
+<a type="reset" class="btn btn-default" href="/config_busi/videoadplayreckwkword">
+<i class="fas fa-eraser">重置</i>
+</a>
+</div>
+</form>
+
+          </div>
+            <table class="table table-striped table-hover table-bordered">
+              <thead>
+                <tr>
+                  
+{% if mcauthfield_videoadid.mcauthview %}
+<td>
+视频广告ID
+</td>
+{% endif %}
+
+{% if mcauthfield_playtime.mcauthview %}
+<td>
+播放时间
+</td>
+{% endif %}
+
+{% if mcauthfield_playduration.mcauthview %}
+<td>
+播放时长
+</td>
+{% endif %}
+
+{% if mcauthfield_userid.mcauthview %}
+<td>
+用户ID关联用户
+</td>
+{% endif %}
+
+{% if mcauthfield_devicetype.mcauthview %}
+<td>
+设备类型
+</td>
+{% endif %}
+
+{% if mcauthfield_ipaddressip.mcauthview %}
+<td>
+地址
+</td>
+{% endif %}
+
+{% if mcauthfield_location.mcauthview %}
+<td>
+地理位置
+</td>
+{% endif %}
+
+{% if mcauthfield_playstatus.mcauthview %}
+<td>
+播放状态如成功、失败、中断等
+</td>
+{% endif %}
+<th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for record in records %}
+                  <tr>
+                    
+ {% if mcauthfield_videoadid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.videoadid}}">
+{{record.videoadid}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_playtime.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.playtime}}">
+{{record.playtime}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_playduration.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.playduration}}">
+{{record.playduration}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_userid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.userid}}">
+{{record.userid}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_devicetype.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.devicetype}}">
+{{record.devicetype}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_ipaddressip.mcauthview %}
+<td class="text-nowrap-cell">
+
+{% if record.ipaddressip %}
+{{record.ipaddressip.name}}
+<p title="{{record.ipaddressip}}">
+{{record.ipaddressip|truncatechars:20}}
+</p>
+{% endif %}
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_location.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.location}}">
+{{record.location}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_playstatus.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.playstatus}}">
+{{record.playstatus}}
+</p>
+
+</td>
+{% endif %}
+ <td>
+                      {% if has_upd %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalupdate">修改</button>
+                      {% endif %}
+                      {% if has_del %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalremove">删除</button>
+                      {% endif %}
+                      {% if has_view %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalpreview">查看</button>
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block modal %}
+  <!-- Modal Structure -->
+
+  {% if has_add %}
+    <div id="modalinsert" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">
+              <h4>添加</h4>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="custom-form">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="add" hidden />{% csrf_token %}<div class="">
+        {% if mcauthfield_videoadid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="videoadid" class="form-label form-group">视频广告ID</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_playtime.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="playtime" class="form-label form-group">播放时间</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_playduration.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="playduration" class="form-label form-group">播放时长</label>
+
+<input type="text" class="form-control form-control-lg" name="playduration" id="playduration"{% if not mcauthfield_playduration.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_userid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="userid" class="form-label form-group">用户ID关联用户</label>
+
+<select class="form-select form-select-lg mb-3" name="userid" id="userid" {% if not mcauthfield_userid.mcisblank %}required {% endif %} data-name="insert"> <option value="" selected>未选择</option> {% for record in data_mc_userinfo_58110 %} 
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+ {% endfor %}
+</select>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_devicetype.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="devicetype" class="form-label form-group">设备类型</label>
+
+<input type="text" class="form-control form-control-lg" name="devicetype" id="devicetype"{% if not mcauthfield_devicetype.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_ipaddressip.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="ipaddressip" class="form-label form-group">地址</label>
+
+<textarea class="form-control form-control-lg" name="ipaddressip" id="ipaddressip" {% if not mcauthfield_ipaddressip.mcisblank %}required {% endif %}data-name="insert"></textarea>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_location.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="location" class="form-label form-group">地理位置</label>
+
+<input type="text" class="form-control form-control-lg" name="location" id="location"{% if not mcauthfield_location.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_playstatus.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="playstatus" class="form-label form-group">播放状态如成功、失败、中断等</label>
+
+<input type="text" class="form-control form-control-lg" name="playstatus" id="playstatus"{% if not mcauthfield_playstatus.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="modal-action modal-close btn-primary btn waves-effect waves-light">提交</button>
+                  <button type="reset" class="modal-action modal-close btn-default btn waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_upd %}
+    <div id="modalupdate" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">修改</div>
+          </div>
+          <div class="modal-body">
+            <div class="custom-form">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="upd" hidden />{% csrf_token %}<input type="text" name="_id_upd" value="" data-name="update_id" hidden />
+                <div class="">
+           {% if mcauthfield_videoadid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="videoadid_upd"
+class="form-label form-group">
+视频广告ID(videoadid)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_playtime.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="playtime_upd"
+class="form-label form-group">
+播放时间(playtime)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_playduration.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="playduration_upd"
+class="form-label form-group">
+播放时长(playduration)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="playduration"
+id="playduration_upd"
+placeholder="播放时长"
+{% if not mcauthfield_playduration.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_playduration.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_userid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="userid_upd"
+class="form-label form-group">
+用户ID关联用户(userid)
+</label>
+
+<select class="form-select form-select-lg mb-3" name="userid"
+id="userid_upd"
+{% if not mcauthfield_userid.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_userid.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+<option value="">未选择</option>
+{% for record in data_mc_userinfo_58110 %}
+
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+
+{% endfor %}
+</select>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_devicetype.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="devicetype_upd"
+class="form-label form-group">
+设备类型(devicetype)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="devicetype"
+id="devicetype_upd"
+placeholder="设备类型"
+{% if not mcauthfield_devicetype.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_devicetype.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_ipaddressip.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="ipaddressip_upd"
+class="form-label form-group">
+地址(ipaddressip)
+</label>
+
+<textarea type="text" class="validate form-control form-control-lg"
+name="ipaddressip"
+id="ipaddressip_upd"
+placeholder="地址"
+{% if not mcauthfield_ipaddressip.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_ipaddressip.mcauthchange %}
+readonly
+{% endif %}
+data-name="update"></textarea>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_location.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="location_upd"
+class="form-label form-group">
+地理位置(location)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="location"
+id="location_upd"
+placeholder="地理位置"
+{% if not mcauthfield_location.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_location.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_playstatus.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="playstatus_upd"
+class="form-label form-group">
+播放状态如成功、失败、中断等(playstatus)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="playstatus"
+id="playstatus_upd"
+placeholder="播放状态如成功、失败、中断等"
+{% if not mcauthfield_playstatus.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_playstatus.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">提交</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_del %}
+    <div id="modalremove" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">删除</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>确认删除这条记录吗?</p>
+          </div>
+          <div class="modal-footer">
+            <div class="row custom-form">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="del" hidden />{% csrf_token %}<input type="text" name="_id" value="" data-name="remove" hidden />
+
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">确认</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_view %}
+    <div id="modalpreview" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <h4>预览</h4>
+          <div class="">
+            
+{% if mcauthfield_videoadid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">视频广告ID</p>
+
+<p id="videoadid_view">
+{{record.videoadid|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_playtime.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">播放时间</p>
+
+<p id="playtime_view">
+{{record.playtime|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_playduration.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">播放时长</p>
+
+<p id="playduration_view">
+{{record.playduration|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_userid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">用户ID关联用户</p>
+
+<p id="userid_view">
+{{record.userid|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_devicetype.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">设备类型</p>
+
+<p id="devicetype_view">
+{{record.devicetype|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_ipaddressip.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">地址</p>
+
+<p id="ipaddressip_view">
+{{record.ipaddressip|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_location.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">地理位置</p>
+
+<p id="location_view">
+{{record.location|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_playstatus.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">播放状态如成功、失败、中断等</p>
+
+<p id="playstatus_view">
+{{record.playstatus|safe }}
+</p>
+
+</div>
+{% endif %}
+<div class="modal-footer">
+              <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">关闭</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block script-footer %}
+<script>
+  function myreset(){
+window.location.href= "/config_busi/videoadplayreckwkword";
+};
+if (document.getElementById("modalupdate")){
+document.getElementById("modalupdate").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/videoadplayreckwkword',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+{% if mcauthfield_videoadid.mcauthview %}
+$("#videoadid_upd").val(resp.ins.videoadid);
+{% endif %}
+
+{% if mcauthfield_playtime.mcauthview %}
+$("#playtime_upd").val(resp.ins.playtime);
+{% endif %}
+
+{% if mcauthfield_playduration.mcauthview %}
+$("#playduration_upd").val(resp.ins.playduration);
+{% endif %}
+
+{% if mcauthfield_userid.mcauthview %}
+$("#userid_upd").val(resp.ins.userid);
+{% endif %}
+
+{% if mcauthfield_devicetype.mcauthview %}
+$("#devicetype_upd").val(resp.ins.devicetype);
+{% endif %}
+
+{% if mcauthfield_ipaddressip.mcauthview %}
+$("#ipaddressip_upd").val(resp.ins.ipaddressip);
+{% endif %}
+
+{% if mcauthfield_location.mcauthview %}
+$("#location_upd").val(resp.ins.location);
+{% endif %}
+
+{% if mcauthfield_playstatus.mcauthview %}
+$("#playstatus_upd").val(resp.ins.playstatus);
+{% endif %}
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+function upd(_id){
+let data = {
+optype:'get',
+_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value,
+
+{% if mcauthfield_videoadid.mcauthchange %}
+videoadid:$("#videoadid_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_playtime.mcauthchange %}
+playtime:$("#playtime_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_playduration.mcauthchange %}
+playduration:$("#playduration_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_userid.mcauthchange %}
+userid:$("#userid_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_devicetype.mcauthchange %}
+devicetype:$("#devicetype_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_ipaddressip.mcauthchange %}
+ipaddressip:$("#ipaddressip_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_location.mcauthchange %}
+location:$("#location_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_playstatus.mcauthchange %}
+playstatus:$("#playstatus_upd]").val(),
+{% endif %}
+
+}
+$.ajax({
+url: '/config_busi/videoadplayreckwkword',
+method: 'post',
+data: data,
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+if (document.getElementById("modalpreview")) {
+document.getElementById("modalpreview").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/videoadplayreckwkword',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+
+
+{% if mcauthfield_videoadid.mcauthview %}
+document.getElementById("videoadid_view").innerHTML=resp.ins.videoadid;
+{% endif %}
+
+
+
+
+{% if mcauthfield_playtime.mcauthview %}
+document.getElementById("playtime_view").innerHTML=resp.ins.playtime;
+{% endif %}
+
+
+
+
+{% if mcauthfield_playduration.mcauthview %}
+document.getElementById("playduration_view").innerHTML=resp.ins.playduration;
+{% endif %}
+
+
+
+
+{% if mcauthfield_userid.mcauthview %}
+document.getElementById("userid_view").innerHTML=resp.ins.userid;
+{% endif %}
+
+
+
+
+{% if mcauthfield_devicetype.mcauthview %}
+document.getElementById("devicetype_view").innerHTML=resp.ins.devicetype;
+{% endif %}
+
+
+
+
+{% if mcauthfield_ipaddressip.mcauthview %}
+document.getElementById("ipaddressip_view").innerHTML=resp.ins.ipaddressip;
+{% endif %}
+
+
+
+
+{% if mcauthfield_location.mcauthview %}
+document.getElementById("location_view").innerHTML=resp.ins.location;
+{% endif %}
+
+
+
+
+{% if mcauthfield_playstatus.mcauthview %}
+document.getElementById("playstatus_view").innerHTML=resp.ins.playstatus;
+{% endif %}
+
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+if (document.getElementById("modalremove")) {
+document.getElementById("modalremove").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=remove]").val(_id);
+});
+};
+function del(_id){
+$.ajax({
+url: '/config_busi/videoadplayreckwkword',
+method: 'post',
+data: {optype:'del',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+</script>
+{% endblock %}

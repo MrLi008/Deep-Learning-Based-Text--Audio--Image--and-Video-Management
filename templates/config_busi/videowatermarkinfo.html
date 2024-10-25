@@ -1,0 +1,884 @@
+{% extends '../tp.html' %}
+
+{% block title %}
+视频水印信息表
+{% endblock %}
+
+{% block body %}
+  <div class="my-container-margin">
+    <div class="divider"></div>
+    {% csrf_token %}
+    <div class="section">
+      <h4>视频水印信息表</h4>
+      <div>
+        <div class="row">
+          
+          {% if has_add %}
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modalinsert" class="waves-effect waves-light btn">添加</button>
+          {% endif %}
+          <div class="divider"></div>
+        
+        
+          
+<div class="col-sm-10">
+</div>
+<div class="col-sm-2">
+<a href="/config_visual/bi_tpvideowatermarkinfo" target="_blank" class="waves-effect waves-light btn">
+统计分析
+</a>
+</div>
+        </div>  
+        <div class="section">
+          {% if record %}
+            <h3>Empty Data</h3>
+          {% else %}
+          
+<div class="row custom-form">
+<form action="" method="get">
+
+
+<div class="form-group">
+<label for="videoid">视频ID关联视频(videoid)</label>
+<select name="videoid_search" id="videoid_search">
+<option value="">未选择</option>
+{% for record in data_mc_videoinfo_58170 %}
+<option value="{{record.value}}">
+<p>{{record.value}}:{{record.label }}</p>
+</option>
+{% endfor %}
+</select>
+</div>
+
+
+
+
+
+<div class="form-group">
+<label for="watermarkposition">水印位置如左上角、右下角等(watermarkposition)</label>
+<input type="text" class="form-control" name="watermarkposition_search" id="watermarkposition_search">
+</div>
+</div>
+
+
+
+<div class="form-group">
+<label for="watermarksize">水印大小如百分比或像素值(watermarksize)</label>
+<input type="text" class="form-control" name="watermarksize_search" id="watermarksize_search">
+</div>
+</div>
+
+
+
+<div class="form-group">
+<label for="watermarkopacity">水印透明度0100%(watermarkopacity)</label>
+<input type="text" class="form-control" name="watermarkopacity_search" id="watermarkopacity_search">
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div class="col-sm-2">
+<button type="submit" class="btn btn-primary" >
+<i class="fas fa-search">搜索</i>
+</button>
+<a type="reset" class="btn btn-default" href="/config_busi/videowatermarkinfo">
+<i class="fas fa-eraser">重置</i>
+</a>
+</div>
+</form>
+
+          </div>
+            <table class="table table-striped table-hover table-bordered">
+              <thead>
+                <tr>
+                  
+{% if mcauthfield_videoid.mcauthview %}
+<td>
+视频ID关联视频
+</td>
+{% endif %}
+
+{% if mcauthfield_watermarktext.mcauthview %}
+<td>
+水印文本
+</td>
+{% endif %}
+
+{% if mcauthfield_watermarkposition.mcauthview %}
+<td>
+水印位置如左上角、右下角等
+</td>
+{% endif %}
+
+{% if mcauthfield_watermarksize.mcauthview %}
+<td>
+水印大小如百分比或像素值
+</td>
+{% endif %}
+
+{% if mcauthfield_watermarkopacity.mcauthview %}
+<td>
+水印透明度0100%
+</td>
+{% endif %}
+
+{% if mcauthfield_createdat.mcauthview %}
+<td>
+创建时间
+</td>
+{% endif %}
+
+{% if mcauthfield_updatedat.mcauthview %}
+<td>
+更新时间
+</td>
+{% endif %}
+
+{% if mcauthfield_kwkwisactive.mcauthview %}
+<td>
+是否激活用于控制水印是否生效如0为未激活1为激活
+</td>
+{% endif %}
+<th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for record in records %}
+                  <tr>
+                    
+ {% if mcauthfield_videoid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.videoid}}">
+{{record.videoid}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_watermarktext.mcauthview %}
+<td class="text-nowrap-cell">
+
+{% if record.watermarktext %}
+{{record.watermarktext.name}}
+<p title="{{record.watermarktext}}">
+{{record.watermarktext|truncatechars:20}}
+</p>
+{% endif %}
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_watermarkposition.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.watermarkposition}}">
+{{record.watermarkposition}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_watermarksize.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.watermarksize}}">
+{{record.watermarksize}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_watermarkopacity.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.watermarkopacity}}">
+{{record.watermarkopacity}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_createdat.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.createdat}}">
+{{record.createdat}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_updatedat.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.updatedat}}">
+{{record.updatedat}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_kwkwisactive.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.kwkwisactive}}">
+{{record.kwkwisactive}}
+</p>
+
+</td>
+{% endif %}
+ <td>
+                      {% if has_upd %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalupdate">修改</button>
+                      {% endif %}
+                      {% if has_del %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalremove">删除</button>
+                      {% endif %}
+                      {% if has_view %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalpreview">查看</button>
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block modal %}
+  <!-- Modal Structure -->
+
+  {% if has_add %}
+    <div id="modalinsert" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">
+              <h4>添加</h4>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="custom-form">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="add" hidden />{% csrf_token %}<div class="">
+        {% if mcauthfield_videoid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="videoid" class="form-label form-group">视频ID关联视频</label>
+
+<select class="form-select form-select-lg mb-3" name="videoid" id="videoid" {% if not mcauthfield_videoid.mcisblank %}required {% endif %} data-name="insert"> <option value="" selected>未选择</option> {% for record in data_mc_videoinfo_58170 %} 
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+ {% endfor %}
+</select>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_watermarktext.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="watermarktext" class="form-label form-group">水印文本</label>
+
+<textarea class="form-control form-control-lg" name="watermarktext" id="watermarktext" {% if not mcauthfield_watermarktext.mcisblank %}required {% endif %}data-name="insert"></textarea>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_watermarkposition.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="watermarkposition" class="form-label form-group">水印位置如左上角、右下角等</label>
+
+<input type="text" class="form-control form-control-lg" name="watermarkposition" id="watermarkposition"{% if not mcauthfield_watermarkposition.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_watermarksize.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="watermarksize" class="form-label form-group">水印大小如百分比或像素值</label>
+
+<input type="text" class="form-control form-control-lg" name="watermarksize" id="watermarksize"{% if not mcauthfield_watermarksize.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_watermarkopacity.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="watermarkopacity" class="form-label form-group">水印透明度0100%</label>
+
+<input type="text" class="form-control form-control-lg" name="watermarkopacity" id="watermarkopacity"{% if not mcauthfield_watermarkopacity.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_createdat.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="createdat" class="form-label form-group">创建时间</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_updatedat.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="updatedat" class="form-label form-group">更新时间</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_kwkwisactive.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="kwkwisactive" class="form-label form-group">是否激活用于控制水印是否生效如0为未激活1为激活</label>
+
+<select class="form-select form-select-lg mb-3" name="kwkwisactive" id="kwkwisactive" {% if not mcauthfield_kwkwisactive.mcisblank %}required {% endif %} data-name="insert">
+<option value="True" selected >是</option>
+<option value="False">否</option>
+</select>
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="modal-action modal-close btn-primary btn waves-effect waves-light">提交</button>
+                  <button type="reset" class="modal-action modal-close btn-default btn waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_upd %}
+    <div id="modalupdate" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">修改</div>
+          </div>
+          <div class="modal-body">
+            <div class="custom-form">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="upd" hidden />{% csrf_token %}<input type="text" name="_id_upd" value="" data-name="update_id" hidden />
+                <div class="">
+           {% if mcauthfield_videoid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="videoid_upd"
+class="form-label form-group">
+视频ID关联视频(videoid)
+</label>
+
+<select class="form-select form-select-lg mb-3" name="videoid"
+id="videoid_upd"
+{% if not mcauthfield_videoid.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_videoid.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+<option value="">未选择</option>
+{% for record in data_mc_videoinfo_58170 %}
+
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+
+{% endfor %}
+</select>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_watermarktext.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="watermarktext_upd"
+class="form-label form-group">
+水印文本(watermarktext)
+</label>
+
+<textarea type="text" class="validate form-control form-control-lg"
+name="watermarktext"
+id="watermarktext_upd"
+placeholder="水印文本"
+{% if not mcauthfield_watermarktext.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_watermarktext.mcauthchange %}
+readonly
+{% endif %}
+data-name="update"></textarea>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_watermarkposition.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="watermarkposition_upd"
+class="form-label form-group">
+水印位置如左上角、右下角等(watermarkposition)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="watermarkposition"
+id="watermarkposition_upd"
+placeholder="水印位置如左上角、右下角等"
+{% if not mcauthfield_watermarkposition.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_watermarkposition.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_watermarksize.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="watermarksize_upd"
+class="form-label form-group">
+水印大小如百分比或像素值(watermarksize)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="watermarksize"
+id="watermarksize_upd"
+placeholder="水印大小如百分比或像素值"
+{% if not mcauthfield_watermarksize.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_watermarksize.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_watermarkopacity.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="watermarkopacity_upd"
+class="form-label form-group">
+水印透明度0100%(watermarkopacity)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="watermarkopacity"
+id="watermarkopacity_upd"
+placeholder="水印透明度0100%"
+{% if not mcauthfield_watermarkopacity.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_watermarkopacity.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_createdat.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="createdat_upd"
+class="form-label form-group">
+创建时间(createdat)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_updatedat.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="updatedat_upd"
+class="form-label form-group">
+更新时间(updatedat)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_kwkwisactive.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="kwkwisactive_upd"
+class="form-label form-group">
+是否激活用于控制水印是否生效如0为未激活1为激活(kwkwisactive)
+</label>
+
+<select class="form-select form-select-lg mb-3" name="kwkwisactive"
+id="kwkwisactive_upd"
+{% if not mcauthfield_kwkwisactive.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_kwkwisactive.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+<option value="True" selected>是</option>
+<option value="False">否</option>
+</select>
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">提交</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_del %}
+    <div id="modalremove" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">删除</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>确认删除这条记录吗?</p>
+          </div>
+          <div class="modal-footer">
+            <div class="row custom-form">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="del" hidden />{% csrf_token %}<input type="text" name="_id" value="" data-name="remove" hidden />
+
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">确认</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_view %}
+    <div id="modalpreview" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <h4>预览</h4>
+          <div class="">
+            
+{% if mcauthfield_videoid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">视频ID关联视频</p>
+
+<p id="videoid_view">
+{{record.videoid|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_watermarktext.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">水印文本</p>
+
+<p id="watermarktext_view">
+{{record.watermarktext|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_watermarkposition.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">水印位置如左上角、右下角等</p>
+
+<p id="watermarkposition_view">
+{{record.watermarkposition|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_watermarksize.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">水印大小如百分比或像素值</p>
+
+<p id="watermarksize_view">
+{{record.watermarksize|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_watermarkopacity.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">水印透明度0100%</p>
+
+<p id="watermarkopacity_view">
+{{record.watermarkopacity|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_createdat.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">创建时间</p>
+
+<p id="createdat_view">
+{{record.createdat|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_updatedat.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">更新时间</p>
+
+<p id="updatedat_view">
+{{record.updatedat|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_kwkwisactive.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">是否激活用于控制水印是否生效如0为未激活1为激活</p>
+
+<p id="kwkwisactive_view">
+{{record.kwkwisactive|safe }}
+</p>
+
+</div>
+{% endif %}
+<div class="modal-footer">
+              <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">关闭</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block script-footer %}
+<script>
+  function myreset(){
+window.location.href= "/config_busi/videowatermarkinfo";
+};
+if (document.getElementById("modalupdate")){
+document.getElementById("modalupdate").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/videowatermarkinfo',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+{% if mcauthfield_videoid.mcauthview %}
+$("#videoid_upd").val(resp.ins.videoid);
+{% endif %}
+
+{% if mcauthfield_watermarktext.mcauthview %}
+$("#watermarktext_upd").val(resp.ins.watermarktext);
+{% endif %}
+
+{% if mcauthfield_watermarkposition.mcauthview %}
+$("#watermarkposition_upd").val(resp.ins.watermarkposition);
+{% endif %}
+
+{% if mcauthfield_watermarksize.mcauthview %}
+$("#watermarksize_upd").val(resp.ins.watermarksize);
+{% endif %}
+
+{% if mcauthfield_watermarkopacity.mcauthview %}
+$("#watermarkopacity_upd").val(resp.ins.watermarkopacity);
+{% endif %}
+
+{% if mcauthfield_createdat.mcauthview %}
+$("#createdat_upd").val(resp.ins.createdat);
+{% endif %}
+
+{% if mcauthfield_updatedat.mcauthview %}
+$("#updatedat_upd").val(resp.ins.updatedat);
+{% endif %}
+
+{% if mcauthfield_kwkwisactive.mcauthview %}
+$("#kwkwisactive_upd").val(resp.ins.kwkwisactive);
+{% endif %}
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+function upd(_id){
+let data = {
+optype:'get',
+_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value,
+
+{% if mcauthfield_videoid.mcauthchange %}
+videoid:$("#videoid_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_watermarktext.mcauthchange %}
+watermarktext:$("#watermarktext_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_watermarkposition.mcauthchange %}
+watermarkposition:$("#watermarkposition_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_watermarksize.mcauthchange %}
+watermarksize:$("#watermarksize_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_watermarkopacity.mcauthchange %}
+watermarkopacity:$("#watermarkopacity_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_createdat.mcauthchange %}
+createdat:$("#createdat_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_updatedat.mcauthchange %}
+updatedat:$("#updatedat_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_kwkwisactive.mcauthchange %}
+kwkwisactive:$("#kwkwisactive_upd]").val(),
+{% endif %}
+
+}
+$.ajax({
+url: '/config_busi/videowatermarkinfo',
+method: 'post',
+data: data,
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+if (document.getElementById("modalpreview")) {
+document.getElementById("modalpreview").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/videowatermarkinfo',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+
+
+{% if mcauthfield_videoid.mcauthview %}
+document.getElementById("videoid_view").innerHTML=resp.ins.videoid;
+{% endif %}
+
+
+
+
+{% if mcauthfield_watermarktext.mcauthview %}
+document.getElementById("watermarktext_view").innerHTML=resp.ins.watermarktext;
+{% endif %}
+
+
+
+
+{% if mcauthfield_watermarkposition.mcauthview %}
+document.getElementById("watermarkposition_view").innerHTML=resp.ins.watermarkposition;
+{% endif %}
+
+
+
+
+{% if mcauthfield_watermarksize.mcauthview %}
+document.getElementById("watermarksize_view").innerHTML=resp.ins.watermarksize;
+{% endif %}
+
+
+
+
+{% if mcauthfield_watermarkopacity.mcauthview %}
+document.getElementById("watermarkopacity_view").innerHTML=resp.ins.watermarkopacity;
+{% endif %}
+
+
+
+
+{% if mcauthfield_createdat.mcauthview %}
+document.getElementById("createdat_view").innerHTML=resp.ins.createdat;
+{% endif %}
+
+
+
+
+{% if mcauthfield_updatedat.mcauthview %}
+document.getElementById("updatedat_view").innerHTML=resp.ins.updatedat;
+{% endif %}
+
+
+
+
+{% if mcauthfield_kwkwisactive.mcauthview %}
+document.getElementById("kwkwisactive_view").innerHTML=resp.ins.kwkwisactive;
+{% endif %}
+
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+if (document.getElementById("modalremove")) {
+document.getElementById("modalremove").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=remove]").val(_id);
+});
+};
+function del(_id){
+$.ajax({
+url: '/config_busi/videowatermarkinfo',
+method: 'post',
+data: {optype:'del',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+</script>
+{% endblock %}

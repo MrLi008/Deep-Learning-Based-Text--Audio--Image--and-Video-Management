@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统 视频推荐算法参数表(videorecommendationparams)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorecommendationparams_algkwkworithmname_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 算法名称 ******************** pie_v2***/ init_echart("echart_videorecommendationparams_algkwkworithmname_pie_v2",'videorecommendationparams.algkwkworithmname_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorecommendationparams_algkwkworithmname_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 算法名称 ******************** pie_v1***/ init_echart("echart_videorecommendationparams_algkwkworithmname_pie_v1",'videorecommendationparams.algkwkworithmname_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorecommendationparams_algkwkworithmname_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 算法名称 ******************** pie***/ init_echart("echart_videorecommendationparams_algkwkworithmname_pie",'videorecommendationparams.algkwkworithmname_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videorecommendationparams_algkwkworithmname_line" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 算法名称 ******************** line***/ init_echart("echart_videorecommendationparams_algkwkworithmname_line",'videorecommendationparams.algkwkworithmname_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorecommendationparams_algkwkworithmname_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 算法名称 ******************** bar***/ init_echart("echart_videorecommendationparams_algkwkworithmname_bar",'videorecommendationparams.algkwkworithmname_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorecommendationparams_algkwkworithmname_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 算法名称 ******************** bar_v1***/ init_echart("echart_videorecommendationparams_algkwkworithmname_bar_v1",'videorecommendationparams.algkwkworithmname_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorecommendationparams_paramname_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 参数名称 ******************** pie_v2***/ init_echart("echart_videorecommendationparams_paramname_pie_v2",'videorecommendationparams.paramname_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorecommendationparams_paramname_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 参数名称 ******************** pie_v1***/ init_echart("echart_videorecommendationparams_paramname_pie_v1",'videorecommendationparams.paramname_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorecommendationparams_paramname_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 参数名称 ******************** pie***/ init_echart("echart_videorecommendationparams_paramname_pie",'videorecommendationparams.paramname_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videorecommendationparams_paramname_line" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 参数名称 ******************** line***/ init_echart("echart_videorecommendationparams_paramname_line",'videorecommendationparams.paramname_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorecommendationparams_paramname_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 参数名称 ******************** bar***/ init_echart("echart_videorecommendationparams_paramname_bar",'videorecommendationparams.paramname_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorecommendationparams_paramname_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 参数名称 ******************** bar_v1***/ init_echart("echart_videorecommendationparams_paramname_bar_v1",'videorecommendationparams.paramname_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorecommendationparams_paramvalue_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 参数值 ******************** pie_v2***/ init_echart("echart_videorecommendationparams_paramvalue_pie_v2",'videorecommendationparams.paramvalue_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorecommendationparams_paramvalue_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 参数值 ******************** pie_v1***/ init_echart("echart_videorecommendationparams_paramvalue_pie_v1",'videorecommendationparams.paramvalue_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorecommendationparams_paramvalue_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 参数值 ******************** pie***/ init_echart("echart_videorecommendationparams_paramvalue_pie",'videorecommendationparams.paramvalue_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videorecommendationparams_paramvalue_line" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 参数值 ******************** line***/ init_echart("echart_videorecommendationparams_paramvalue_line",'videorecommendationparams.paramvalue_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorecommendationparams_paramvalue_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 参数值 ******************** bar***/ init_echart("echart_videorecommendationparams_paramvalue_bar",'videorecommendationparams.paramvalue_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorecommendationparams_paramvalue_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 参数值 ******************** bar_v1***/ init_echart("echart_videorecommendationparams_paramvalue_bar_v1",'videorecommendationparams.paramvalue_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorecommendationparams_description_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 参数描述 ******************** pie_v2***/ init_echart("echart_videorecommendationparams_description_pie_v2",'videorecommendationparams.description_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorecommendationparams_description_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 参数描述 ******************** pie_v1***/ init_echart("echart_videorecommendationparams_description_pie_v1",'videorecommendationparams.description_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorecommendationparams_description_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 参数描述 ******************** pie***/ init_echart("echart_videorecommendationparams_description_pie",'videorecommendationparams.description_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videorecommendationparams_description_line" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 参数描述 ******************** line***/ init_echart("echart_videorecommendationparams_description_line",'videorecommendationparams.description_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorecommendationparams_description_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 参数描述 ******************** bar***/ init_echart("echart_videorecommendationparams_description_bar",'videorecommendationparams.description_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorecommendationparams_description_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 参数描述 ******************** bar_v1***/ init_echart("echart_videorecommendationparams_description_bar_v1",'videorecommendationparams.description_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorecommendationparams_createdat_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 创建时间 ******************** pie_v2***/ init_echart("echart_videorecommendationparams_createdat_pie_v2",'videorecommendationparams.createdat_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorecommendationparams_createdat_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 创建时间 ******************** pie_v1***/ init_echart("echart_videorecommendationparams_createdat_pie_v1",'videorecommendationparams.createdat_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorecommendationparams_createdat_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 创建时间 ******************** pie***/ init_echart("echart_videorecommendationparams_createdat_pie",'videorecommendationparams.createdat_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videorecommendationparams_createdat_line" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 创建时间 ******************** line***/ init_echart("echart_videorecommendationparams_createdat_line",'videorecommendationparams.createdat_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorecommendationparams_createdat_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 创建时间 ******************** bar***/ init_echart("echart_videorecommendationparams_createdat_bar",'videorecommendationparams.createdat_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorecommendationparams_createdat_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 创建时间 ******************** bar_v1***/ init_echart("echart_videorecommendationparams_createdat_bar_v1",'videorecommendationparams.createdat_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorecommendationparams_updatedat_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 更新时间 ******************** pie_v2***/ init_echart("echart_videorecommendationparams_updatedat_pie_v2",'videorecommendationparams.updatedat_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorecommendationparams_updatedat_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 更新时间 ******************** pie_v1***/ init_echart("echart_videorecommendationparams_updatedat_pie_v1",'videorecommendationparams.updatedat_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorecommendationparams_updatedat_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 更新时间 ******************** pie***/ init_echart("echart_videorecommendationparams_updatedat_pie",'videorecommendationparams.updatedat_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videorecommendationparams_updatedat_line" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 更新时间 ******************** line***/ init_echart("echart_videorecommendationparams_updatedat_line",'videorecommendationparams.updatedat_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorecommendationparams_updatedat_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 更新时间 ******************** bar***/ init_echart("echart_videorecommendationparams_updatedat_bar",'videorecommendationparams.updatedat_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorecommendationparams_updatedat_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频推荐算法参数表 更新时间 ******************** bar_v1***/ init_echart("echart_videorecommendationparams_updatedat_bar_v1",'videorecommendationparams.updatedat_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

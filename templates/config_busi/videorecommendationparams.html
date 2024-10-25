@@ -1,0 +1,884 @@
+{% extends '../tp.html' %}
+
+{% block title %}
+视频推荐算法参数表
+{% endblock %}
+
+{% block body %}
+  <div class="my-container-margin">
+    <div class="divider"></div>
+    {% csrf_token %}
+    <div class="section">
+      <h4>视频推荐算法参数表</h4>
+      <div>
+        <div class="row">
+          
+          {% if has_add %}
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modalinsert" class="waves-effect waves-light btn">添加</button>
+          {% endif %}
+          <div class="divider"></div>
+        
+        
+          
+<div class="col-sm-10">
+</div>
+<div class="col-sm-2">
+<a href="/config_visual/bi_tpvideorecommendationparams" target="_blank" class="waves-effect waves-light btn">
+统计分析
+</a>
+</div>
+        </div>  
+        <div class="section">
+          {% if record %}
+            <h3>Empty Data</h3>
+          {% else %}
+          
+<div class="row custom-form">
+<form action="" method="get">
+
+
+<div class="form-group">
+<label for="algkwkworithmname">算法名称(algkwkworithmname)</label>
+<input type="text" class="form-control" name="algkwkworithmname_search" id="algkwkworithmname_search">
+</div>
+</div>
+
+
+
+<div class="form-group">
+<label for="paramname">参数名称(paramname)</label>
+<input type="text" class="form-control" name="paramname_search" id="paramname_search">
+</div>
+</div>
+
+
+
+<div class="form-group">
+<label for="paramvalue">参数值(paramvalue)</label>
+<input type="text" class="form-control" name="paramvalue_search" id="paramvalue_search">
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="form-group">
+<label for="videotypeid">视频类型ID关联字段指向视频类型(videotypeid)</label>
+<select name="videotypeid_search" id="videotypeid_search">
+<option value="">未选择</option>
+{% for record in data_mc_videocategkwkwory_58096 %}
+<option value="{{record.value}}">
+<p>{{record.value}}:{{record.label }}</p>
+</option>
+{% endfor %}
+</select>
+</div>
+
+
+<div class="col-sm-2">
+<button type="submit" class="btn btn-primary" >
+<i class="fas fa-search">搜索</i>
+</button>
+<a type="reset" class="btn btn-default" href="/config_busi/videorecommendationparams">
+<i class="fas fa-eraser">重置</i>
+</a>
+</div>
+</form>
+
+          </div>
+            <table class="table table-striped table-hover table-bordered">
+              <thead>
+                <tr>
+                  
+{% if mcauthfield_algkwkworithmname.mcauthview %}
+<td>
+算法名称
+</td>
+{% endif %}
+
+{% if mcauthfield_paramname.mcauthview %}
+<td>
+参数名称
+</td>
+{% endif %}
+
+{% if mcauthfield_paramvalue.mcauthview %}
+<td>
+参数值
+</td>
+{% endif %}
+
+{% if mcauthfield_description.mcauthview %}
+<td>
+参数描述
+</td>
+{% endif %}
+
+{% if mcauthfield_createdat.mcauthview %}
+<td>
+创建时间
+</td>
+{% endif %}
+
+{% if mcauthfield_updatedat.mcauthview %}
+<td>
+更新时间
+</td>
+{% endif %}
+
+{% if mcauthfield_kwkwisactive.mcauthview %}
+<td>
+是否启用
+</td>
+{% endif %}
+
+{% if mcauthfield_videotypeid.mcauthview %}
+<td>
+视频类型ID关联字段指向视频类型
+</td>
+{% endif %}
+<th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for record in records %}
+                  <tr>
+                    
+ {% if mcauthfield_algkwkworithmname.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.algkwkworithmname}}">
+{{record.algkwkworithmname}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_paramname.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.paramname}}">
+{{record.paramname}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_paramvalue.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.paramvalue}}">
+{{record.paramvalue}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_description.mcauthview %}
+<td class="text-nowrap-cell">
+
+{% if record.description %}
+{{record.description.name}}
+<p title="{{record.description}}">
+{{record.description|truncatechars:20}}
+</p>
+{% endif %}
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_createdat.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.createdat}}">
+{{record.createdat}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_updatedat.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.updatedat}}">
+{{record.updatedat}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_kwkwisactive.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.kwkwisactive}}">
+{{record.kwkwisactive}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_videotypeid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.videotypeid}}">
+{{record.videotypeid}}
+</p>
+
+</td>
+{% endif %}
+ <td>
+                      {% if has_upd %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalupdate">修改</button>
+                      {% endif %}
+                      {% if has_del %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalremove">删除</button>
+                      {% endif %}
+                      {% if has_view %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalpreview">查看</button>
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block modal %}
+  <!-- Modal Structure -->
+
+  {% if has_add %}
+    <div id="modalinsert" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">
+              <h4>添加</h4>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="custom-form">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="add" hidden />{% csrf_token %}<div class="">
+        {% if mcauthfield_algkwkworithmname.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="algkwkworithmname" class="form-label form-group">算法名称</label>
+
+<input type="text" class="form-control form-control-lg" name="algkwkworithmname" id="algkwkworithmname"{% if not mcauthfield_algkwkworithmname.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_paramname.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="paramname" class="form-label form-group">参数名称</label>
+
+<input type="text" class="form-control form-control-lg" name="paramname" id="paramname"{% if not mcauthfield_paramname.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_paramvalue.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="paramvalue" class="form-label form-group">参数值</label>
+
+<input type="text" class="form-control form-control-lg" name="paramvalue" id="paramvalue"{% if not mcauthfield_paramvalue.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_description.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="description" class="form-label form-group">参数描述</label>
+
+<textarea class="form-control form-control-lg" name="description" id="description" {% if not mcauthfield_description.mcisblank %}required {% endif %}data-name="insert"></textarea>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_createdat.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="createdat" class="form-label form-group">创建时间</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_updatedat.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="updatedat" class="form-label form-group">更新时间</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_kwkwisactive.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="kwkwisactive" class="form-label form-group">是否启用</label>
+
+<select class="form-select form-select-lg mb-3" name="kwkwisactive" id="kwkwisactive" {% if not mcauthfield_kwkwisactive.mcisblank %}required {% endif %} data-name="insert">
+<option value="True" selected >是</option>
+<option value="False">否</option>
+</select>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_videotypeid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="videotypeid" class="form-label form-group">视频类型ID关联字段指向视频类型</label>
+
+<select class="form-select form-select-lg mb-3" name="videotypeid" id="videotypeid" {% if not mcauthfield_videotypeid.mcisblank %}required {% endif %} data-name="insert"> <option value="" selected>未选择</option> {% for record in data_mc_videocategkwkwory_58096 %} 
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+ {% endfor %}
+</select>
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="modal-action modal-close btn-primary btn waves-effect waves-light">提交</button>
+                  <button type="reset" class="modal-action modal-close btn-default btn waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_upd %}
+    <div id="modalupdate" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">修改</div>
+          </div>
+          <div class="modal-body">
+            <div class="custom-form">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="upd" hidden />{% csrf_token %}<input type="text" name="_id_upd" value="" data-name="update_id" hidden />
+                <div class="">
+           {% if mcauthfield_algkwkworithmname.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="algkwkworithmname_upd"
+class="form-label form-group">
+算法名称(algkwkworithmname)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="algkwkworithmname"
+id="algkwkworithmname_upd"
+placeholder="算法名称"
+{% if not mcauthfield_algkwkworithmname.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_algkwkworithmname.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_paramname.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="paramname_upd"
+class="form-label form-group">
+参数名称(paramname)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="paramname"
+id="paramname_upd"
+placeholder="参数名称"
+{% if not mcauthfield_paramname.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_paramname.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_paramvalue.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="paramvalue_upd"
+class="form-label form-group">
+参数值(paramvalue)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="paramvalue"
+id="paramvalue_upd"
+placeholder="参数值"
+{% if not mcauthfield_paramvalue.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_paramvalue.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_description.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="description_upd"
+class="form-label form-group">
+参数描述(description)
+</label>
+
+<textarea type="text" class="validate form-control form-control-lg"
+name="description"
+id="description_upd"
+placeholder="参数描述"
+{% if not mcauthfield_description.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_description.mcauthchange %}
+readonly
+{% endif %}
+data-name="update"></textarea>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_createdat.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="createdat_upd"
+class="form-label form-group">
+创建时间(createdat)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_updatedat.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="updatedat_upd"
+class="form-label form-group">
+更新时间(updatedat)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_kwkwisactive.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="kwkwisactive_upd"
+class="form-label form-group">
+是否启用(kwkwisactive)
+</label>
+
+<select class="form-select form-select-lg mb-3" name="kwkwisactive"
+id="kwkwisactive_upd"
+{% if not mcauthfield_kwkwisactive.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_kwkwisactive.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+<option value="True" selected>是</option>
+<option value="False">否</option>
+</select>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_videotypeid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="videotypeid_upd"
+class="form-label form-group">
+视频类型ID关联字段指向视频类型(videotypeid)
+</label>
+
+<select class="form-select form-select-lg mb-3" name="videotypeid"
+id="videotypeid_upd"
+{% if not mcauthfield_videotypeid.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_videotypeid.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+<option value="">未选择</option>
+{% for record in data_mc_videocategkwkwory_58096 %}
+
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+
+{% endfor %}
+</select>
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">提交</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_del %}
+    <div id="modalremove" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">删除</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>确认删除这条记录吗?</p>
+          </div>
+          <div class="modal-footer">
+            <div class="row custom-form">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="del" hidden />{% csrf_token %}<input type="text" name="_id" value="" data-name="remove" hidden />
+
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">确认</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_view %}
+    <div id="modalpreview" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <h4>预览</h4>
+          <div class="">
+            
+{% if mcauthfield_algkwkworithmname.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">算法名称</p>
+
+<p id="algkwkworithmname_view">
+{{record.algkwkworithmname|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_paramname.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">参数名称</p>
+
+<p id="paramname_view">
+{{record.paramname|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_paramvalue.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">参数值</p>
+
+<p id="paramvalue_view">
+{{record.paramvalue|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_description.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">参数描述</p>
+
+<p id="description_view">
+{{record.description|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_createdat.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">创建时间</p>
+
+<p id="createdat_view">
+{{record.createdat|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_updatedat.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">更新时间</p>
+
+<p id="updatedat_view">
+{{record.updatedat|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_kwkwisactive.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">是否启用</p>
+
+<p id="kwkwisactive_view">
+{{record.kwkwisactive|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_videotypeid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">视频类型ID关联字段指向视频类型</p>
+
+<p id="videotypeid_view">
+{{record.videotypeid|safe }}
+</p>
+
+</div>
+{% endif %}
+<div class="modal-footer">
+              <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">关闭</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block script-footer %}
+<script>
+  function myreset(){
+window.location.href= "/config_busi/videorecommendationparams";
+};
+if (document.getElementById("modalupdate")){
+document.getElementById("modalupdate").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/videorecommendationparams',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+{% if mcauthfield_algkwkworithmname.mcauthview %}
+$("#algkwkworithmname_upd").val(resp.ins.algkwkworithmname);
+{% endif %}
+
+{% if mcauthfield_paramname.mcauthview %}
+$("#paramname_upd").val(resp.ins.paramname);
+{% endif %}
+
+{% if mcauthfield_paramvalue.mcauthview %}
+$("#paramvalue_upd").val(resp.ins.paramvalue);
+{% endif %}
+
+{% if mcauthfield_description.mcauthview %}
+$("#description_upd").val(resp.ins.description);
+{% endif %}
+
+{% if mcauthfield_createdat.mcauthview %}
+$("#createdat_upd").val(resp.ins.createdat);
+{% endif %}
+
+{% if mcauthfield_updatedat.mcauthview %}
+$("#updatedat_upd").val(resp.ins.updatedat);
+{% endif %}
+
+{% if mcauthfield_kwkwisactive.mcauthview %}
+$("#kwkwisactive_upd").val(resp.ins.kwkwisactive);
+{% endif %}
+
+{% if mcauthfield_videotypeid.mcauthview %}
+$("#videotypeid_upd").val(resp.ins.videotypeid);
+{% endif %}
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+function upd(_id){
+let data = {
+optype:'get',
+_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value,
+
+{% if mcauthfield_algkwkworithmname.mcauthchange %}
+algkwkworithmname:$("#algkwkworithmname_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_paramname.mcauthchange %}
+paramname:$("#paramname_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_paramvalue.mcauthchange %}
+paramvalue:$("#paramvalue_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_description.mcauthchange %}
+description:$("#description_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_createdat.mcauthchange %}
+createdat:$("#createdat_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_updatedat.mcauthchange %}
+updatedat:$("#updatedat_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_kwkwisactive.mcauthchange %}
+kwkwisactive:$("#kwkwisactive_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_videotypeid.mcauthchange %}
+videotypeid:$("#videotypeid_upd]").val(),
+{% endif %}
+
+}
+$.ajax({
+url: '/config_busi/videorecommendationparams',
+method: 'post',
+data: data,
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+if (document.getElementById("modalpreview")) {
+document.getElementById("modalpreview").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/videorecommendationparams',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+
+
+{% if mcauthfield_algkwkworithmname.mcauthview %}
+document.getElementById("algkwkworithmname_view").innerHTML=resp.ins.algkwkworithmname;
+{% endif %}
+
+
+
+
+{% if mcauthfield_paramname.mcauthview %}
+document.getElementById("paramname_view").innerHTML=resp.ins.paramname;
+{% endif %}
+
+
+
+
+{% if mcauthfield_paramvalue.mcauthview %}
+document.getElementById("paramvalue_view").innerHTML=resp.ins.paramvalue;
+{% endif %}
+
+
+
+
+{% if mcauthfield_description.mcauthview %}
+document.getElementById("description_view").innerHTML=resp.ins.description;
+{% endif %}
+
+
+
+
+{% if mcauthfield_createdat.mcauthview %}
+document.getElementById("createdat_view").innerHTML=resp.ins.createdat;
+{% endif %}
+
+
+
+
+{% if mcauthfield_updatedat.mcauthview %}
+document.getElementById("updatedat_view").innerHTML=resp.ins.updatedat;
+{% endif %}
+
+
+
+
+{% if mcauthfield_kwkwisactive.mcauthview %}
+document.getElementById("kwkwisactive_view").innerHTML=resp.ins.kwkwisactive;
+{% endif %}
+
+
+
+
+{% if mcauthfield_videotypeid.mcauthview %}
+document.getElementById("videotypeid_view").innerHTML=resp.ins.videotypeid;
+{% endif %}
+
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+if (document.getElementById("modalremove")) {
+document.getElementById("modalremove").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=remove]").val(_id);
+});
+};
+function del(_id){
+$.ajax({
+url: '/config_busi/videorecommendationparams',
+method: 'post',
+data: {optype:'del',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+</script>
+{% endblock %}

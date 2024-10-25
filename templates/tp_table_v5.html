@@ -1,0 +1,33 @@
+{% if ins %}
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            {% for param in ins.params %}
+            <th class="text-nowrap-cell">
+                {{param}}
+            </th>
+            {% endfor %}
+            <th>
+                操作
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for record in ins.records %}
+        <tr>
+            {% for val in record.toValues %}
+            <td class="text-nowrap-cell">
+                <span title="{{val}}">
+                    {{val}}
+                </span>
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+    {% else %}
+    <h3>
+        Empty Data
+    </h3>
+    {% endif %}

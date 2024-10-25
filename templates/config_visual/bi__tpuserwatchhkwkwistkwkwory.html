@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统 用户观看历史表(userwatchhkwkwistkwkwory)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_watchtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 观看时间 ******************** pie_v2***/ init_echart("echart_userwatchhkwkwistkwkwory_watchtime_pie_v2",'userwatchhkwkwistkwkwory.watchtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_watchtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 观看时间 ******************** pie_v1***/ init_echart("echart_userwatchhkwkwistkwkwory_watchtime_pie_v1",'userwatchhkwkwistkwkwory.watchtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_watchtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 观看时间 ******************** pie***/ init_echart("echart_userwatchhkwkwistkwkwory_watchtime_pie",'userwatchhkwkwistkwkwory.watchtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_watchtime_line" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 观看时间 ******************** line***/ init_echart("echart_userwatchhkwkwistkwkwory_watchtime_line",'userwatchhkwkwistkwkwory.watchtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_watchtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 观看时间 ******************** bar***/ init_echart("echart_userwatchhkwkwistkwkwory_watchtime_bar",'userwatchhkwkwistkwkwory.watchtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_watchtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 观看时间 ******************** bar_v1***/ init_echart("echart_userwatchhkwkwistkwkwory_watchtime_bar_v1",'userwatchhkwkwistkwkwory.watchtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_watchduration_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 观看时长 ******************** pie_v2***/ init_echart("echart_userwatchhkwkwistkwkwory_watchduration_pie_v2",'userwatchhkwkwistkwkwory.watchduration_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_watchduration_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 观看时长 ******************** pie_v1***/ init_echart("echart_userwatchhkwkwistkwkwory_watchduration_pie_v1",'userwatchhkwkwistkwkwory.watchduration_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_watchduration_pie" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 观看时长 ******************** pie***/ init_echart("echart_userwatchhkwkwistkwkwory_watchduration_pie",'userwatchhkwkwistkwkwory.watchduration_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_watchduration_line" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 观看时长 ******************** line***/ init_echart("echart_userwatchhkwkwistkwkwory_watchduration_line",'userwatchhkwkwistkwkwory.watchduration_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_watchduration_bar" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 观看时长 ******************** bar***/ init_echart("echart_userwatchhkwkwistkwkwory_watchduration_bar",'userwatchhkwkwistkwkwory.watchduration_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_watchduration_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 观看时长 ******************** bar_v1***/ init_echart("echart_userwatchhkwkwistkwkwory_watchduration_bar_v1",'userwatchhkwkwistkwkwory.watchduration_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_watchstatus_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 观看状态如已观看、观看中、暂停、已放弃 ******************** pie_v2***/ init_echart("echart_userwatchhkwkwistkwkwory_watchstatus_pie_v2",'userwatchhkwkwistkwkwory.watchstatus_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_watchstatus_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 观看状态如已观看、观看中、暂停、已放弃 ******************** pie_v1***/ init_echart("echart_userwatchhkwkwistkwkwory_watchstatus_pie_v1",'userwatchhkwkwistkwkwory.watchstatus_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_watchstatus_pie" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 观看状态如已观看、观看中、暂停、已放弃 ******************** pie***/ init_echart("echart_userwatchhkwkwistkwkwory_watchstatus_pie",'userwatchhkwkwistkwkwory.watchstatus_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_watchstatus_line" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 观看状态如已观看、观看中、暂停、已放弃 ******************** line***/ init_echart("echart_userwatchhkwkwistkwkwory_watchstatus_line",'userwatchhkwkwistkwkwory.watchstatus_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_watchstatus_bar" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 观看状态如已观看、观看中、暂停、已放弃 ******************** bar***/ init_echart("echart_userwatchhkwkwistkwkwory_watchstatus_bar",'userwatchhkwkwistkwkwory.watchstatus_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_watchstatus_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 观看状态如已观看、观看中、暂停、已放弃 ******************** bar_v1***/ init_echart("echart_userwatchhkwkwistkwkwory_watchstatus_bar_v1",'userwatchhkwkwistkwkwory.watchstatus_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_ratkwkwing_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 评分可选用户对该视频的评分 ******************** pie_v2***/ init_echart("echart_userwatchhkwkwistkwkwory_ratkwkwing_pie_v2",'userwatchhkwkwistkwkwory.ratkwkwing_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_ratkwkwing_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 评分可选用户对该视频的评分 ******************** pie_v1***/ init_echart("echart_userwatchhkwkwistkwkwory_ratkwkwing_pie_v1",'userwatchhkwkwistkwkwory.ratkwkwing_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_ratkwkwing_pie" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 评分可选用户对该视频的评分 ******************** pie***/ init_echart("echart_userwatchhkwkwistkwkwory_ratkwkwing_pie",'userwatchhkwkwistkwkwory.ratkwkwing_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_ratkwkwing_line" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 评分可选用户对该视频的评分 ******************** line***/ init_echart("echart_userwatchhkwkwistkwkwory_ratkwkwing_line",'userwatchhkwkwistkwkwory.ratkwkwing_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_ratkwkwing_bar" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 评分可选用户对该视频的评分 ******************** bar***/ init_echart("echart_userwatchhkwkwistkwkwory_ratkwkwing_bar",'userwatchhkwkwistkwkwory.ratkwkwing_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_ratkwkwing_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 评分可选用户对该视频的评分 ******************** bar_v1***/ init_echart("echart_userwatchhkwkwistkwkwory_ratkwkwing_bar_v1",'userwatchhkwkwistkwkwory.ratkwkwing_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_comment_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 评论可选用户对该视频的评论 ******************** pie_v2***/ init_echart("echart_userwatchhkwkwistkwkwory_comment_pie_v2",'userwatchhkwkwistkwkwory.comment_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_comment_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 评论可选用户对该视频的评论 ******************** pie_v1***/ init_echart("echart_userwatchhkwkwistkwkwory_comment_pie_v1",'userwatchhkwkwistkwkwory.comment_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_comment_pie" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 评论可选用户对该视频的评论 ******************** pie***/ init_echart("echart_userwatchhkwkwistkwkwory_comment_pie",'userwatchhkwkwistkwkwory.comment_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_comment_line" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 评论可选用户对该视频的评论 ******************** line***/ init_echart("echart_userwatchhkwkwistkwkwory_comment_line",'userwatchhkwkwistkwkwory.comment_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_comment_bar" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 评论可选用户对该视频的评论 ******************** bar***/ init_echart("echart_userwatchhkwkwistkwkwory_comment_bar",'userwatchhkwkwistkwkwory.comment_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_comment_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 评论可选用户对该视频的评论 ******************** bar_v1***/ init_echart("echart_userwatchhkwkwistkwkwory_comment_bar_v1",'userwatchhkwkwistkwkwory.comment_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_likestatus_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 点赞状态如已点赞、未点赞 ******************** pie_v2***/ init_echart("echart_userwatchhkwkwistkwkwory_likestatus_pie_v2",'userwatchhkwkwistkwkwory.likestatus_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_likestatus_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 点赞状态如已点赞、未点赞 ******************** pie_v1***/ init_echart("echart_userwatchhkwkwistkwkwory_likestatus_pie_v1",'userwatchhkwkwistkwkwory.likestatus_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_likestatus_pie" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 点赞状态如已点赞、未点赞 ******************** pie***/ init_echart("echart_userwatchhkwkwistkwkwory_likestatus_pie",'userwatchhkwkwistkwkwory.likestatus_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_likestatus_line" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 点赞状态如已点赞、未点赞 ******************** line***/ init_echart("echart_userwatchhkwkwistkwkwory_likestatus_line",'userwatchhkwkwistkwkwory.likestatus_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_likestatus_bar" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 点赞状态如已点赞、未点赞 ******************** bar***/ init_echart("echart_userwatchhkwkwistkwkwory_likestatus_bar",'userwatchhkwkwistkwkwory.likestatus_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_likestatus_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 点赞状态如已点赞、未点赞 ******************** bar_v1***/ init_echart("echart_userwatchhkwkwistkwkwory_likestatus_bar_v1",'userwatchhkwkwistkwkwory.likestatus_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_sharestatus_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 分享状态如已分享、未分享 ******************** pie_v2***/ init_echart("echart_userwatchhkwkwistkwkwory_sharestatus_pie_v2",'userwatchhkwkwistkwkwory.sharestatus_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_sharestatus_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 分享状态如已分享、未分享 ******************** pie_v1***/ init_echart("echart_userwatchhkwkwistkwkwory_sharestatus_pie_v1",'userwatchhkwkwistkwkwory.sharestatus_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_sharestatus_pie" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 分享状态如已分享、未分享 ******************** pie***/ init_echart("echart_userwatchhkwkwistkwkwory_sharestatus_pie",'userwatchhkwkwistkwkwory.sharestatus_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_sharestatus_line" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 分享状态如已分享、未分享 ******************** line***/ init_echart("echart_userwatchhkwkwistkwkwory_sharestatus_line",'userwatchhkwkwistkwkwory.sharestatus_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_sharestatus_bar" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 分享状态如已分享、未分享 ******************** bar***/ init_echart("echart_userwatchhkwkwistkwkwory_sharestatus_bar",'userwatchhkwkwistkwkwory.sharestatus_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_sharestatus_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 分享状态如已分享、未分享 ******************** bar_v1***/ init_echart("echart_userwatchhkwkwistkwkwory_sharestatus_bar_v1",'userwatchhkwkwistkwkwory.sharestatus_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_favkwkworitestatus_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 收藏状态如已收藏、未收藏 ******************** pie_v2***/ init_echart("echart_userwatchhkwkwistkwkwory_favkwkworitestatus_pie_v2",'userwatchhkwkwistkwkwory.favkwkworitestatus_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_favkwkworitestatus_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 收藏状态如已收藏、未收藏 ******************** pie_v1***/ init_echart("echart_userwatchhkwkwistkwkwory_favkwkworitestatus_pie_v1",'userwatchhkwkwistkwkwory.favkwkworitestatus_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_favkwkworitestatus_pie" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 收藏状态如已收藏、未收藏 ******************** pie***/ init_echart("echart_userwatchhkwkwistkwkwory_favkwkworitestatus_pie",'userwatchhkwkwistkwkwory.favkwkworitestatus_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_favkwkworitestatus_line" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 收藏状态如已收藏、未收藏 ******************** line***/ init_echart("echart_userwatchhkwkwistkwkwory_favkwkworitestatus_line",'userwatchhkwkwistkwkwory.favkwkworitestatus_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_favkwkworitestatus_bar" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 收藏状态如已收藏、未收藏 ******************** bar***/ init_echart("echart_userwatchhkwkwistkwkwory_favkwkworitestatus_bar",'userwatchhkwkwistkwkwory.favkwkworitestatus_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_userwatchhkwkwistkwkwory_favkwkworitestatus_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 用户观看历史表 收藏状态如已收藏、未收藏 ******************** bar_v1***/ init_echart("echart_userwatchhkwkwistkwkwory_favkwkworitestatus_bar_v1",'userwatchhkwkwistkwkwory.favkwkworitestatus_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+    </div>
+  </body>
+</html>

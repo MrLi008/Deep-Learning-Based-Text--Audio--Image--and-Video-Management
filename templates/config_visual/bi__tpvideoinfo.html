@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统 视频信息表(videoinfo)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoinfo_videotitle_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频标题 ******************** pie_v2***/ init_echart("echart_videoinfo_videotitle_pie_v2",'videoinfo.videotitle_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoinfo_videotitle_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频标题 ******************** pie_v1***/ init_echart("echart_videoinfo_videotitle_pie_v1",'videoinfo.videotitle_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoinfo_videotitle_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频标题 ******************** pie***/ init_echart("echart_videoinfo_videotitle_pie",'videoinfo.videotitle_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoinfo_videotitle_line" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频标题 ******************** line***/ init_echart("echart_videoinfo_videotitle_line",'videoinfo.videotitle_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoinfo_videotitle_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频标题 ******************** bar***/ init_echart("echart_videoinfo_videotitle_bar",'videoinfo.videotitle_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoinfo_videotitle_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频标题 ******************** bar_v1***/ init_echart("echart_videoinfo_videotitle_bar_v1",'videoinfo.videotitle_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoinfo_videodescription_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频描述 ******************** pie_v2***/ init_echart("echart_videoinfo_videodescription_pie_v2",'videoinfo.videodescription_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoinfo_videodescription_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频描述 ******************** pie_v1***/ init_echart("echart_videoinfo_videodescription_pie_v1",'videoinfo.videodescription_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoinfo_videodescription_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频描述 ******************** pie***/ init_echart("echart_videoinfo_videodescription_pie",'videoinfo.videodescription_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoinfo_videodescription_line" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频描述 ******************** line***/ init_echart("echart_videoinfo_videodescription_line",'videoinfo.videodescription_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoinfo_videodescription_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频描述 ******************** bar***/ init_echart("echart_videoinfo_videodescription_bar",'videoinfo.videodescription_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoinfo_videodescription_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频描述 ******************** bar_v1***/ init_echart("echart_videoinfo_videodescription_bar_v1",'videoinfo.videodescription_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoinfo_uploadtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 上传时间 ******************** pie_v2***/ init_echart("echart_videoinfo_uploadtime_pie_v2",'videoinfo.uploadtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoinfo_uploadtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 上传时间 ******************** pie_v1***/ init_echart("echart_videoinfo_uploadtime_pie_v1",'videoinfo.uploadtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoinfo_uploadtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 上传时间 ******************** pie***/ init_echart("echart_videoinfo_uploadtime_pie",'videoinfo.uploadtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoinfo_uploadtime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 上传时间 ******************** line***/ init_echart("echart_videoinfo_uploadtime_line",'videoinfo.uploadtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoinfo_uploadtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 上传时间 ******************** bar***/ init_echart("echart_videoinfo_uploadtime_bar",'videoinfo.uploadtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoinfo_uploadtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 上传时间 ******************** bar_v1***/ init_echart("echart_videoinfo_uploadtime_bar_v1",'videoinfo.uploadtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoinfo_duration_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频时长秒 ******************** pie_v2***/ init_echart("echart_videoinfo_duration_pie_v2",'videoinfo.duration_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoinfo_duration_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频时长秒 ******************** pie_v1***/ init_echart("echart_videoinfo_duration_pie_v1",'videoinfo.duration_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoinfo_duration_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频时长秒 ******************** pie***/ init_echart("echart_videoinfo_duration_pie",'videoinfo.duration_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoinfo_duration_line" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频时长秒 ******************** line***/ init_echart("echart_videoinfo_duration_line",'videoinfo.duration_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoinfo_duration_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频时长秒 ******************** bar***/ init_echart("echart_videoinfo_duration_bar",'videoinfo.duration_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoinfo_duration_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频时长秒 ******************** bar_v1***/ init_echart("echart_videoinfo_duration_bar_v1",'videoinfo.duration_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoinfo_resolution_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频分辨率 ******************** pie_v2***/ init_echart("echart_videoinfo_resolution_pie_v2",'videoinfo.resolution_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoinfo_resolution_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频分辨率 ******************** pie_v1***/ init_echart("echart_videoinfo_resolution_pie_v1",'videoinfo.resolution_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoinfo_resolution_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频分辨率 ******************** pie***/ init_echart("echart_videoinfo_resolution_pie",'videoinfo.resolution_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoinfo_resolution_line" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频分辨率 ******************** line***/ init_echart("echart_videoinfo_resolution_line",'videoinfo.resolution_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoinfo_resolution_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频分辨率 ******************** bar***/ init_echart("echart_videoinfo_resolution_bar",'videoinfo.resolution_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoinfo_resolution_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频信息表 视频分辨率 ******************** bar_v1***/ init_echart("echart_videoinfo_resolution_bar_v1",'videoinfo.resolution_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

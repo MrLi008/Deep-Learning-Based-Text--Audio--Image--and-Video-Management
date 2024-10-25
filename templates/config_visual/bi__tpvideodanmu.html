@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统 视频弹幕表(videodanmu)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmu_danmucontent_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕内容 ******************** pie_v2***/ init_echart("echart_videodanmu_danmucontent_pie_v2",'videodanmu.danmucontent_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmu_danmucontent_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕内容 ******************** pie_v1***/ init_echart("echart_videodanmu_danmucontent_pie_v1",'videodanmu.danmucontent_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmu_danmucontent_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕内容 ******************** pie***/ init_echart("echart_videodanmu_danmucontent_pie",'videodanmu.danmucontent_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videodanmu_danmucontent_line" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕内容 ******************** line***/ init_echart("echart_videodanmu_danmucontent_line",'videodanmu.danmucontent_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmu_danmucontent_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕内容 ******************** bar***/ init_echart("echart_videodanmu_danmucontent_bar",'videodanmu.danmucontent_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmu_danmucontent_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕内容 ******************** bar_v1***/ init_echart("echart_videodanmu_danmucontent_bar_v1",'videodanmu.danmucontent_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmu_sendtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 发送时间 ******************** pie_v2***/ init_echart("echart_videodanmu_sendtime_pie_v2",'videodanmu.sendtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmu_sendtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 发送时间 ******************** pie_v1***/ init_echart("echart_videodanmu_sendtime_pie_v1",'videodanmu.sendtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmu_sendtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 发送时间 ******************** pie***/ init_echart("echart_videodanmu_sendtime_pie",'videodanmu.sendtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videodanmu_sendtime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 发送时间 ******************** line***/ init_echart("echart_videodanmu_sendtime_line",'videodanmu.sendtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmu_sendtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 发送时间 ******************** bar***/ init_echart("echart_videodanmu_sendtime_bar",'videodanmu.sendtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmu_sendtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 发送时间 ******************** bar_v1***/ init_echart("echart_videodanmu_sendtime_bar_v1",'videodanmu.sendtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmu_colkwkwor_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕颜色 ******************** pie_v2***/ init_echart("echart_videodanmu_colkwkwor_pie_v2",'videodanmu.colkwkwor_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmu_colkwkwor_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕颜色 ******************** pie_v1***/ init_echart("echart_videodanmu_colkwkwor_pie_v1",'videodanmu.colkwkwor_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmu_colkwkwor_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕颜色 ******************** pie***/ init_echart("echart_videodanmu_colkwkwor_pie",'videodanmu.colkwkwor_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videodanmu_colkwkwor_line" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕颜色 ******************** line***/ init_echart("echart_videodanmu_colkwkwor_line",'videodanmu.colkwkwor_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmu_colkwkwor_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕颜色 ******************** bar***/ init_echart("echart_videodanmu_colkwkwor_bar",'videodanmu.colkwkwor_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmu_colkwkwor_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕颜色 ******************** bar_v1***/ init_echart("echart_videodanmu_colkwkwor_bar_v1",'videodanmu.colkwkwor_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmu_fontsize_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 字体大小 ******************** pie_v2***/ init_echart("echart_videodanmu_fontsize_pie_v2",'videodanmu.fontsize_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmu_fontsize_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 字体大小 ******************** pie_v1***/ init_echart("echart_videodanmu_fontsize_pie_v1",'videodanmu.fontsize_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmu_fontsize_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 字体大小 ******************** pie***/ init_echart("echart_videodanmu_fontsize_pie",'videodanmu.fontsize_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videodanmu_fontsize_line" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 字体大小 ******************** line***/ init_echart("echart_videodanmu_fontsize_line",'videodanmu.fontsize_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmu_fontsize_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 字体大小 ******************** bar***/ init_echart("echart_videodanmu_fontsize_bar",'videodanmu.fontsize_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmu_fontsize_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 字体大小 ******************** bar_v1***/ init_echart("echart_videodanmu_fontsize_bar_v1",'videodanmu.fontsize_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmu_position_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕位置如顶部、底部、滚动等 ******************** pie_v2***/ init_echart("echart_videodanmu_position_pie_v2",'videodanmu.position_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmu_position_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕位置如顶部、底部、滚动等 ******************** pie_v1***/ init_echart("echart_videodanmu_position_pie_v1",'videodanmu.position_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmu_position_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕位置如顶部、底部、滚动等 ******************** pie***/ init_echart("echart_videodanmu_position_pie",'videodanmu.position_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videodanmu_position_line" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕位置如顶部、底部、滚动等 ******************** line***/ init_echart("echart_videodanmu_position_line",'videodanmu.position_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmu_position_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕位置如顶部、底部、滚动等 ******************** bar***/ init_echart("echart_videodanmu_position_bar",'videodanmu.position_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmu_position_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕位置如顶部、底部、滚动等 ******************** bar_v1***/ init_echart("echart_videodanmu_position_bar_v1",'videodanmu.position_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmu_duration_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕显示时长秒 ******************** pie_v2***/ init_echart("echart_videodanmu_duration_pie_v2",'videodanmu.duration_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmu_duration_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕显示时长秒 ******************** pie_v1***/ init_echart("echart_videodanmu_duration_pie_v1",'videodanmu.duration_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmu_duration_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕显示时长秒 ******************** pie***/ init_echart("echart_videodanmu_duration_pie",'videodanmu.duration_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videodanmu_duration_line" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕显示时长秒 ******************** line***/ init_echart("echart_videodanmu_duration_line",'videodanmu.duration_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmu_duration_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕显示时长秒 ******************** bar***/ init_echart("echart_videodanmu_duration_bar",'videodanmu.duration_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmu_duration_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕表 弹幕显示时长秒 ******************** bar_v1***/ init_echart("echart_videodanmu_duration_bar_v1",'videodanmu.duration_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+    </div>
+  </body>
+</html>

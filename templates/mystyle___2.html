@@ -1,0 +1,206 @@
+<style>  
+    /* 基础样式 */  
+    body {  
+      font-family: 'Lato', sans-serif;  
+      color: #333;  
+      background-color: #f8f9fa;  
+      margin: 0;  
+      padding: 0;  
+    }  
+    
+    h1, h2, h3, p {  
+      margin: 0;  
+      padding: 0;  
+    }  
+    
+    /* 导航栏样式 */  
+    .navbar {  
+      padding: 10px 0;  
+      background-color: #fff;  
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  
+    }  
+    
+    .navbar-brand {  
+      font-size: 24px;  
+      font-weight: bold;  
+      color: #333;  
+    }  
+    
+    .navbar-nav .nav-link {  
+      color: #6c757d;  
+      text-transform: uppercase;  
+      font-size: 14px;  
+      padding: 10px 15px;  
+      margin-right: 10px;  
+      border-radius: 4px;  
+    }  
+    
+    .navbar-nav .nav-link:hover {  
+      background-color: #e9ecef;  
+      color: #333;  
+    }  
+    
+    .navbar-nav .nav-link.active {  
+      background-color: #007bff;  
+      color: #fff;  
+    }  
+    
+    /* 容器样式 */  
+    .container {  
+      max-width: 1200px;  
+      margin: 30px auto;  
+      padding: 20px;  
+      background-color: #fff;  
+      border-radius: 4px;  
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  
+    }  
+    
+    /* 按钮样式 */  
+    .btn {  
+      display: inline-block;  
+      padding: 10px 20px;  
+      font-size: 16px;  
+      color: #fff;  
+      background-color: #007bff;  
+      border: none;  
+      border-radius: 4px;  
+      cursor: pointer;  
+      transition: background-color 0.3s ease;  
+    }  
+    
+    .btn:hover {  
+      background-color: #0056b3;  
+    }  
+    
+    /* 卡片样式 */  
+    .card {  
+      background-color: #fff;  
+      border-radius: 4px;  
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  
+      margin-bottom: 20px;  
+      padding: 20px;  
+    }  
+    
+    .card-title {  
+      font-size: 20px;  
+      margin-bottom: 10px;  
+    }  
+    
+    /* 响应式样式 */  
+    @media (max-width: 768px) {  
+      .container {  
+        padding: 15px;  
+      }  
+    }  
+  </style>
+  <style>.default-echart-border{
+    color: c;
+    border-color: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: oblique;
+    border: 1px solid rgba(255, 159, 64, 1);
+    margin: 1px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 0px 0px rgba(255, 159, 64, 1);
+    padding: 4px;
+  }.btn{
+    color: d;
+    border-color: 1;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-style: oblique;
+    border: 1px solid rgba(255, 99, 132, 1);
+    margin: 1px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 0px 0px rgba(255, 206, 86, 1);
+    padding: 0;
+  }.my-header{
+    color: 9;
+    border-color: 1;
+    font-size: 1rem;
+    font-weight: 100;
+    font-style: normal;
+    border: 1px solid rgba(255, 206, 86, 1);
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 0px 0px rgba(255, 159, 64, 1);
+    padding: 0;
+  }.my-container-margin{
+    color: b;
+    border-color: 2;
+    font-size: 1.3rem;
+    font-weight: 800;
+    font-style: italic;
+    border: 1px solid rgba(75, 192, 192, 1);
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 0px 0px rgba(255, 206, 86, 1);
+    padding: 3px;
+  }.table{
+    color: b;
+    border-color: 2;
+    font-size: 0.9rem;
+    font-weight: 900;
+    font-style: normal;
+    border: 1px solid rgba(153, 102, 255, 1);
+    margin: 1px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 0px 0px rgba(54, 162, 235, 1);
+    padding: 4px;
+  }.form-control{
+    color: f;
+    border-color: #;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-style: italic;
+    border: 1px solid rgba(153, 102, 255, 1);
+    margin: 12px;
+    border-radius: 0;
+    box-shadow: 0px 0px 0px 0px rgba(255, 159, 64, 1);
+    padding: 3px;
+  }.form-control-label{
+    color: e;
+    border-color: 1;
+    font-size: 0.7rem;
+    font-weight: 400;
+    font-style: normal;
+    border: 1px solid rgba(75, 192, 192, 1);
+    margin: 0;
+    border-radius: 4px;
+    box-shadow: 0px 0px 0px 0px rgba(54, 162, 235, 1);
+    padding: 4px;
+  }.form-control-input{
+    color: a;
+    border-color: #;
+    font-size: 0.6rem;
+    font-weight: 100;
+    font-style: normal;
+    border: 1px solid rgba(255, 159, 64, 1);
+    margin: 3px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 0px 0px rgba(75, 192, 192, 1);
+    padding: 2px;
+  }.background-color{
+    color: e;
+    border-color: 2;
+    font-size: 0.9rem;
+    font-weight: 300;
+    font-style: oblique;
+    border: 1px solid rgba(54, 162, 235, 1);
+    margin: 7px;
+    border-radius: 0;
+    box-shadow: 0px 0px 0px 0px rgba(54, 162, 235, 1);
+    padding: 4px;
+  }.border-color{
+    color: #;
+    border-color: 1;
+    font-size: 1.2rem;
+    font-weight: 100;
+    font-style: oblique;
+    border: 1px solid rgba(153, 102, 255, 1);
+    margin: 10px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 0px 0px rgba(153, 102, 255, 1);
+    padding: 2px;
+  }</style>

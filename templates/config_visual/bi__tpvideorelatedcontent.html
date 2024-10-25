@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统 视频关联内容表(videorelatedcontent)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorelatedcontent_contenttype_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 内容类型 ******************** pie_v2***/ init_echart("echart_videorelatedcontent_contenttype_pie_v2",'videorelatedcontent.contenttype_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorelatedcontent_contenttype_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 内容类型 ******************** pie_v1***/ init_echart("echart_videorelatedcontent_contenttype_pie_v1",'videorelatedcontent.contenttype_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorelatedcontent_contenttype_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 内容类型 ******************** pie***/ init_echart("echart_videorelatedcontent_contenttype_pie",'videorelatedcontent.contenttype_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videorelatedcontent_contenttype_line" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 内容类型 ******************** line***/ init_echart("echart_videorelatedcontent_contenttype_line",'videorelatedcontent.contenttype_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorelatedcontent_contenttype_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 内容类型 ******************** bar***/ init_echart("echart_videorelatedcontent_contenttype_bar",'videorelatedcontent.contenttype_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorelatedcontent_contenttype_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 内容类型 ******************** bar_v1***/ init_echart("echart_videorelatedcontent_contenttype_bar_v1",'videorelatedcontent.contenttype_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorelatedcontent_description_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 描述 ******************** pie_v2***/ init_echart("echart_videorelatedcontent_description_pie_v2",'videorelatedcontent.description_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorelatedcontent_description_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 描述 ******************** pie_v1***/ init_echart("echart_videorelatedcontent_description_pie_v1",'videorelatedcontent.description_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorelatedcontent_description_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 描述 ******************** pie***/ init_echart("echart_videorelatedcontent_description_pie",'videorelatedcontent.description_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videorelatedcontent_description_line" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 描述 ******************** line***/ init_echart("echart_videorelatedcontent_description_line",'videorelatedcontent.description_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorelatedcontent_description_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 描述 ******************** bar***/ init_echart("echart_videorelatedcontent_description_bar",'videorelatedcontent.description_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorelatedcontent_description_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 描述 ******************** bar_v1***/ init_echart("echart_videorelatedcontent_description_bar_v1",'videorelatedcontent.description_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorelatedcontent_status_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 状态 ******************** pie_v2***/ init_echart("echart_videorelatedcontent_status_pie_v2",'videorelatedcontent.status_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorelatedcontent_status_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 状态 ******************** pie_v1***/ init_echart("echart_videorelatedcontent_status_pie_v1",'videorelatedcontent.status_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorelatedcontent_status_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 状态 ******************** pie***/ init_echart("echart_videorelatedcontent_status_pie",'videorelatedcontent.status_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videorelatedcontent_status_line" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 状态 ******************** line***/ init_echart("echart_videorelatedcontent_status_line",'videorelatedcontent.status_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorelatedcontent_status_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 状态 ******************** bar***/ init_echart("echart_videorelatedcontent_status_bar",'videorelatedcontent.status_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorelatedcontent_status_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 状态 ******************** bar_v1***/ init_echart("echart_videorelatedcontent_status_bar_v1",'videorelatedcontent.status_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorelatedcontent_creationtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 创建时间 ******************** pie_v2***/ init_echart("echart_videorelatedcontent_creationtime_pie_v2",'videorelatedcontent.creationtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorelatedcontent_creationtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 创建时间 ******************** pie_v1***/ init_echart("echart_videorelatedcontent_creationtime_pie_v1",'videorelatedcontent.creationtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorelatedcontent_creationtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 创建时间 ******************** pie***/ init_echart("echart_videorelatedcontent_creationtime_pie",'videorelatedcontent.creationtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videorelatedcontent_creationtime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 创建时间 ******************** line***/ init_echart("echart_videorelatedcontent_creationtime_line",'videorelatedcontent.creationtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorelatedcontent_creationtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 创建时间 ******************** bar***/ init_echart("echart_videorelatedcontent_creationtime_bar",'videorelatedcontent.creationtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorelatedcontent_creationtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 创建时间 ******************** bar_v1***/ init_echart("echart_videorelatedcontent_creationtime_bar_v1",'videorelatedcontent.creationtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorelatedcontent_modkwkwificationtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 修改时间 ******************** pie_v2***/ init_echart("echart_videorelatedcontent_modkwkwificationtime_pie_v2",'videorelatedcontent.modkwkwificationtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorelatedcontent_modkwkwificationtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 修改时间 ******************** pie_v1***/ init_echart("echart_videorelatedcontent_modkwkwificationtime_pie_v1",'videorelatedcontent.modkwkwificationtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videorelatedcontent_modkwkwificationtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 修改时间 ******************** pie***/ init_echart("echart_videorelatedcontent_modkwkwificationtime_pie",'videorelatedcontent.modkwkwificationtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videorelatedcontent_modkwkwificationtime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 修改时间 ******************** line***/ init_echart("echart_videorelatedcontent_modkwkwificationtime_line",'videorelatedcontent.modkwkwificationtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorelatedcontent_modkwkwificationtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 修改时间 ******************** bar***/ init_echart("echart_videorelatedcontent_modkwkwificationtime_bar",'videorelatedcontent.modkwkwificationtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videorelatedcontent_modkwkwificationtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频关联内容表 修改时间 ******************** bar_v1***/ init_echart("echart_videorelatedcontent_modkwkwificationtime_bar_v1",'videorelatedcontent.modkwkwificationtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>
+        {% block title %}
+        基于深度学习的文案语音图片视频管理分析-视频矩阵系统
+        {% endblock %}
+        {% block version %}
+        
+        {% endblock %}
+    </title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/static/css/bootstrap-table.css" rel="stylesheet" type="text/css" media="all"/>
+    {% block header %}
+
+    {% endblock %}
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    {% include 'mystyle.html' %}
+    {% include 'mystyle___2.html' %}
+    <style>
+        table{
+            max-height:700px;
+            overflow:auto;
+        }
+
+        .small-echart {
+            width:500px;
+            height:300px;
+        }
+    </style>
+</head> 
+<body>
+{% block nav %}
+{% include 'header.html' %}
+{% endblock %}
+
+{% block header-image %}
+
+{% endblock %}
+{% block body %}
+{% endblock %}
+{% block modal %}
+{% endblock %}
+<div class="fixed-layout-footer">
+    <div class="container container-footer">
+        <footer class="page-footer black ml-footer">
+            {% block footer %}
+            CopyRight 基于深度学习的文案语音图片视频管理分析-视频矩阵系统 email:基于深度学习的文案语音图片视频管理分析-视频矩阵系统@XX.XXX
+            {% endblock %}
+        </footer>
+    </div>
+</div>
+{% block script-footer %}
+{% endblock %}
+<script>
+
+    
+</script>
+{% block external-script %}
+{% include 'go_to_top.html' %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,132 @@
+
+<h1>
+语法介绍：
+</h1>
+<p>
+参考下述格式，以及附带的模板，实现自定义表格内容展示
+</p>
+<p>
+默认使用系统提供的接口展示所有的字段和数值，需要定制的可以在此基础上做修改
+</p>
+{% if ins%}
+<table class="table table-bordered table-hover table-striped text-nowrap">
+<thead>
+<tr>
+
+<th class="text-nowrap-cell">
+视频ID关联字段指向视频的
+</th>
+
+<th class="text-nowrap-cell">
+封面图片URL
+</th>
+
+<th class="text-nowrap-cell">
+图片格式
+</th>
+
+<th class="text-nowrap-cell">
+图片大小单位KB
+</th>
+
+<th class="text-nowrap-cell">
+上传时间
+</th>
+
+<th class="text-nowrap-cell">
+创建者ID关联字段指向用户的
+</th>
+
+<th class="text-nowrap-cell">
+状态例如有效、无效、待审核
+</th>
+
+<th class="text-nowrap-cell">
+图片描述
+</th>
+
+<th class="text-nowrap-cell">
+是否为默认封面kwTruekwFalse
+</th>
+
+<th>
+<span class="text-nowrap">
+操作
+</span>
+</th>
+</tr>
+</thead>
+<tbody>
+{% for record in ins.records%}
+<tr>
+
+<td class="text-nowrap-cell">
+<span title="{{record.videoid}}">
+{{record.videoid|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.coverimageurl}}">
+{{record.coverimageurl|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.imagekwkwfkwkwormat}}">
+{{record.imagekwkwfkwkwormat|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.imagesize}}">
+{{record.imagesize|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.uploadtime}}">
+{{record.uploadtime|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.creatkwkworid}}">
+{{record.creatkwkworid|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.status}}">
+{{record.status|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.description}}">
+{{record.description|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.kwkwiskwkwdefault}}">
+{{record.kwkwiskwkwdefault|truncatechars:20}}
+</span>
+</td>
+
+<td>
+<a href="/config_busi/videocoverimage?id_search={{record..id}}" class="btn btn-sm btn-primary">
+详情
+</a>
+</td>
+</tr>
+{% endfor%}
+</tbody>
+</table>
+{% else%}
+<h3>
+Empty Data
+</h3>
+{% endif%}
+
+In table....

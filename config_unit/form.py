@@ -1,0 +1,40 @@
+from django import forms
+from captcha.fields import CaptchaField
+
+from appcenter.form import *
+
+all_tables_form = {
+    "videoinfo": mc_videoinfo_form,
+    "videocategkwkwory": mc_videocategkwkwory_form,
+    "videotag": mc_videotag_form,
+    "videofilestkwkworage": mc_videofilestkwkworage_form,
+    "videoplayreckwkword": mc_videoplayreckwkword_form,
+    "videocomment": mc_videocomment_form,
+    "videolike": mc_videolike_form,
+    "videoshare": mc_videoshare_form,
+    "videoviewduration": mc_videoviewduration_form,
+    "videouploader": mc_videouploader_form,
+    "userinfo": mc_userinfo_form,
+    "userpermkwkwission": mc_userpermkwkwission_form,
+    "userwatchhkwkwistkwkwory": mc_userwatchhkwkwistkwkwory_form,
+    "videoauditstatus": mc_videoauditstatus_form,
+    "videocoverimage": mc_videocoverimage_form,
+    "videomatrixconfig": mc_videomatrixconfig_form,
+    "videomatrixnode": mc_videomatrixnode_form,
+    "videomatrixplayreckwkword": mc_videomatrixplayreckwkword_form,
+    "videorelatedcontent": mc_videorelatedcontent_form,
+    "videoerrkwkworlog": mc_videoerrkwkworlog_form,
+    "videopopularity": mc_videopopularity_form,
+    "videorecommendationparams": mc_videorecommendationparams_form,
+    "videoadinfo": mc_videoadinfo_form,
+    "videoadplayreckwkword": mc_videoadplayreckwkword_form,
+    "videodanmu": mc_videodanmu_form,
+    "videodanmublockwkwkwords": mc_videodanmublockwkwkwords_form,
+    "videomultilkwkwingualsubtitles": mc_videomultilkwkwingualsubtitles_form,
+    "videotranscodkwkwingtkwkwask": mc_videotranscodkwkwingtkwkwask_form,
+    "videoanalyskwkwismetrics": mc_videoanalyskwkwismetrics_form,
+    "videoqualityassessment": mc_videoqualityassessment_form,
+    "videowatermarkinfo": mc_videowatermarkinfo_form,
+    "videocopyrightinfo": mc_videocopyrightinfo_form,
+    "supermanager": mc_supermanager_form,
+}

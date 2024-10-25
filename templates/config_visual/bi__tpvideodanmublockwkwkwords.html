@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统 视频弹幕屏蔽词表(videodanmublockwkwkwords)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_wkwkword_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 屏蔽词 ******************** pie_v2***/ init_echart("echart_videodanmublockwkwkwords_wkwkword_pie_v2",'videodanmublockwkwkwords.wkwkword_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_wkwkword_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 屏蔽词 ******************** pie_v1***/ init_echart("echart_videodanmublockwkwkwords_wkwkword_pie_v1",'videodanmublockwkwkwords.wkwkword_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_wkwkword_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 屏蔽词 ******************** pie***/ init_echart("echart_videodanmublockwkwkwords_wkwkword_pie",'videodanmublockwkwkwords.wkwkword_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_wkwkword_line" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 屏蔽词 ******************** line***/ init_echart("echart_videodanmublockwkwkwords_wkwkword_line",'videodanmublockwkwkwords.wkwkword_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_wkwkword_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 屏蔽词 ******************** bar***/ init_echart("echart_videodanmublockwkwkwords_wkwkword_bar",'videodanmublockwkwkwords.wkwkword_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_wkwkword_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 屏蔽词 ******************** bar_v1***/ init_echart("echart_videodanmublockwkwkwords_wkwkword_bar_v1",'videodanmublockwkwkwords.wkwkword_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_createtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 创建时间 ******************** pie_v2***/ init_echart("echart_videodanmublockwkwkwords_createtime_pie_v2",'videodanmublockwkwkwords.createtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_createtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 创建时间 ******************** pie_v1***/ init_echart("echart_videodanmublockwkwkwords_createtime_pie_v1",'videodanmublockwkwkwords.createtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_createtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 创建时间 ******************** pie***/ init_echart("echart_videodanmublockwkwkwords_createtime_pie",'videodanmublockwkwkwords.createtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_createtime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 创建时间 ******************** line***/ init_echart("echart_videodanmublockwkwkwords_createtime_line",'videodanmublockwkwkwords.createtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_createtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 创建时间 ******************** bar***/ init_echart("echart_videodanmublockwkwkwords_createtime_bar",'videodanmublockwkwkwords.createtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_createtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 创建时间 ******************** bar_v1***/ init_echart("echart_videodanmublockwkwkwords_createtime_bar_v1",'videodanmublockwkwkwords.createtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_updatetime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 更新时间 ******************** pie_v2***/ init_echart("echart_videodanmublockwkwkwords_updatetime_pie_v2",'videodanmublockwkwkwords.updatetime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_updatetime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 更新时间 ******************** pie_v1***/ init_echart("echart_videodanmublockwkwkwords_updatetime_pie_v1",'videodanmublockwkwkwords.updatetime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_updatetime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 更新时间 ******************** pie***/ init_echart("echart_videodanmublockwkwkwords_updatetime_pie",'videodanmublockwkwkwords.updatetime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_updatetime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 更新时间 ******************** line***/ init_echart("echart_videodanmublockwkwkwords_updatetime_line",'videodanmublockwkwkwords.updatetime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_updatetime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 更新时间 ******************** bar***/ init_echart("echart_videodanmublockwkwkwords_updatetime_bar",'videodanmublockwkwkwords.updatetime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_updatetime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 更新时间 ******************** bar_v1***/ init_echart("echart_videodanmublockwkwkwords_updatetime_bar_v1",'videodanmublockwkwkwords.updatetime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_blocktype_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 屏蔽类型如关键词、正则达式等 ******************** pie_v2***/ init_echart("echart_videodanmublockwkwkwords_blocktype_pie_v2",'videodanmublockwkwkwords.blocktype_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_blocktype_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 屏蔽类型如关键词、正则达式等 ******************** pie_v1***/ init_echart("echart_videodanmublockwkwkwords_blocktype_pie_v1",'videodanmublockwkwkwords.blocktype_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_blocktype_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 屏蔽类型如关键词、正则达式等 ******************** pie***/ init_echart("echart_videodanmublockwkwkwords_blocktype_pie",'videodanmublockwkwkwords.blocktype_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_blocktype_line" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 屏蔽类型如关键词、正则达式等 ******************** line***/ init_echart("echart_videodanmublockwkwkwords_blocktype_line",'videodanmublockwkwkwords.blocktype_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_blocktype_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 屏蔽类型如关键词、正则达式等 ******************** bar***/ init_echart("echart_videodanmublockwkwkwords_blocktype_bar",'videodanmublockwkwkwords.blocktype_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_blocktype_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 屏蔽类型如关键词、正则达式等 ******************** bar_v1***/ init_echart("echart_videodanmublockwkwkwords_blocktype_bar_v1",'videodanmublockwkwkwords.blocktype_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_description_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 描述对屏蔽词的额外说明或备注 ******************** pie_v2***/ init_echart("echart_videodanmublockwkwkwords_description_pie_v2",'videodanmublockwkwkwords.description_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_description_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 描述对屏蔽词的额外说明或备注 ******************** pie_v1***/ init_echart("echart_videodanmublockwkwkwords_description_pie_v1",'videodanmublockwkwkwords.description_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_description_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 描述对屏蔽词的额外说明或备注 ******************** pie***/ init_echart("echart_videodanmublockwkwkwords_description_pie",'videodanmublockwkwkwords.description_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_description_line" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 描述对屏蔽词的额外说明或备注 ******************** line***/ init_echart("echart_videodanmublockwkwkwords_description_line",'videodanmublockwkwkwords.description_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_description_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 描述对屏蔽词的额外说明或备注 ******************** bar***/ init_echart("echart_videodanmublockwkwkwords_description_bar",'videodanmublockwkwkwords.description_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videodanmublockwkwkwords_description_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频弹幕屏蔽词表 描述对屏蔽词的额外说明或备注 ******************** bar_v1***/ init_echart("echart_videodanmublockwkwkwords_description_bar_v1",'videodanmublockwkwkwords.description_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+    </div>
+  </body>
+</html>

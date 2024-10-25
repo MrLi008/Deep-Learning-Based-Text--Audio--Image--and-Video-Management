@@ -1,0 +1,83 @@
+{% extends 'tp.html' %}
+
+{% block title %}
+基于深度学习的文案语音图片视频管理分析-视频矩阵系统
+
+{% endblock %}
+{% block nav %}
+
+{% endblock %}
+{% block header-image %}
+
+{% endblock %}
+
+{% block body %}
+<div class="row my-background" style="height:97%">
+    
+    <div class="col-sm-12">
+        
+        <video autoplay muted loop class="bgVideo">
+            <source src="/static/imgs/back.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+
+        <div class="my-login-block-video">
+            <h3>
+                WelCome 基于深度学习的文案语音图片视频管理分析-视频矩阵系统
+            </h3>
+            <div class="row">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {% for field in loginform %}
+                    <div class="form-group mb-3">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-label form-control-lg justify-text">{{ field.label }}</div>
+                            </div>
+                            <div class="col-sm-7">
+                                {{field}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <span style="background-color: red">{{ field.errors }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="form-group mb-3">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-label form-control-lg justify-text">用户类型</div>
+
+                            </div>
+                            <div class="col-sm-7">
+                                <select class="form-control" name="user_table_id" id="user_table_id">
+                                    __mark_template_login_user_tables
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3 justify-text-center">
+                        <button class="btn btn-primary " type="submit">
+                            登录
+                        </button>
+                        <button class="btn btn-default" type="reset">
+                            重置
+                        </button>
+                        <a href="/register" class="btn">
+                            注册
+                        </a>
+                        <a href="/admin" class="btn" target="_blank">
+                            管理
+                        </a>
+                    </div>
+                    <div class="form-group mb-3">
+                        <span style="color: red">
+                            {{ error_message }}
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

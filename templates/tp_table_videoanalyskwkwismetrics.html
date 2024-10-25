@@ -1,0 +1,132 @@
+
+<h1>
+语法介绍：
+</h1>
+<p>
+参考下述格式，以及附带的模板，实现自定义表格内容展示
+</p>
+<p>
+默认使用系统提供的接口展示所有的字段和数值，需要定制的可以在此基础上做修改
+</p>
+{% if ins%}
+<table class="table table-bordered table-hover table-striped text-nowrap">
+<thead>
+<tr>
+
+<th class="text-nowrap-cell">
+视频ID关联视频
+</th>
+
+<th class="text-nowrap-cell">
+分析时间
+</th>
+
+<th class="text-nowrap-cell">
+观看次数
+</th>
+
+<th class="text-nowrap-cell">
+点赞次数
+</th>
+
+<th class="text-nowrap-cell">
+分享次数
+</th>
+
+<th class="text-nowrap-cell">
+评论次数
+</th>
+
+<th class="text-nowrap-cell">
+跳出率
+</th>
+
+<th class="text-nowrap-cell">
+平均观看时长
+</th>
+
+<th class="text-nowrap-cell">
+互动率
+</th>
+
+<th>
+<span class="text-nowrap">
+操作
+</span>
+</th>
+</tr>
+</thead>
+<tbody>
+{% for record in ins.records%}
+<tr>
+
+<td class="text-nowrap-cell">
+<span title="{{record.videoid}}">
+{{record.videoid|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.analyskwkwistime}}">
+{{record.analyskwkwistime|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.viewcount}}">
+{{record.viewcount|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.likecount}}">
+{{record.likecount|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.sharecount}}">
+{{record.sharecount|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.commentcount}}">
+{{record.commentcount|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.bouncerate}}">
+{{record.bouncerate|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.averagewatchtime}}">
+{{record.averagewatchtime|truncatechars:20}}
+</span>
+</td>
+
+<td class="text-nowrap-cell">
+<span title="{{record.engagementrate}}">
+{{record.engagementrate|truncatechars:20}}
+</span>
+</td>
+
+<td>
+<a href="/config_busi/videoanalyskwkwismetrics?id_search={{record..id}}" class="btn btn-sm btn-primary">
+详情
+</a>
+</td>
+</tr>
+{% endfor%}
+</tbody>
+</table>
+{% else%}
+<h3>
+Empty Data
+</h3>
+{% endif%}
+
+In table....

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统 视频点赞表(videolike)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videolike_liketime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞时间 ******************** pie_v2***/ init_echart("echart_videolike_liketime_pie_v2",'videolike.liketime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videolike_liketime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞时间 ******************** pie_v1***/ init_echart("echart_videolike_liketime_pie_v1",'videolike.liketime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videolike_liketime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞时间 ******************** pie***/ init_echart("echart_videolike_liketime_pie",'videolike.liketime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videolike_liketime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞时间 ******************** line***/ init_echart("echart_videolike_liketime_line",'videolike.liketime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videolike_liketime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞时间 ******************** bar***/ init_echart("echart_videolike_liketime_bar",'videolike.liketime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videolike_liketime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞时间 ******************** bar_v1***/ init_echart("echart_videolike_liketime_bar_v1",'videolike.liketime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videolike_ipaddress_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞时的IP地址 ******************** pie_v2***/ init_echart("echart_videolike_ipaddress_pie_v2",'videolike.ipaddress_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videolike_ipaddress_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞时的IP地址 ******************** pie_v1***/ init_echart("echart_videolike_ipaddress_pie_v1",'videolike.ipaddress_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videolike_ipaddress_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞时的IP地址 ******************** pie***/ init_echart("echart_videolike_ipaddress_pie",'videolike.ipaddress_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videolike_ipaddress_line" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞时的IP地址 ******************** line***/ init_echart("echart_videolike_ipaddress_line",'videolike.ipaddress_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videolike_ipaddress_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞时的IP地址 ******************** bar***/ init_echart("echart_videolike_ipaddress_bar",'videolike.ipaddress_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videolike_ipaddress_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞时的IP地址 ******************** bar_v1***/ init_echart("echart_videolike_ipaddress_bar_v1",'videolike.ipaddress_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videolike_liketype_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞类型如普通点赞、特殊点赞等可用枚举或示 ******************** pie_v2***/ init_echart("echart_videolike_liketype_pie_v2",'videolike.liketype_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videolike_liketype_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞类型如普通点赞、特殊点赞等可用枚举或示 ******************** pie_v1***/ init_echart("echart_videolike_liketype_pie_v1",'videolike.liketype_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videolike_liketype_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞类型如普通点赞、特殊点赞等可用枚举或示 ******************** pie***/ init_echart("echart_videolike_liketype_pie",'videolike.liketype_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videolike_liketype_line" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞类型如普通点赞、特殊点赞等可用枚举或示 ******************** line***/ init_echart("echart_videolike_liketype_line",'videolike.liketype_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videolike_liketype_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞类型如普通点赞、特殊点赞等可用枚举或示 ******************** bar***/ init_echart("echart_videolike_liketype_bar",'videolike.liketype_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videolike_liketype_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞类型如普通点赞、特殊点赞等可用枚举或示 ******************** bar_v1***/ init_echart("echart_videolike_liketype_bar_v1",'videolike.liketype_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videolike_platkwkwfkwkworm_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞平台如Web、iOS、Android等 ******************** pie_v2***/ init_echart("echart_videolike_platkwkwfkwkworm_pie_v2",'videolike.platkwkwfkwkworm_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videolike_platkwkwfkwkworm_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞平台如Web、iOS、Android等 ******************** pie_v1***/ init_echart("echart_videolike_platkwkwfkwkworm_pie_v1",'videolike.platkwkwfkwkworm_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videolike_platkwkwfkwkworm_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞平台如Web、iOS、Android等 ******************** pie***/ init_echart("echart_videolike_platkwkwfkwkworm_pie",'videolike.platkwkwfkwkworm_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videolike_platkwkwfkwkworm_line" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞平台如Web、iOS、Android等 ******************** line***/ init_echart("echart_videolike_platkwkwfkwkworm_line",'videolike.platkwkwfkwkworm_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videolike_platkwkwfkwkworm_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞平台如Web、iOS、Android等 ******************** bar***/ init_echart("echart_videolike_platkwkwfkwkworm_bar",'videolike.platkwkwfkwkworm_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videolike_platkwkwfkwkworm_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频点赞表 点赞平台如Web、iOS、Android等 ******************** bar_v1***/ init_echart("echart_videolike_platkwkwfkwkworm_bar_v1",'videolike.platkwkwfkwkworm_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

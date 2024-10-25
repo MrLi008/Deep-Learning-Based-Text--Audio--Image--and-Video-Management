@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统 视频多语言字幕表(videomultilkwkwingualsubtitles)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_languagecode_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 语言代码 ******************** pie_v2***/ init_echart("echart_videomultilkwkwingualsubtitles_languagecode_pie_v2",'videomultilkwkwingualsubtitles.languagecode_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_languagecode_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 语言代码 ******************** pie_v1***/ init_echart("echart_videomultilkwkwingualsubtitles_languagecode_pie_v1",'videomultilkwkwingualsubtitles.languagecode_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_languagecode_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 语言代码 ******************** pie***/ init_echart("echart_videomultilkwkwingualsubtitles_languagecode_pie",'videomultilkwkwingualsubtitles.languagecode_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_languagecode_line" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 语言代码 ******************** line***/ init_echart("echart_videomultilkwkwingualsubtitles_languagecode_line",'videomultilkwkwingualsubtitles.languagecode_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_languagecode_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 语言代码 ******************** bar***/ init_echart("echart_videomultilkwkwingualsubtitles_languagecode_bar",'videomultilkwkwingualsubtitles.languagecode_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_languagecode_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 语言代码 ******************** bar_v1***/ init_echart("echart_videomultilkwkwingualsubtitles_languagecode_bar_v1",'videomultilkwkwingualsubtitles.languagecode_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_subtitletext_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 字幕文本 ******************** pie_v2***/ init_echart("echart_videomultilkwkwingualsubtitles_subtitletext_pie_v2",'videomultilkwkwingualsubtitles.subtitletext_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_subtitletext_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 字幕文本 ******************** pie_v1***/ init_echart("echart_videomultilkwkwingualsubtitles_subtitletext_pie_v1",'videomultilkwkwingualsubtitles.subtitletext_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_subtitletext_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 字幕文本 ******************** pie***/ init_echart("echart_videomultilkwkwingualsubtitles_subtitletext_pie",'videomultilkwkwingualsubtitles.subtitletext_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_subtitletext_line" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 字幕文本 ******************** line***/ init_echart("echart_videomultilkwkwingualsubtitles_subtitletext_line",'videomultilkwkwingualsubtitles.subtitletext_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_subtitletext_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 字幕文本 ******************** bar***/ init_echart("echart_videomultilkwkwingualsubtitles_subtitletext_bar",'videomultilkwkwingualsubtitles.subtitletext_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_subtitletext_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 字幕文本 ******************** bar_v1***/ init_echart("echart_videomultilkwkwingualsubtitles_subtitletext_bar_v1",'videomultilkwkwingualsubtitles.subtitletext_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_starttime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 开始时间字幕出现时间 ******************** pie_v2***/ init_echart("echart_videomultilkwkwingualsubtitles_starttime_pie_v2",'videomultilkwkwingualsubtitles.starttime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_starttime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 开始时间字幕出现时间 ******************** pie_v1***/ init_echart("echart_videomultilkwkwingualsubtitles_starttime_pie_v1",'videomultilkwkwingualsubtitles.starttime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_starttime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 开始时间字幕出现时间 ******************** pie***/ init_echart("echart_videomultilkwkwingualsubtitles_starttime_pie",'videomultilkwkwingualsubtitles.starttime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_starttime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 开始时间字幕出现时间 ******************** line***/ init_echart("echart_videomultilkwkwingualsubtitles_starttime_line",'videomultilkwkwingualsubtitles.starttime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_starttime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 开始时间字幕出现时间 ******************** bar***/ init_echart("echart_videomultilkwkwingualsubtitles_starttime_bar",'videomultilkwkwingualsubtitles.starttime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_starttime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 开始时间字幕出现时间 ******************** bar_v1***/ init_echart("echart_videomultilkwkwingualsubtitles_starttime_bar_v1",'videomultilkwkwingualsubtitles.starttime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_endtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 结束时间字幕消失时间 ******************** pie_v2***/ init_echart("echart_videomultilkwkwingualsubtitles_endtime_pie_v2",'videomultilkwkwingualsubtitles.endtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_endtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 结束时间字幕消失时间 ******************** pie_v1***/ init_echart("echart_videomultilkwkwingualsubtitles_endtime_pie_v1",'videomultilkwkwingualsubtitles.endtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_endtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 结束时间字幕消失时间 ******************** pie***/ init_echart("echart_videomultilkwkwingualsubtitles_endtime_pie",'videomultilkwkwingualsubtitles.endtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_endtime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 结束时间字幕消失时间 ******************** line***/ init_echart("echart_videomultilkwkwingualsubtitles_endtime_line",'videomultilkwkwingualsubtitles.endtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_endtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 结束时间字幕消失时间 ******************** bar***/ init_echart("echart_videomultilkwkwingualsubtitles_endtime_bar",'videomultilkwkwingualsubtitles.endtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_endtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 结束时间字幕消失时间 ******************** bar_v1***/ init_echart("echart_videomultilkwkwingualsubtitles_endtime_bar_v1",'videomultilkwkwingualsubtitles.endtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_createdat_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 创建时间 ******************** pie_v2***/ init_echart("echart_videomultilkwkwingualsubtitles_createdat_pie_v2",'videomultilkwkwingualsubtitles.createdat_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_createdat_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 创建时间 ******************** pie_v1***/ init_echart("echart_videomultilkwkwingualsubtitles_createdat_pie_v1",'videomultilkwkwingualsubtitles.createdat_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_createdat_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 创建时间 ******************** pie***/ init_echart("echart_videomultilkwkwingualsubtitles_createdat_pie",'videomultilkwkwingualsubtitles.createdat_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_createdat_line" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 创建时间 ******************** line***/ init_echart("echart_videomultilkwkwingualsubtitles_createdat_line",'videomultilkwkwingualsubtitles.createdat_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_createdat_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 创建时间 ******************** bar***/ init_echart("echart_videomultilkwkwingualsubtitles_createdat_bar",'videomultilkwkwingualsubtitles.createdat_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_createdat_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 创建时间 ******************** bar_v1***/ init_echart("echart_videomultilkwkwingualsubtitles_createdat_bar_v1",'videomultilkwkwingualsubtitles.createdat_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_updatedat_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 更新时间 ******************** pie_v2***/ init_echart("echart_videomultilkwkwingualsubtitles_updatedat_pie_v2",'videomultilkwkwingualsubtitles.updatedat_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_updatedat_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 更新时间 ******************** pie_v1***/ init_echart("echart_videomultilkwkwingualsubtitles_updatedat_pie_v1",'videomultilkwkwingualsubtitles.updatedat_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_updatedat_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 更新时间 ******************** pie***/ init_echart("echart_videomultilkwkwingualsubtitles_updatedat_pie",'videomultilkwkwingualsubtitles.updatedat_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_updatedat_line" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 更新时间 ******************** line***/ init_echart("echart_videomultilkwkwingualsubtitles_updatedat_line",'videomultilkwkwingualsubtitles.updatedat_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_updatedat_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 更新时间 ******************** bar***/ init_echart("echart_videomultilkwkwingualsubtitles_updatedat_bar",'videomultilkwkwingualsubtitles.updatedat_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomultilkwkwingualsubtitles_updatedat_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频多语言字幕表 更新时间 ******************** bar_v1***/ init_echart("echart_videomultilkwkwingualsubtitles_updatedat_bar_v1",'videomultilkwkwingualsubtitles.updatedat_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

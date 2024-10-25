@@ -1,0 +1,109 @@
+{% extends 'tp.html' %}
+
+
+{% block title %}
+配置管理中心
+
+{% endblock %}
+{% block header %}
+
+{% endblock %}
+{% block nav %}
+
+
+{% endblock %}
+
+
+
+{% block body %}
+按照步骤依次配置系统功能
+并导出为独立项目
+1. 创建项目,配置项目名称,预期的功能,项目级别等信息
+2. 创建项目有关表和字段,用户表,业务表,访问权限
+3. 配置可视化,大屏功能,配置算法模块,进行数据分析
+4. 导出/发布项目,测试运行
+<div class="container my-container-margin">
+    <h1>
+        接口说明
+        
+    </h1>
+    <p>
+        一律使用post请求,json格式数据,并带csrftoken
+    </p>
+    <ul>
+        <li>
+            <h4>
+                登录
+            </h4>
+            <p>
+                <span>post</span>
+                <span>{{config_unit}}/login</span>
+                <span>登录</span>
+            </p>
+            <p>
+                <span>data</span>
+                <span>{'username': 'xxx', 'password': 'xxx'}</span>
+            </p>
+        </li>
+        <li>
+            <h4>
+                注册
+            </h4>
+            <p>
+                <span>post</span>
+                <span>{{config_unit}}/register/</span>
+                <span>注册</span>
+            </p>
+            <p>
+                <span>data</span>
+                <span>{'username': 'xxx', 'password1': 'xxx', 'password2':'XXX'}</span>
+            </p>
+        </li>
+        <li>
+            <h4>
+                退出登录
+            </h4>
+            <p>
+                <span>post</span>
+                <span>{{config_unit}}/logout/</span>
+                <span>退出登录</span>
+            </p>
+            <p>
+                <span>data</span>
+                <span>无</span>
+            </p>
+        </li>
+        {% for tablename, tablemeta in tables.items %}
+        <li>
+            <h4>
+                {{tablename}}
+            </h4>
+            <p>
+                <span>post</span>
+                <span>{{config_unit}}/{{tablename}}</span>
+                <span>获取数据</span>
+            </p>
+            <p>data</p>
+            <p>{'optype': 'One Of [add,upd,del,get,or Your Self Needed]', 'fieldnameen': 'fieldvalue', }</p>
+            <p>{'optype': 'One Of [add,upd,del,get,or Your Self Needed]', '_id': 'record.id', }</p>
+            <tbody id="{{tablename}}">
+                {{tablemeta.implement|safe}}
+            </tbody>
+            
+           
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
+
+
+{% block footer %}
+
+
+{% endblock %}
+
+{% block script-footer %}
+
+{% endblock %}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    <script>
+      function init_echart(echart_id, optype, url, condition,polar={}) {
+        // 初始化图表
+        data = condition
+        data['optype'] = optype
+        data['csrfmiddlewaretoken'] = document.querySelector('[name=csrfmiddlewaretoken]').value
+        $.ajax({
+          url: url,
+          method: 'post',
+          data: data,
+          success: (res) => {
+            console.log(res)
+            let chart = echarts.init(document.getElementById(echart_id))
+            let chartoptions = {
+              title: {
+                text: res.title,
+                textStyle: {
+                  color: 'black', //这里设置标题颜色为红色
+                  fontWeight: 'bold' //这里设置标题字体加粗
+                },
+                left: 'center', //水平居中
+                top: 'bottom' //垂直底部
+              },
+              tooltip: {
+                trigger: 'item'
+              },
+              toolbox: {
+                show: true,
+                feature: {
+                  mark: { show: true },
+                  dataView: { show: true, readOnly: false },
+                  restore: { show: true },
+                  saveAsImage: { show: true }
+                }
+              },
+              legend: {
+                top: '5%',
+                left: 'center',
+                data: res.legend,
+                textStyle: {
+                  color: 'black', //修改图例文字颜色为红色
+                  fontSize: 18, //修改字体大小
+                  fontWeight: 'bold' //这里设置标题字体加粗
+                }
+              },
+              xAxis: {
+                name: res.xaxisname,
+                data: res.xaxis,
+                axisLabel: {
+                  interval: 0,
+                  rotate: 45,
+                  overflow: 'truncate',
+                  truncate: '...',
+                  textStyle: {
+                    color: 'black',
+                    fontSize: 18,
+                    fontFamily: '"Microsoft YaHei',
+                    fontWeight: 'bold' //这里设置字体加粗
+                  }
+                },
+                axisLine: {
+                  lineStyle: {
+                    color: 'black'
+                  }
+                },
+                axisTick: {
+                  lineStyle: {
+                    color: 'black'
+                  }
+                },
+              },
+              yAxis: {
+                name: res.yaxisname,
+                nameLocation: 'middle',  // 名称显示位置  
+                nameGap: 30,  // 名称与轴线之间的距离  
+                nameRotate: 90,  // 名称旋转的角度  
+                nameTextStyle: {  // 文本样式  
+                    color: 'black',  // 文本颜色  
+                    fontSize: 16,  // 字体大小  
+                    fontWeight: 'bold'  // 字体粗细  
+                } ,
+                axisLabel: {
+                  //显示每隔2个标签
+                  interval: res.interval,
+                  lineStyle: {
+                    color: 'black' //纵坐标轴线颜色为红色
+                  },
+                  textStyle: {
+                    color: 'black',
+                    fontSize: 18,
+                    fontFamily: '"Microsoft YaHei',
+                    fontWeight: 'bold' //这里设置字体加粗
+                  }
+                },
+                axisLabel: {
+                  color: 'black' //纵坐标轴标签颜色为绿色
+                }
+              },
+              series: res.series,
+              itemStyle: {
+                normal: {
+                  label: {
+                    show: true,
+                    position: 'inside'
+                  }
+                }
+              },
+              dataZoom: [
+                {
+                  xAxisIndex: 0
+                }
+              ]
+            }
+            chart.setOption(chartoptions);
+          },
+          error: (err) => {}
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统</h3>
+        </div>
+      </div>
+      {% csrf_token %}V4
+    </div>
+  </body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统 视频分享表(videoshare)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_sharetime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 分享时间 ******************** pie_v2***/ init_echart("echart_videoshare_sharetime_pie_v2",'videoshare.sharetime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_sharetime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 分享时间 ******************** pie_v1***/ init_echart("echart_videoshare_sharetime_pie_v1",'videoshare.sharetime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_sharetime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 分享时间 ******************** pie***/ init_echart("echart_videoshare_sharetime_pie",'videoshare.sharetime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoshare_sharetime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 分享时间 ******************** line***/ init_echart("echart_videoshare_sharetime_line",'videoshare.sharetime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoshare_sharetime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 分享时间 ******************** bar***/ init_echart("echart_videoshare_sharetime_bar",'videoshare.sharetime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoshare_sharetime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 分享时间 ******************** bar_v1***/ init_echart("echart_videoshare_sharetime_bar_v1",'videoshare.sharetime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_title_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 视频标题 ******************** pie_v2***/ init_echart("echart_videoshare_title_pie_v2",'videoshare.title_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_title_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 视频标题 ******************** pie_v1***/ init_echart("echart_videoshare_title_pie_v1",'videoshare.title_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_title_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 视频标题 ******************** pie***/ init_echart("echart_videoshare_title_pie",'videoshare.title_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoshare_title_line" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 视频标题 ******************** line***/ init_echart("echart_videoshare_title_line",'videoshare.title_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoshare_title_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 视频标题 ******************** bar***/ init_echart("echart_videoshare_title_bar",'videoshare.title_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoshare_title_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 视频标题 ******************** bar_v1***/ init_echart("echart_videoshare_title_bar_v1",'videoshare.title_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_description_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 视频描述 ******************** pie_v2***/ init_echart("echart_videoshare_description_pie_v2",'videoshare.description_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_description_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 视频描述 ******************** pie_v1***/ init_echart("echart_videoshare_description_pie_v1",'videoshare.description_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_description_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 视频描述 ******************** pie***/ init_echart("echart_videoshare_description_pie",'videoshare.description_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoshare_description_line" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 视频描述 ******************** line***/ init_echart("echart_videoshare_description_line",'videoshare.description_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoshare_description_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 视频描述 ******************** bar***/ init_echart("echart_videoshare_description_bar",'videoshare.description_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoshare_description_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 视频描述 ******************** bar_v1***/ init_echart("echart_videoshare_description_bar_v1",'videoshare.description_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_thumbnailurl_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 缩略图URL ******************** pie_v2***/ init_echart("echart_videoshare_thumbnailurl_pie_v2",'videoshare.thumbnailurl_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_thumbnailurl_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 缩略图URL ******************** pie_v1***/ init_echart("echart_videoshare_thumbnailurl_pie_v1",'videoshare.thumbnailurl_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_thumbnailurl_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 缩略图URL ******************** pie***/ init_echart("echart_videoshare_thumbnailurl_pie",'videoshare.thumbnailurl_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoshare_thumbnailurl_line" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 缩略图URL ******************** line***/ init_echart("echart_videoshare_thumbnailurl_line",'videoshare.thumbnailurl_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoshare_thumbnailurl_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 缩略图URL ******************** bar***/ init_echart("echart_videoshare_thumbnailurl_bar",'videoshare.thumbnailurl_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoshare_thumbnailurl_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 缩略图URL ******************** bar_v1***/ init_echart("echart_videoshare_thumbnailurl_bar_v1",'videoshare.thumbnailurl_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_viewcount_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 观看次数 ******************** pie_v2***/ init_echart("echart_videoshare_viewcount_pie_v2",'videoshare.viewcount_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_viewcount_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 观看次数 ******************** pie_v1***/ init_echart("echart_videoshare_viewcount_pie_v1",'videoshare.viewcount_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_viewcount_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 观看次数 ******************** pie***/ init_echart("echart_videoshare_viewcount_pie",'videoshare.viewcount_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoshare_viewcount_line" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 观看次数 ******************** line***/ init_echart("echart_videoshare_viewcount_line",'videoshare.viewcount_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoshare_viewcount_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 观看次数 ******************** bar***/ init_echart("echart_videoshare_viewcount_bar",'videoshare.viewcount_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoshare_viewcount_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 观看次数 ******************** bar_v1***/ init_echart("echart_videoshare_viewcount_bar_v1",'videoshare.viewcount_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_likecount_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 点赞次数 ******************** pie_v2***/ init_echart("echart_videoshare_likecount_pie_v2",'videoshare.likecount_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_likecount_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 点赞次数 ******************** pie_v1***/ init_echart("echart_videoshare_likecount_pie_v1",'videoshare.likecount_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_likecount_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 点赞次数 ******************** pie***/ init_echart("echart_videoshare_likecount_pie",'videoshare.likecount_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoshare_likecount_line" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 点赞次数 ******************** line***/ init_echart("echart_videoshare_likecount_line",'videoshare.likecount_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoshare_likecount_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 点赞次数 ******************** bar***/ init_echart("echart_videoshare_likecount_bar",'videoshare.likecount_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoshare_likecount_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 点赞次数 ******************** bar_v1***/ init_echart("echart_videoshare_likecount_bar_v1",'videoshare.likecount_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_commentcount_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 评论次数 ******************** pie_v2***/ init_echart("echart_videoshare_commentcount_pie_v2",'videoshare.commentcount_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_commentcount_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 评论次数 ******************** pie_v1***/ init_echart("echart_videoshare_commentcount_pie_v1",'videoshare.commentcount_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_commentcount_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 评论次数 ******************** pie***/ init_echart("echart_videoshare_commentcount_pie",'videoshare.commentcount_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoshare_commentcount_line" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 评论次数 ******************** line***/ init_echart("echart_videoshare_commentcount_line",'videoshare.commentcount_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoshare_commentcount_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 评论次数 ******************** bar***/ init_echart("echart_videoshare_commentcount_bar",'videoshare.commentcount_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoshare_commentcount_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 评论次数 ******************** bar_v1***/ init_echart("echart_videoshare_commentcount_bar_v1",'videoshare.commentcount_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_sharestatus_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 分享状态例如已分享、已删除 ******************** pie_v2***/ init_echart("echart_videoshare_sharestatus_pie_v2",'videoshare.sharestatus_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_sharestatus_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 分享状态例如已分享、已删除 ******************** pie_v1***/ init_echart("echart_videoshare_sharestatus_pie_v1",'videoshare.sharestatus_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoshare_sharestatus_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 分享状态例如已分享、已删除 ******************** pie***/ init_echart("echart_videoshare_sharestatus_pie",'videoshare.sharestatus_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoshare_sharestatus_line" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 分享状态例如已分享、已删除 ******************** line***/ init_echart("echart_videoshare_sharestatus_line",'videoshare.sharestatus_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoshare_sharestatus_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 分享状态例如已分享、已删除 ******************** bar***/ init_echart("echart_videoshare_sharestatus_bar",'videoshare.sharestatus_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoshare_sharestatus_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分享表 分享状态例如已分享、已删除 ******************** bar_v1***/ init_echart("echart_videoshare_sharestatus_bar_v1",'videoshare.sharestatus_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+    </div>
+  </body>
+</html>

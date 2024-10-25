@@ -1,0 +1,384 @@
+// 基于深度学习的文案语音图片视频管理分析-视频矩阵系统
+digraph "基于深度学习的文案语音图片视频管理分析-视频矩阵系统" {
+	graph [fontname=SimSun]
+	node [fontname=SimSun style=filled]
+	edge [dir=none fontname=SimSun style=solid]
+	8385 [label="【视频信息表】
+    视频ID
+视频标题
+视频描述
+上传时间
+视频时长秒
+视频分辨率
+文件类型
+文件大小KBMBGB
+创建者ID关联用户
+类别ID关联视频类别" color=black fillcolor=lightpink shape=box]
+	8386 [label="【视频分类表】
+    分类名称
+分类描述
+父分类ID用于构建分类层级如果为顶级分类则为NULL
+创建时间
+更新时间
+是否激活用于控制分类是否显示在前端
+排序顺序" color=black fillcolor=lightpink shape=box]
+	8387 [label="【视频标签表】
+    标签ID
+标签名称
+视频ID关联字段指向视频中的视频ID
+创建时间
+更新时间
+是否激活用于标记标签是否可用
+标签描述
+创建者ID关联字段指向用户中的用户ID" color=black fillcolor=lightpink shape=box]
+	8388 [label="【视频文件存储表】
+    视频ID
+文件名
+文件存储路径
+文件大小单位MB
+上传时间
+视频时长单位秒
+分辨率例如1920x1080
+视频格式例如mp4
+创建者ID关联用户
+分类ID关联视频分类" color=black fillcolor=lightpink shape=box]
+	8389 [label="【视频播放记录表】
+    视频ID关联视频信息
+用户ID关联用户信息
+播放开始时间
+播放结束时间
+播放时长秒
+播放状态如已完成、暂停、中断
+设备类型如手机、平板、电脑
+IP地址
+播放位置可选根据IP解析的地理位置" color=black fillcolor=lightpink shape=box]
+	8390 [label="【视频评论表】
+    关联视频ID
+关联用户ID
+评论内容
+创建时间
+点赞数
+回复数
+是否已删除
+关联父评论ID" color=black fillcolor=lightpink shape=box]
+	8391 [label="【视频点赞表】
+    关联视频ID
+关联用户ID
+点赞时间
+是否点赞1为已点赞0为未点赞用于取消点赞功能
+点赞时的IP地址
+点赞类型如普通点赞、特殊点赞等可用枚举或示
+点赞平台如Web、iOS、Android等
+设备ID可选用于追踪用户设备" color=black fillcolor=lightpink shape=box]
+	8392 [label="【视频分享表】
+    视频分享ID
+关联视频ID
+关联用户ID
+分享时间
+视频标题
+视频描述
+缩略图URL
+观看次数
+点赞次数
+评论次数
+分享状态例如已分享、已删除" color=black fillcolor=lightpink shape=box]
+	8393 [label="【视频观看时长统计表】
+    关联视频ID
+关联用户ID
+观看开始时间
+观看结束时间
+观看时长秒
+设备类型
+观看地点
+网络类型
+是否观看完成0未完成1已完成" color=black fillcolor=lightpink shape=box]
+	8394 [label="【视频上传用户表】
+    关联用户ID
+用户名
+电子邮件
+电话号码
+上传时间
+视频ID
+视频标题
+视频描述
+视频分类ID
+视频状态如审核中、已发布、已删除" color=black fillcolor=lightpink shape=box]
+	8395 [label="【用户信息表】
+    用户ID
+用户名
+用户邮箱
+用户密码
+电话号码
+性别
+出生日期
+注册日期
+用户角色
+最后登录时间" color=black fillcolor=lightpink shape=box]
+	8396 [label="【用户权限表】
+    关联用户ID
+关联权限ID
+角色名称
+权限名称
+创建时间
+更新时间
+是否激活
+描述" color=black fillcolor=lightpink shape=box]
+	8397 [label="【用户观看历史表】
+    关联用户ID
+关联视频ID
+观看时间
+观看时长
+观看状态如已观看、观看中、暂停、已放弃
+评分可选用户对该视频的评分
+评论可选用户对该视频的评论
+点赞状态如已点赞、未点赞
+分享状态如已分享、未分享
+收藏状态如已收藏、未收藏" color=black fillcolor=lightpink shape=box]
+	8398 [label="【视频审核状态表】
+    视频ID关联字段指向视频的ID
+审核状态如待审核、审核通过、审核拒绝
+审核员ID关联字段指向审核员的ID
+审核时间
+拒绝原因如果状态为审核拒绝则记录拒绝的具体原因
+审核备注
+是否最终审核标记该审核是否为最终审核结果
+创建时间
+更新时间" color=black fillcolor=lightpink shape=box]
+	8399 [label="【视频封面图片表】
+    视频ID关联字段指向视频的
+封面图片URL
+图片格式
+图片大小单位KB
+上传时间
+创建者ID关联字段指向用户的
+状态例如有效、无效、待审核
+图片描述
+是否为默认封面kwTruekwFalse" color=black fillcolor=lightpink shape=box]
+	8400 [label="【视频矩阵配置表】
+    视频矩阵名称
+描述信息
+创建时间
+更新时间
+视频源ID关联视频源
+输出通道ID关联输出通道
+布局配置如1x4
+是否激活用于控制视频矩阵的启用状态" color=black fillcolor=lightpink shape=box]
+	8401 [label="【视频矩阵节点表】
+    节点名称
+关联视频源ID
+视频格式
+分辨率
+状态如在线、离线、维护中
+创建时间
+更新时间
+关联父节点ID用于示节点之间的层级关系
+描述信息" color=black fillcolor=lightpink shape=box]
+	8402 [label="【视频矩阵播放记录表】
+    视频ID关联视频
+矩阵ID关联视频矩阵
+播放时间
+播放时长秒
+用户ID关联用户
+设备ID关联设备
+播放状态如成功、失败、中断等
+播放请求的IP地址" color=black fillcolor=lightpink shape=box]
+	8403 [label="【视频关联内容表】
+    关联视频ID
+关联内容ID
+内容类型
+关联时间
+描述
+状态
+关联创建者ID
+创建时间
+修改时间
+视频名称关联字段视频名假设为VideoTable关联字段为视频名称" color=black fillcolor=lightpink shape=box]
+	8404 [label="【视频错误日志表】
+    关联视频ID
+错误类型
+错误描述
+错误时间
+是否已解决
+解决时间
+关联解决人
+设备信息
+客户端IP" color=black fillcolor=lightpink shape=box]
+	8405 [label="【视频热度统计表】
+    关联视频ID
+观看次数
+点赞次数
+分享次数
+评论次数
+热度评分
+发布时间
+更新时间
+关联类别ID
+关联创作者ID" color=black fillcolor=lightpink shape=box]
+	8406 [label="【视频推荐算法参数表】
+    算法名称
+参数名称
+参数值
+参数描述
+创建时间
+更新时间
+是否启用
+视频类型ID关联字段指向视频类型" color=black fillcolor=lightpink shape=box]
+	8407 [label="【视频广告信息表】
+    视频广告ID
+广告标题
+广告描述
+开始时间
+结束时间
+视频链接
+缩略图链接
+广告主ID
+广告分类ID
+广告状态" color=black fillcolor=lightpink shape=box]
+	8408 [label="【视频广告播放记录表】
+    视频广告ID
+播放时间
+播放时长
+用户ID关联用户
+设备类型
+地址
+地理位置
+播放状态如成功、失败、中断等" color=black fillcolor=lightpink shape=box]
+	8409 [label="【视频弹幕表】
+    视频唯一标识符关联视频
+弹幕内容
+发送弹幕的用户唯一标识符关联用户
+发送时间
+弹幕颜色
+字体大小
+是否可见用于控制弹幕的显示与隐藏
+弹幕位置如顶部、底部、滚动等
+弹幕显示时长秒" color=black fillcolor=lightpink shape=box]
+	8410 [label="【视频弹幕屏蔽词表】
+    屏蔽词
+视频ID关联字段指向视频的ID
+创建者ID关联字段指向用户的ID
+创建时间
+更新时间
+是否激活用于控制屏蔽词是否生效
+屏蔽类型如关键词、正则达式等
+描述对屏蔽词的额外说明或备注" color=black fillcolor=lightpink shape=box]
+	8411 [label="【视频多语言字幕表】
+    关联视频ID
+语言代码
+字幕文本
+开始时间字幕出现时间
+结束时间字幕消失时间
+创建时间
+更新时间
+是否激活用于控制字幕是否显示在视频中
+创建者用户ID关联到用户示谁添加了这条字幕" color=black fillcolor=lightpink shape=box]
+	8412 [label="【视频转码任务表】
+    任务ID
+关联视频ID
+源视频路径
+目标格式
+任务状态
+任务进度
+创建时间
+更新时间
+关联用户ID
+任务优先级" color=black fillcolor=lightpink shape=box]
+	8413 [label="【视频分析指标表】
+    视频ID关联视频
+分析时间
+观看次数
+点赞次数
+分享次数
+评论次数
+跳出率
+平均观看时长
+互动率" color=black fillcolor=lightpink shape=box]
+	8414 [label="【视频质量评估表】
+    关联视频ID
+质量评分
+评估时间
+关联评审员ID
+帧率
+分辨率
+比特率
+编码格式
+是否检测到损坏
+相关问题ID" color=black fillcolor=lightpink shape=box]
+	8415 [label="【视频水印信息表】
+    视频ID关联视频
+水印文本
+水印位置如左上角、右下角等
+水印大小如百分比或像素值
+水印透明度0100%
+创建时间
+更新时间
+是否激活用于控制水印是否生效如0为未激活1为激活" color=black fillcolor=lightpink shape=box]
+	8416 [label="【视频版权信息表】
+    关联视频ID
+版权持有人
+版权年份
+许可类型
+许可状态
+版权描述
+创建日期
+修改日期
+相关视频ID" color=black fillcolor=lightpink shape=box]
+	8417 [label="【系统管理员】
+    管理员姓名" color=black fillcolor=lightpink shape=box]
+	8395 -> 8385 [label="用户名" shape=diamond]
+	8386 -> 8385 [label="分类名称" shape=diamond]
+	8385 -> 8387 [label="视频标题" shape=diamond]
+	8395 -> 8387 [label="用户名" shape=diamond]
+	8395 -> 8388 [label="用户名" shape=diamond]
+	8386 -> 8388 [label="分类名称" shape=diamond]
+	8385 -> 8389 [label="视频标题" shape=diamond]
+	8395 -> 8389 [label="用户名" shape=diamond]
+	8385 -> 8390 [label="视频标题" shape=diamond]
+	8395 -> 8390 [label="用户名" shape=diamond]
+	8390 -> 8390 [label="评论内容" shape=diamond]
+	8385 -> 8391 [label="视频标题" shape=diamond]
+	8395 -> 8391 [label="用户名" shape=diamond]
+	8385 -> 8392 [label="视频标题" shape=diamond]
+	8395 -> 8392 [label="用户名" shape=diamond]
+	8385 -> 8393 [label="视频标题" shape=diamond]
+	8395 -> 8393 [label="用户名" shape=diamond]
+	8395 -> 8394 [label="用户名" shape=diamond]
+	8395 -> 8396 [label="用户名" shape=diamond]
+	8396 -> 8396 [label="关联权限ID" shape=diamond]
+	8395 -> 8397 [label="用户名" shape=diamond]
+	8385 -> 8397 [label="视频标题" shape=diamond]
+	8385 -> 8398 [label="视频标题" shape=diamond]
+	8417 -> 8398 [label="管理员姓名" shape=diamond]
+	8385 -> 8399 [label="视频标题" shape=diamond]
+	8395 -> 8399 [label="用户名" shape=diamond]
+	8385 -> 8400 [label="视频标题" shape=diamond]
+	8388 -> 8400 [label="文件名" shape=diamond]
+	8385 -> 8401 [label="视频标题" shape=diamond]
+	8401 -> 8401 [label="节点名称" shape=diamond]
+	8385 -> 8402 [label="视频标题" shape=diamond]
+	8400 -> 8402 [label="视频矩阵名称" shape=diamond]
+	8395 -> 8402 [label="用户名" shape=diamond]
+	8402 -> 8402 [label="设备ID关联设备" shape=diamond]
+	8385 -> 8403 [label="视频标题" shape=diamond]
+	8390 -> 8403 [label="评论内容" shape=diamond]
+	8403 -> 8403 [label="关联时间" shape=diamond]
+	8395 -> 8403 [label="用户名" shape=diamond]
+	8385 -> 8404 [label="视频标题" shape=diamond]
+	8417 -> 8404 [label="管理员姓名" shape=diamond]
+	8385 -> 8405 [label="视频标题" shape=diamond]
+	8386 -> 8405 [label="分类名称" shape=diamond]
+	8395 -> 8405 [label="用户名" shape=diamond]
+	8386 -> 8406 [label="分类名称" shape=diamond]
+	8395 -> 8408 [label="用户名" shape=diamond]
+	8385 -> 8410 [label="视频标题" shape=diamond]
+	8395 -> 8410 [label="用户名" shape=diamond]
+	8385 -> 8411 [label="视频标题" shape=diamond]
+	8395 -> 8411 [label="用户名" shape=diamond]
+	8385 -> 8412 [label="视频标题" shape=diamond]
+	8395 -> 8412 [label="用户名" shape=diamond]
+	8385 -> 8413 [label="视频标题" shape=diamond]
+	8385 -> 8414 [label="视频标题" shape=diamond]
+	8417 -> 8414 [label="管理员姓名" shape=diamond]
+	8385 -> 8415 [label="视频标题" shape=diamond]
+	8385 -> 8416 [label="视频标题" shape=diamond]
+}

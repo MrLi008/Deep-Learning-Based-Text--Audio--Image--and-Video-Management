@@ -1,0 +1,30 @@
+{% if ins %}
+<div class="row">
+
+{% for record in ins.json %}
+<!-- 基本的卡片 -->  
+<div class="col-sm-4">
+
+<div class="Card" >  
+    <!-- 卡片图片 -->  
+    <img src="/static/imgs/default.jpg" class="card-img-top" alt="Card Image">  
+    <!-- 卡片主体 -->  
+    <div class="card-body">  
+      <!-- 卡片标题 -->  
+      <h5 class="card-title">{{record.id}}</h5>  
+      <!-- 卡片文本 -->  
+{% for name, val in record.items %}
+      <p class="card-text">{{name}}:{{val}}</p>  
+      {% endfor %}
+      <!-- 卡片链接 -->  
+      <a href="#" class="btn btn-primary">详情[换成用户的操作]</a>  
+    </div>  
+</div>
+</div>
+{% endfor %}
+{% else %}
+<h3>
+    Empty Data
+</h3>
+{% endif %}
+</div>

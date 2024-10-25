@@ -1,0 +1,44 @@
+<button id="external-backToTop" onclick="external_scrollToTop()">🔝⬆️🥰</button>  
+
+
+<script>
+// script.js  
+// 当页面滚动时触发的事件  
+window.onscroll = function() {scrollFunction()};  
+  
+function scrollFunction() {  
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {  
+        document.getElementById("external-backToTop").style.display = "block";  
+    } else {  
+        document.getElementById("external-backToTop").style.display = "none";  
+    }  
+}  
+  
+// 定义点击按钮时的滚动到顶部函数  
+function external_scrollToTop() {  
+    document.body.scrollTop = 0; // For Safari  
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera  
+}
+</script>
+
+<style>
+    /* styles.css */  
+  
+#external-backToTop {  
+    position: fixed; /* 固定位置 */  
+    bottom: 30px; /* 距离底部30px */  
+    right: 30px; /* 距离右侧30px */  
+    display: none; /* 初始隐藏，页面滚动后显示 */  
+    padding: 10px 20px;  
+    background-color: #e7e3dc;  
+    color: white;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+    font-size: 16px;  
+}  
+  
+#external-backToTop:hover {  
+    background-color: #d37e1b;  
+}
+</style>

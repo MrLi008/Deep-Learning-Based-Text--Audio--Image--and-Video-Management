@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统 视频广告播放记录表(videoadplayreckwkword)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_playtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 播放时间 ******************** pie_v2***/ init_echart("echart_videoadplayreckwkword_playtime_pie_v2",'videoadplayreckwkword.playtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_playtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 播放时间 ******************** pie_v1***/ init_echart("echart_videoadplayreckwkword_playtime_pie_v1",'videoadplayreckwkword.playtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_playtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 播放时间 ******************** pie***/ init_echart("echart_videoadplayreckwkword_playtime_pie",'videoadplayreckwkword.playtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_playtime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 播放时间 ******************** line***/ init_echart("echart_videoadplayreckwkword_playtime_line",'videoadplayreckwkword.playtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_playtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 播放时间 ******************** bar***/ init_echart("echart_videoadplayreckwkword_playtime_bar",'videoadplayreckwkword.playtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_playtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 播放时间 ******************** bar_v1***/ init_echart("echart_videoadplayreckwkword_playtime_bar_v1",'videoadplayreckwkword.playtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_playduration_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 播放时长 ******************** pie_v2***/ init_echart("echart_videoadplayreckwkword_playduration_pie_v2",'videoadplayreckwkword.playduration_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_playduration_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 播放时长 ******************** pie_v1***/ init_echart("echart_videoadplayreckwkword_playduration_pie_v1",'videoadplayreckwkword.playduration_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_playduration_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 播放时长 ******************** pie***/ init_echart("echart_videoadplayreckwkword_playduration_pie",'videoadplayreckwkword.playduration_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_playduration_line" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 播放时长 ******************** line***/ init_echart("echart_videoadplayreckwkword_playduration_line",'videoadplayreckwkword.playduration_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_playduration_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 播放时长 ******************** bar***/ init_echart("echart_videoadplayreckwkword_playduration_bar",'videoadplayreckwkword.playduration_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_playduration_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 播放时长 ******************** bar_v1***/ init_echart("echart_videoadplayreckwkword_playduration_bar_v1",'videoadplayreckwkword.playduration_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_devicetype_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 设备类型 ******************** pie_v2***/ init_echart("echart_videoadplayreckwkword_devicetype_pie_v2",'videoadplayreckwkword.devicetype_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_devicetype_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 设备类型 ******************** pie_v1***/ init_echart("echart_videoadplayreckwkword_devicetype_pie_v1",'videoadplayreckwkword.devicetype_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_devicetype_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 设备类型 ******************** pie***/ init_echart("echart_videoadplayreckwkword_devicetype_pie",'videoadplayreckwkword.devicetype_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_devicetype_line" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 设备类型 ******************** line***/ init_echart("echart_videoadplayreckwkword_devicetype_line",'videoadplayreckwkword.devicetype_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_devicetype_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 设备类型 ******************** bar***/ init_echart("echart_videoadplayreckwkword_devicetype_bar",'videoadplayreckwkword.devicetype_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_devicetype_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 设备类型 ******************** bar_v1***/ init_echart("echart_videoadplayreckwkword_devicetype_bar_v1",'videoadplayreckwkword.devicetype_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_ipaddressip_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 地址 ******************** pie_v2***/ init_echart("echart_videoadplayreckwkword_ipaddressip_pie_v2",'videoadplayreckwkword.ipaddressip_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_ipaddressip_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 地址 ******************** pie_v1***/ init_echart("echart_videoadplayreckwkword_ipaddressip_pie_v1",'videoadplayreckwkword.ipaddressip_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_ipaddressip_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 地址 ******************** pie***/ init_echart("echart_videoadplayreckwkword_ipaddressip_pie",'videoadplayreckwkword.ipaddressip_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_ipaddressip_line" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 地址 ******************** line***/ init_echart("echart_videoadplayreckwkword_ipaddressip_line",'videoadplayreckwkword.ipaddressip_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_ipaddressip_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 地址 ******************** bar***/ init_echart("echart_videoadplayreckwkword_ipaddressip_bar",'videoadplayreckwkword.ipaddressip_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_ipaddressip_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 地址 ******************** bar_v1***/ init_echart("echart_videoadplayreckwkword_ipaddressip_bar_v1",'videoadplayreckwkword.ipaddressip_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_location_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 地理位置 ******************** pie_v2***/ init_echart("echart_videoadplayreckwkword_location_pie_v2",'videoadplayreckwkword.location_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_location_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 地理位置 ******************** pie_v1***/ init_echart("echart_videoadplayreckwkword_location_pie_v1",'videoadplayreckwkword.location_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_location_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 地理位置 ******************** pie***/ init_echart("echart_videoadplayreckwkword_location_pie",'videoadplayreckwkword.location_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_location_line" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 地理位置 ******************** line***/ init_echart("echart_videoadplayreckwkword_location_line",'videoadplayreckwkword.location_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_location_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 地理位置 ******************** bar***/ init_echart("echart_videoadplayreckwkword_location_bar",'videoadplayreckwkword.location_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_location_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 地理位置 ******************** bar_v1***/ init_echart("echart_videoadplayreckwkword_location_bar_v1",'videoadplayreckwkword.location_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_playstatus_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 播放状态如成功、失败、中断等 ******************** pie_v2***/ init_echart("echart_videoadplayreckwkword_playstatus_pie_v2",'videoadplayreckwkword.playstatus_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_playstatus_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 播放状态如成功、失败、中断等 ******************** pie_v1***/ init_echart("echart_videoadplayreckwkword_playstatus_pie_v1",'videoadplayreckwkword.playstatus_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_playstatus_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 播放状态如成功、失败、中断等 ******************** pie***/ init_echart("echart_videoadplayreckwkword_playstatus_pie",'videoadplayreckwkword.playstatus_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_playstatus_line" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 播放状态如成功、失败、中断等 ******************** line***/ init_echart("echart_videoadplayreckwkword_playstatus_line",'videoadplayreckwkword.playstatus_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_playstatus_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 播放状态如成功、失败、中断等 ******************** bar***/ init_echart("echart_videoadplayreckwkword_playstatus_bar",'videoadplayreckwkword.playstatus_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadplayreckwkword_playstatus_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告播放记录表 播放状态如成功、失败、中断等 ******************** bar_v1***/ init_echart("echart_videoadplayreckwkword_playstatus_bar_v1",'videoadplayreckwkword.playstatus_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+    </div>
+  </body>
+</html>

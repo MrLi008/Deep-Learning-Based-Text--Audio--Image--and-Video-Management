@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统 视频广告信息表(videoadinfo)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_title_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 广告标题 ******************** pie_v2***/ init_echart("echart_videoadinfo_title_pie_v2",'videoadinfo.title_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_title_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 广告标题 ******************** pie_v1***/ init_echart("echart_videoadinfo_title_pie_v1",'videoadinfo.title_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_title_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 广告标题 ******************** pie***/ init_echart("echart_videoadinfo_title_pie",'videoadinfo.title_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoadinfo_title_line" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 广告标题 ******************** line***/ init_echart("echart_videoadinfo_title_line",'videoadinfo.title_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadinfo_title_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 广告标题 ******************** bar***/ init_echart("echart_videoadinfo_title_bar",'videoadinfo.title_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadinfo_title_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 广告标题 ******************** bar_v1***/ init_echart("echart_videoadinfo_title_bar_v1",'videoadinfo.title_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_description_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 广告描述 ******************** pie_v2***/ init_echart("echart_videoadinfo_description_pie_v2",'videoadinfo.description_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_description_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 广告描述 ******************** pie_v1***/ init_echart("echart_videoadinfo_description_pie_v1",'videoadinfo.description_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_description_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 广告描述 ******************** pie***/ init_echart("echart_videoadinfo_description_pie",'videoadinfo.description_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoadinfo_description_line" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 广告描述 ******************** line***/ init_echart("echart_videoadinfo_description_line",'videoadinfo.description_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadinfo_description_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 广告描述 ******************** bar***/ init_echart("echart_videoadinfo_description_bar",'videoadinfo.description_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadinfo_description_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 广告描述 ******************** bar_v1***/ init_echart("echart_videoadinfo_description_bar_v1",'videoadinfo.description_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_starttime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 开始时间 ******************** pie_v2***/ init_echart("echart_videoadinfo_starttime_pie_v2",'videoadinfo.starttime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_starttime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 开始时间 ******************** pie_v1***/ init_echart("echart_videoadinfo_starttime_pie_v1",'videoadinfo.starttime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_starttime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 开始时间 ******************** pie***/ init_echart("echart_videoadinfo_starttime_pie",'videoadinfo.starttime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoadinfo_starttime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 开始时间 ******************** line***/ init_echart("echart_videoadinfo_starttime_line",'videoadinfo.starttime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadinfo_starttime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 开始时间 ******************** bar***/ init_echart("echart_videoadinfo_starttime_bar",'videoadinfo.starttime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadinfo_starttime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 开始时间 ******************** bar_v1***/ init_echart("echart_videoadinfo_starttime_bar_v1",'videoadinfo.starttime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_endtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 结束时间 ******************** pie_v2***/ init_echart("echart_videoadinfo_endtime_pie_v2",'videoadinfo.endtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_endtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 结束时间 ******************** pie_v1***/ init_echart("echart_videoadinfo_endtime_pie_v1",'videoadinfo.endtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_endtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 结束时间 ******************** pie***/ init_echart("echart_videoadinfo_endtime_pie",'videoadinfo.endtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoadinfo_endtime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 结束时间 ******************** line***/ init_echart("echart_videoadinfo_endtime_line",'videoadinfo.endtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadinfo_endtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 结束时间 ******************** bar***/ init_echart("echart_videoadinfo_endtime_bar",'videoadinfo.endtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadinfo_endtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 结束时间 ******************** bar_v1***/ init_echart("echart_videoadinfo_endtime_bar_v1",'videoadinfo.endtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_videourl_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 视频链接 ******************** pie_v2***/ init_echart("echart_videoadinfo_videourl_pie_v2",'videoadinfo.videourl_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_videourl_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 视频链接 ******************** pie_v1***/ init_echart("echart_videoadinfo_videourl_pie_v1",'videoadinfo.videourl_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_videourl_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 视频链接 ******************** pie***/ init_echart("echart_videoadinfo_videourl_pie",'videoadinfo.videourl_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoadinfo_videourl_line" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 视频链接 ******************** line***/ init_echart("echart_videoadinfo_videourl_line",'videoadinfo.videourl_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadinfo_videourl_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 视频链接 ******************** bar***/ init_echart("echart_videoadinfo_videourl_bar",'videoadinfo.videourl_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadinfo_videourl_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 视频链接 ******************** bar_v1***/ init_echart("echart_videoadinfo_videourl_bar_v1",'videoadinfo.videourl_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_thumbnailurl_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 缩略图链接 ******************** pie_v2***/ init_echart("echart_videoadinfo_thumbnailurl_pie_v2",'videoadinfo.thumbnailurl_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_thumbnailurl_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 缩略图链接 ******************** pie_v1***/ init_echart("echart_videoadinfo_thumbnailurl_pie_v1",'videoadinfo.thumbnailurl_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_thumbnailurl_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 缩略图链接 ******************** pie***/ init_echart("echart_videoadinfo_thumbnailurl_pie",'videoadinfo.thumbnailurl_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoadinfo_thumbnailurl_line" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 缩略图链接 ******************** line***/ init_echart("echart_videoadinfo_thumbnailurl_line",'videoadinfo.thumbnailurl_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadinfo_thumbnailurl_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 缩略图链接 ******************** bar***/ init_echart("echart_videoadinfo_thumbnailurl_bar",'videoadinfo.thumbnailurl_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadinfo_thumbnailurl_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 缩略图链接 ******************** bar_v1***/ init_echart("echart_videoadinfo_thumbnailurl_bar_v1",'videoadinfo.thumbnailurl_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_status_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 广告状态 ******************** pie_v2***/ init_echart("echart_videoadinfo_status_pie_v2",'videoadinfo.status_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_status_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 广告状态 ******************** pie_v1***/ init_echart("echart_videoadinfo_status_pie_v1",'videoadinfo.status_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoadinfo_status_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 广告状态 ******************** pie***/ init_echart("echart_videoadinfo_status_pie",'videoadinfo.status_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoadinfo_status_line" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 广告状态 ******************** line***/ init_echart("echart_videoadinfo_status_line",'videoadinfo.status_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadinfo_status_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 广告状态 ******************** bar***/ init_echart("echart_videoadinfo_status_bar",'videoadinfo.status_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoadinfo_status_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频广告信息表 广告状态 ******************** bar_v1***/ init_echart("echart_videoadinfo_status_bar_v1",'videoadinfo.status_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+    </div>
+  </body>
+</html>

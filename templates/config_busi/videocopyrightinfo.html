@@ -1,0 +1,975 @@
+{% extends '../tp.html' %}
+
+{% block title %}
+视频版权信息表
+{% endblock %}
+
+{% block body %}
+  <div class="my-container-margin">
+    <div class="divider"></div>
+    {% csrf_token %}
+    <div class="section">
+      <h4>视频版权信息表</h4>
+      <div>
+        <div class="row">
+          
+          {% if has_add %}
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modalinsert" class="waves-effect waves-light btn">添加</button>
+          {% endif %}
+          <div class="divider"></div>
+        
+        
+          
+<div class="col-sm-10">
+</div>
+<div class="col-sm-2">
+<a href="/config_visual/bi_tpvideocopyrightinfo" target="_blank" class="waves-effect waves-light btn">
+统计分析
+</a>
+</div>
+        </div>  
+        <div class="section">
+          {% if record %}
+            <h3>Empty Data</h3>
+          {% else %}
+          
+<div class="row custom-form">
+<form action="" method="get">
+
+
+<div class="form-group">
+<label for="videoid">关联视频ID(videoid)</label>
+<select name="videoid_search" id="videoid_search">
+<option value="">未选择</option>
+{% for record in data_mc_videoinfo_58178 %}
+<option value="{{record.value}}">
+<p>{{record.value}}:{{record.label }}</p>
+</option>
+{% endfor %}
+</select>
+</div>
+
+
+
+<div class="form-group">
+<label for="copyrightholder">版权持有人(copyrightholder)</label>
+<input type="text" class="form-control" name="copyrightholder_search" id="copyrightholder_search">
+</div>
+</div>
+
+
+
+<div class="form-group">
+<label for="copyrightyear">版权年份(copyrightyear)</label>
+<input type="text" class="form-control" name="copyrightyear_search" id="copyrightyear_search">
+</div>
+</div>
+
+
+
+<div class="form-group">
+<label for="licensetype">许可类型(licensetype)</label>
+<input type="text" class="form-control" name="licensetype_search" id="licensetype_search">
+</div>
+</div>
+
+
+
+<div class="form-group">
+<label for="licensestatus">许可状态(licensestatus)</label>
+<input type="text" class="form-control" name="licensestatus_search" id="licensestatus_search">
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="col-sm-2">
+<button type="submit" class="btn btn-primary" >
+<i class="fas fa-search">搜索</i>
+</button>
+<a type="reset" class="btn btn-default" href="/config_busi/videocopyrightinfo">
+<i class="fas fa-eraser">重置</i>
+</a>
+</div>
+</form>
+
+          </div>
+            <table class="table table-striped table-hover table-bordered">
+              <thead>
+                <tr>
+                  
+{% if mcauthfield_videoid.mcauthview %}
+<td>
+关联视频ID
+</td>
+{% endif %}
+
+{% if mcauthfield_copyrightholder.mcauthview %}
+<td>
+版权持有人
+</td>
+{% endif %}
+
+{% if mcauthfield_copyrightyear.mcauthview %}
+<td>
+版权年份
+</td>
+{% endif %}
+
+{% if mcauthfield_licensetype.mcauthview %}
+<td>
+许可类型
+</td>
+{% endif %}
+
+{% if mcauthfield_licensestatus.mcauthview %}
+<td>
+许可状态
+</td>
+{% endif %}
+
+{% if mcauthfield_description.mcauthview %}
+<td>
+版权描述
+</td>
+{% endif %}
+
+{% if mcauthfield_creationdate.mcauthview %}
+<td>
+创建日期
+</td>
+{% endif %}
+
+{% if mcauthfield_modkwkwificationdate.mcauthview %}
+<td>
+修改日期
+</td>
+{% endif %}
+
+{% if mcauthfield_relatedvideoid.mcauthview %}
+<td>
+相关视频ID
+</td>
+{% endif %}
+<th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for record in records %}
+                  <tr>
+                    
+ {% if mcauthfield_videoid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.videoid}}">
+{{record.videoid}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_copyrightholder.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.copyrightholder}}">
+{{record.copyrightholder}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_copyrightyear.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.copyrightyear}}">
+{{record.copyrightyear}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_licensetype.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.licensetype}}">
+{{record.licensetype}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_licensestatus.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.licensestatus}}">
+{{record.licensestatus}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_description.mcauthview %}
+<td class="text-nowrap-cell">
+
+{% if record.description %}
+{{record.description.name}}
+<p title="{{record.description}}">
+{{record.description|truncatechars:20}}
+</p>
+{% endif %}
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_creationdate.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.creationdate}}">
+{{record.creationdate}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_modkwkwificationdate.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.modkwkwificationdate}}">
+{{record.modkwkwificationdate}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_relatedvideoid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.relatedvideoid}}">
+{{record.relatedvideoid}}
+</p>
+
+</td>
+{% endif %}
+ <td>
+                      {% if has_upd %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalupdate">修改</button>
+                      {% endif %}
+                      {% if has_del %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalremove">删除</button>
+                      {% endif %}
+                      {% if has_view %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalpreview">查看</button>
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block modal %}
+  <!-- Modal Structure -->
+
+  {% if has_add %}
+    <div id="modalinsert" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">
+              <h4>添加</h4>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="custom-form">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="add" hidden />{% csrf_token %}<div class="">
+        {% if mcauthfield_videoid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="videoid" class="form-label form-group">关联视频ID</label>
+
+<select class="form-select form-select-lg mb-3" name="videoid" id="videoid" {% if not mcauthfield_videoid.mcisblank %}required {% endif %} data-name="insert"> <option value="" selected>未选择</option> {% for record in data_mc_videoinfo_58178 %} 
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+ {% endfor %}
+</select>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_copyrightholder.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="copyrightholder" class="form-label form-group">版权持有人</label>
+
+<input type="text" class="form-control form-control-lg" name="copyrightholder" id="copyrightholder"{% if not mcauthfield_copyrightholder.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_copyrightyear.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="copyrightyear" class="form-label form-group">版权年份</label>
+
+<input type="text" class="form-control form-control-lg" name="copyrightyear" id="copyrightyear"{% if not mcauthfield_copyrightyear.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_licensetype.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="licensetype" class="form-label form-group">许可类型</label>
+
+<input type="text" class="form-control form-control-lg" name="licensetype" id="licensetype"{% if not mcauthfield_licensetype.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_licensestatus.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="licensestatus" class="form-label form-group">许可状态</label>
+
+<input type="text" class="form-control form-control-lg" name="licensestatus" id="licensestatus"{% if not mcauthfield_licensestatus.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_description.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="description" class="form-label form-group">版权描述</label>
+
+<textarea class="form-control form-control-lg" name="description" id="description" {% if not mcauthfield_description.mcisblank %}required {% endif %}data-name="insert"></textarea>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_creationdate.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="creationdate" class="form-label form-group">创建日期</label>
+
+<input type="date" class="form-control form-control-lg" name="creationdate" id="creationdate" {% if not mcauthfield_creationdate.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_modkwkwificationdate.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="modkwkwificationdate" class="form-label form-group">修改日期</label>
+
+<input type="date" class="form-control form-control-lg" name="modkwkwificationdate" id="modkwkwificationdate" {% if not mcauthfield_modkwkwificationdate.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_relatedvideoid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="relatedvideoid" class="form-label form-group">相关视频ID</label>
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="modal-action modal-close btn-primary btn waves-effect waves-light">提交</button>
+                  <button type="reset" class="modal-action modal-close btn-default btn waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_upd %}
+    <div id="modalupdate" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">修改</div>
+          </div>
+          <div class="modal-body">
+            <div class="custom-form">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="upd" hidden />{% csrf_token %}<input type="text" name="_id_upd" value="" data-name="update_id" hidden />
+                <div class="">
+           {% if mcauthfield_videoid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="videoid_upd"
+class="form-label form-group">
+关联视频ID(videoid)
+</label>
+
+<select class="form-select form-select-lg mb-3" name="videoid"
+id="videoid_upd"
+{% if not mcauthfield_videoid.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_videoid.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+<option value="">未选择</option>
+{% for record in data_mc_videoinfo_58178 %}
+
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+
+{% endfor %}
+</select>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_copyrightholder.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="copyrightholder_upd"
+class="form-label form-group">
+版权持有人(copyrightholder)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="copyrightholder"
+id="copyrightholder_upd"
+placeholder="版权持有人"
+{% if not mcauthfield_copyrightholder.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_copyrightholder.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_copyrightyear.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="copyrightyear_upd"
+class="form-label form-group">
+版权年份(copyrightyear)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="copyrightyear"
+id="copyrightyear_upd"
+placeholder="版权年份"
+{% if not mcauthfield_copyrightyear.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_copyrightyear.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_licensetype.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="licensetype_upd"
+class="form-label form-group">
+许可类型(licensetype)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="licensetype"
+id="licensetype_upd"
+placeholder="许可类型"
+{% if not mcauthfield_licensetype.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_licensetype.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_licensestatus.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="licensestatus_upd"
+class="form-label form-group">
+许可状态(licensestatus)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="licensestatus"
+id="licensestatus_upd"
+placeholder="许可状态"
+{% if not mcauthfield_licensestatus.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_licensestatus.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_description.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="description_upd"
+class="form-label form-group">
+版权描述(description)
+</label>
+
+<textarea type="text" class="validate form-control form-control-lg"
+name="description"
+id="description_upd"
+placeholder="版权描述"
+{% if not mcauthfield_description.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_description.mcauthchange %}
+readonly
+{% endif %}
+data-name="update"></textarea>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_creationdate.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="creationdate_upd"
+class="form-label form-group">
+创建日期(creationdate)
+</label>
+
+<input type="date" class="validate form-control form-control-lg"
+name="creationdate"
+id="creationdate_upd"
+placeholder="创建日期"
+{% if not mcauthfield_creationdate.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_creationdate.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_modkwkwificationdate.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="modkwkwificationdate_upd"
+class="form-label form-group">
+修改日期(modkwkwificationdate)
+</label>
+
+<input type="date" class="validate form-control form-control-lg"
+name="modkwkwificationdate"
+id="modkwkwificationdate_upd"
+placeholder="修改日期"
+{% if not mcauthfield_modkwkwificationdate.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_modkwkwificationdate.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_relatedvideoid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="relatedvideoid_upd"
+class="form-label form-group">
+相关视频ID(relatedvideoid)
+</label>
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">提交</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_del %}
+    <div id="modalremove" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">删除</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>确认删除这条记录吗?</p>
+          </div>
+          <div class="modal-footer">
+            <div class="row custom-form">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="del" hidden />{% csrf_token %}<input type="text" name="_id" value="" data-name="remove" hidden />
+
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">确认</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_view %}
+    <div id="modalpreview" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <h4>预览</h4>
+          <div class="">
+            
+{% if mcauthfield_videoid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">关联视频ID</p>
+
+<p id="videoid_view">
+{{record.videoid|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_copyrightholder.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">版权持有人</p>
+
+<p id="copyrightholder_view">
+{{record.copyrightholder|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_copyrightyear.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">版权年份</p>
+
+<p id="copyrightyear_view">
+{{record.copyrightyear|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_licensetype.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">许可类型</p>
+
+<p id="licensetype_view">
+{{record.licensetype|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_licensestatus.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">许可状态</p>
+
+<p id="licensestatus_view">
+{{record.licensestatus|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_description.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">版权描述</p>
+
+<p id="description_view">
+{{record.description|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_creationdate.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">创建日期</p>
+
+<p id="creationdate_view">
+{{record.creationdate|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_modkwkwificationdate.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">修改日期</p>
+
+<p id="modkwkwificationdate_view">
+{{record.modkwkwificationdate|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_relatedvideoid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">相关视频ID</p>
+
+<p id="relatedvideoid_view">
+{{record.relatedvideoid|safe }}
+</p>
+
+</div>
+{% endif %}
+<div class="modal-footer">
+              <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">关闭</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block script-footer %}
+<script>
+  function myreset(){
+window.location.href= "/config_busi/videocopyrightinfo";
+};
+if (document.getElementById("modalupdate")){
+document.getElementById("modalupdate").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/videocopyrightinfo',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+{% if mcauthfield_videoid.mcauthview %}
+$("#videoid_upd").val(resp.ins.videoid);
+{% endif %}
+
+{% if mcauthfield_copyrightholder.mcauthview %}
+$("#copyrightholder_upd").val(resp.ins.copyrightholder);
+{% endif %}
+
+{% if mcauthfield_copyrightyear.mcauthview %}
+$("#copyrightyear_upd").val(resp.ins.copyrightyear);
+{% endif %}
+
+{% if mcauthfield_licensetype.mcauthview %}
+$("#licensetype_upd").val(resp.ins.licensetype);
+{% endif %}
+
+{% if mcauthfield_licensestatus.mcauthview %}
+$("#licensestatus_upd").val(resp.ins.licensestatus);
+{% endif %}
+
+{% if mcauthfield_description.mcauthview %}
+$("#description_upd").val(resp.ins.description);
+{% endif %}
+
+{% if mcauthfield_creationdate.mcauthview %}
+$("#creationdate_upd").val(resp.ins.creationdate);
+{% endif %}
+
+{% if mcauthfield_modkwkwificationdate.mcauthview %}
+$("#modkwkwificationdate_upd").val(resp.ins.modkwkwificationdate);
+{% endif %}
+
+{% if mcauthfield_relatedvideoid.mcauthview %}
+$("#relatedvideoid_upd").val(resp.ins.relatedvideoid);
+{% endif %}
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+function upd(_id){
+let data = {
+optype:'get',
+_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value,
+
+{% if mcauthfield_videoid.mcauthchange %}
+videoid:$("#videoid_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_copyrightholder.mcauthchange %}
+copyrightholder:$("#copyrightholder_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_copyrightyear.mcauthchange %}
+copyrightyear:$("#copyrightyear_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_licensetype.mcauthchange %}
+licensetype:$("#licensetype_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_licensestatus.mcauthchange %}
+licensestatus:$("#licensestatus_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_description.mcauthchange %}
+description:$("#description_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_creationdate.mcauthchange %}
+creationdate:$("#creationdate_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_modkwkwificationdate.mcauthchange %}
+modkwkwificationdate:$("#modkwkwificationdate_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_relatedvideoid.mcauthchange %}
+relatedvideoid:$("#relatedvideoid_upd]").val(),
+{% endif %}
+
+}
+$.ajax({
+url: '/config_busi/videocopyrightinfo',
+method: 'post',
+data: data,
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+if (document.getElementById("modalpreview")) {
+document.getElementById("modalpreview").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/videocopyrightinfo',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+
+
+{% if mcauthfield_videoid.mcauthview %}
+document.getElementById("videoid_view").innerHTML=resp.ins.videoid;
+{% endif %}
+
+
+
+
+{% if mcauthfield_copyrightholder.mcauthview %}
+document.getElementById("copyrightholder_view").innerHTML=resp.ins.copyrightholder;
+{% endif %}
+
+
+
+
+{% if mcauthfield_copyrightyear.mcauthview %}
+document.getElementById("copyrightyear_view").innerHTML=resp.ins.copyrightyear;
+{% endif %}
+
+
+
+
+{% if mcauthfield_licensetype.mcauthview %}
+document.getElementById("licensetype_view").innerHTML=resp.ins.licensetype;
+{% endif %}
+
+
+
+
+{% if mcauthfield_licensestatus.mcauthview %}
+document.getElementById("licensestatus_view").innerHTML=resp.ins.licensestatus;
+{% endif %}
+
+
+
+
+{% if mcauthfield_description.mcauthview %}
+document.getElementById("description_view").innerHTML=resp.ins.description;
+{% endif %}
+
+
+
+
+{% if mcauthfield_creationdate.mcauthview %}
+document.getElementById("creationdate_view").innerHTML=resp.ins.creationdate;
+{% endif %}
+
+
+
+
+{% if mcauthfield_modkwkwificationdate.mcauthview %}
+document.getElementById("modkwkwificationdate_view").innerHTML=resp.ins.modkwkwificationdate;
+{% endif %}
+
+
+
+
+{% if mcauthfield_relatedvideoid.mcauthview %}
+document.getElementById("relatedvideoid_view").innerHTML=resp.ins.relatedvideoid;
+{% endif %}
+
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+if (document.getElementById("modalremove")) {
+document.getElementById("modalremove").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=remove]").val(_id);
+});
+};
+function del(_id){
+$.ajax({
+url: '/config_busi/videocopyrightinfo',
+method: 'post',
+data: {optype:'del',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+</script>
+{% endblock %}

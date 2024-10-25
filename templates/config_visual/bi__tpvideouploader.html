@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统 视频上传用户表(videouploader)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_username_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 用户名 ******************** pie_v2***/ init_echart("echart_videouploader_username_pie_v2",'videouploader.username_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_username_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 用户名 ******************** pie_v1***/ init_echart("echart_videouploader_username_pie_v1",'videouploader.username_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_username_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 用户名 ******************** pie***/ init_echart("echart_videouploader_username_pie",'videouploader.username_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videouploader_username_line" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 用户名 ******************** line***/ init_echart("echart_videouploader_username_line",'videouploader.username_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videouploader_username_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 用户名 ******************** bar***/ init_echart("echart_videouploader_username_bar",'videouploader.username_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videouploader_username_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 用户名 ******************** bar_v1***/ init_echart("echart_videouploader_username_bar_v1",'videouploader.username_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_email_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 电子邮件 ******************** pie_v2***/ init_echart("echart_videouploader_email_pie_v2",'videouploader.email_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_email_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 电子邮件 ******************** pie_v1***/ init_echart("echart_videouploader_email_pie_v1",'videouploader.email_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_email_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 电子邮件 ******************** pie***/ init_echart("echart_videouploader_email_pie",'videouploader.email_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videouploader_email_line" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 电子邮件 ******************** line***/ init_echart("echart_videouploader_email_line",'videouploader.email_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videouploader_email_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 电子邮件 ******************** bar***/ init_echart("echart_videouploader_email_bar",'videouploader.email_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videouploader_email_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 电子邮件 ******************** bar_v1***/ init_echart("echart_videouploader_email_bar_v1",'videouploader.email_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_phonenumber_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 电话号码 ******************** pie_v2***/ init_echart("echart_videouploader_phonenumber_pie_v2",'videouploader.phonenumber_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_phonenumber_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 电话号码 ******************** pie_v1***/ init_echart("echart_videouploader_phonenumber_pie_v1",'videouploader.phonenumber_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_phonenumber_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 电话号码 ******************** pie***/ init_echart("echart_videouploader_phonenumber_pie",'videouploader.phonenumber_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videouploader_phonenumber_line" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 电话号码 ******************** line***/ init_echart("echart_videouploader_phonenumber_line",'videouploader.phonenumber_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videouploader_phonenumber_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 电话号码 ******************** bar***/ init_echart("echart_videouploader_phonenumber_bar",'videouploader.phonenumber_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videouploader_phonenumber_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 电话号码 ******************** bar_v1***/ init_echart("echart_videouploader_phonenumber_bar_v1",'videouploader.phonenumber_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_uploadtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 上传时间 ******************** pie_v2***/ init_echart("echart_videouploader_uploadtime_pie_v2",'videouploader.uploadtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_uploadtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 上传时间 ******************** pie_v1***/ init_echart("echart_videouploader_uploadtime_pie_v1",'videouploader.uploadtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_uploadtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 上传时间 ******************** pie***/ init_echart("echart_videouploader_uploadtime_pie",'videouploader.uploadtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videouploader_uploadtime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 上传时间 ******************** line***/ init_echart("echart_videouploader_uploadtime_line",'videouploader.uploadtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videouploader_uploadtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 上传时间 ******************** bar***/ init_echart("echart_videouploader_uploadtime_bar",'videouploader.uploadtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videouploader_uploadtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 上传时间 ******************** bar_v1***/ init_echart("echart_videouploader_uploadtime_bar_v1",'videouploader.uploadtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_videotitle_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 视频标题 ******************** pie_v2***/ init_echart("echart_videouploader_videotitle_pie_v2",'videouploader.videotitle_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_videotitle_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 视频标题 ******************** pie_v1***/ init_echart("echart_videouploader_videotitle_pie_v1",'videouploader.videotitle_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_videotitle_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 视频标题 ******************** pie***/ init_echart("echart_videouploader_videotitle_pie",'videouploader.videotitle_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videouploader_videotitle_line" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 视频标题 ******************** line***/ init_echart("echart_videouploader_videotitle_line",'videouploader.videotitle_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videouploader_videotitle_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 视频标题 ******************** bar***/ init_echart("echart_videouploader_videotitle_bar",'videouploader.videotitle_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videouploader_videotitle_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 视频标题 ******************** bar_v1***/ init_echart("echart_videouploader_videotitle_bar_v1",'videouploader.videotitle_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_videodescription_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 视频描述 ******************** pie_v2***/ init_echart("echart_videouploader_videodescription_pie_v2",'videouploader.videodescription_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_videodescription_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 视频描述 ******************** pie_v1***/ init_echart("echart_videouploader_videodescription_pie_v1",'videouploader.videodescription_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_videodescription_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 视频描述 ******************** pie***/ init_echart("echart_videouploader_videodescription_pie",'videouploader.videodescription_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videouploader_videodescription_line" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 视频描述 ******************** line***/ init_echart("echart_videouploader_videodescription_line",'videouploader.videodescription_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videouploader_videodescription_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 视频描述 ******************** bar***/ init_echart("echart_videouploader_videodescription_bar",'videouploader.videodescription_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videouploader_videodescription_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 视频描述 ******************** bar_v1***/ init_echart("echart_videouploader_videodescription_bar_v1",'videouploader.videodescription_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_videostatus_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 视频状态如审核中、已发布、已删除 ******************** pie_v2***/ init_echart("echart_videouploader_videostatus_pie_v2",'videouploader.videostatus_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_videostatus_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 视频状态如审核中、已发布、已删除 ******************** pie_v1***/ init_echart("echart_videouploader_videostatus_pie_v1",'videouploader.videostatus_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videouploader_videostatus_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 视频状态如审核中、已发布、已删除 ******************** pie***/ init_echart("echart_videouploader_videostatus_pie",'videouploader.videostatus_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videouploader_videostatus_line" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 视频状态如审核中、已发布、已删除 ******************** line***/ init_echart("echart_videouploader_videostatus_line",'videouploader.videostatus_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videouploader_videostatus_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 视频状态如审核中、已发布、已删除 ******************** bar***/ init_echart("echart_videouploader_videostatus_bar",'videouploader.videostatus_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videouploader_videostatus_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频上传用户表 视频状态如审核中、已发布、已删除 ******************** bar_v1***/ init_echart("echart_videouploader_videostatus_bar_v1",'videouploader.videostatus_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+    </div>
+  </body>
+</html>

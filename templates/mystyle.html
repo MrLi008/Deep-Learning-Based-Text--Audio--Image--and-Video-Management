@@ -1,0 +1,592 @@
+<style>
+  .default-echart-border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bgVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .justify-text {
+    text-align: center;
+    padding-top: 30px;
+
+  }
+
+  .justify-text-center {
+    text-align: center;
+  }
+
+  .margin-20 {
+    margin-top: 20px;
+  }
+
+  .btn {
+    width: 200px;
+    border: #495057 solid 1px;
+  }
+
+  /****************** 输入框 *****************/
+  .form-control {}
+
+  .form-control-lg {
+    padding-top: 30px;
+  }
+
+  .form-control-label {}
+
+  .form-control-input {}
+
+  /* Modal基础样式 */
+  .modal {
+    display: none;
+    /* 默认隐藏 */
+    position: fixed;
+    /* Stay in place */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+  }
+
+  /* Modal Content样式 */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  /* Close Button样式 */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* Modal Header样式 */
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+
+  /* Modal Body样式 */
+  .modal-body {
+    padding: 2px 16px;
+  }
+
+  /* Modal Footer样式 */
+  .modal-footer {
+    padding: 2px 16px;
+    /* background-color: #5cb85c;   */
+    color: white;
+    text-align: right;
+  }
+
+
+  /****************** 输入框 *****************/
+  .my-background {
+    background-image: url('/static/imgs/default.jpg');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover;
+    height: 100%;
+  }
+
+  .my-header-image {
+    background-image: url('/static/imgs/header.png');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover;
+    height: 40%;
+  }
+
+  .my-login-block {
+    color: white;
+    font-size: larger;
+    width: 980px;
+    margin-top: 10%;
+    margin-left: 30%;
+    border: 1px #161612 solid;
+    opacity: 1;
+    padding: 20px;
+    box-shadow: -1px 2px 11px #7ba0c6;
+    border-radius: 30px;
+  }
+
+  .my-login-block-video {
+    width: 980px;
+    margin-top: 400px;
+    margin-left: 600px;
+    border: 1px #161612 solid;
+    opacity: 0.8;
+
+    padding: 20px;
+  }
+
+  .tab-pane {
+    padding: 20px;
+  }
+
+  .my-header {
+    /* 页面风格 */
+    background-color: #d7dce0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px #161612 solid;
+    opacity: 0.8;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  .ruby-text {
+    display: ruby-text;
+  }
+
+  .my-container-margin {
+    margin: 0 auto;
+    background-color: whitesmoke;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.06);
+    justify-content: center;
+  }
+
+  .nav-tabs .nav-link {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .modal-dialog-custom {
+    max-width: 80%;
+    margin: 1.75rem auto;
+    min-height: 500px;
+  }
+
+  .text-nowrap-cell {
+    max-width: 150px;
+    /* 设置你需要的最大宽度 */
+    white-space: nowrap;
+    /* 防止文本换行 */
+    overflow: hidden;
+    /* 隐藏超出容器的内容 */
+    text-overflow: ellipsis;
+    /* 显示省略号 */
+  }
+
+  /* 未访问的链接 */
+  a:link {
+    color: blue;
+  }
+
+  /* 已访问的链接 */
+  a:visited {
+    color: purple;
+  }
+
+  /* 鼠标悬停时的链接 */
+  a:hover {
+    color: red;
+  }
+
+  /* 被点击的链接 */
+  a:active {
+    color: yellow;
+  }
+
+  /****** A标签字体 */
+  a {
+    font-family: 'Microsoft YaHei';
+    font-size: 1.6rem;
+  }
+
+  /* 自定义复选框样式 */
+  .custom-checkbox-primary .custom-control-input:checked~.custom-control-label::before {
+    border-color: #007bff;
+    /* 边框颜色 */
+    background-color: #007bff;
+    /* 背景颜色 */
+  }
+
+  .custom-checkbox-primary .custom-control-input:focus~.custom-control-label::before {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    /* 焦点阴影 */
+  }
+
+  .custom-checkbox-primary .custom-control-input:active~.custom-control-label::before {
+    background-color: #b3d7ff;
+    /* 激活时的背景颜色 */
+    border-color: #b3d7ff;
+    /* 激活时的边框颜色 */
+  }
+
+  /* 悬停效果 */
+  .custom-checkbox-primary .custom-control-input:not(:disabled):hover~.custom-control-label::before {
+    border-color: #0056b3;
+    /* 悬停时的边框颜色 */
+  }
+
+  /* Add some custom styling to the tabs */
+  .nav-tabs .nav-link {
+    border: none;
+    border-bottom: 3px solid transparent;
+    border-radius: 0;
+    color: #495057;
+    transition: border-color 0.3s ease;
+  }
+
+  .nav-tabs .nav-link.active {
+    border-color: #007bff;
+    /* Blue border color for active tab */
+    color: #007bff;
+    /* Blue text color for active tab */
+  }
+
+  /* Center the tabs and add some space */
+  .nav-tabs {
+    border-bottom: none;
+  }
+
+  /* Add some padding and border to the tab content */
+  .tab-content {
+    border-color: #ddd;
+  }
+
+  .table-responsive {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .fixed-column {
+    position: sticky;
+    right: 0;
+    background-color: white;
+    /* 为了确保在滚动时列的背景与其他列保持一致 */
+    z-index: 1;
+    /* 确保列在其他内容之上 */
+  }
+
+  .pricingTable {
+    text-align: center;
+
+    background: #e4dfd7;
+
+    padding: 30px 0;
+  }
+
+  .text-body {
+    font-size: 24px;
+  }
+
+  .pricingTable .title {
+    font-size: 22px;
+
+    font-weight: 600;
+
+    color: #2e282a;
+
+    text-transform: uppercase;
+
+    margin: 0 0 30px 0;
+  }
+
+  .pricingTable .price-value {
+    padding: 30px 0;
+
+    background: #ba5289;
+
+    margin-bottom: 30px;
+
+    position: relative;
+  }
+
+  .pricingTable .price-value:before {
+    content: '';
+
+    border-top: 15px solid #fff;
+
+    border-left: 15px solid transparent;
+
+    border-right: 15px solid transparent;
+
+    position: absolute;
+
+    top: 0;
+
+    left: 46%;
+  }
+
+  .pricingTable .month {
+    display: block;
+
+    height: 50px;
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+    color: #fff;
+
+    text-transform: uppercase;
+  }
+
+  .pricingTable .amount {
+    display: inline- block;
+
+    font-size: 50px;
+
+    color: #fff;
+
+    position: relative;
+  }
+
+  .pricingTable .currency {
+    position: absolute;
+
+    top: -1px;
+
+    left: -35px;
+  }
+
+  .pricingTable .value {
+    font-size: 20px;
+
+    position: absolute;
+
+    top: -11px;
+
+    right: -27px;
+  }
+
+  .pricingTable .pricing-content {
+    padding: 0;
+
+    margin: 0 0 30px 0;
+
+    list-style: none;
+  }
+
+  .pricingTable .pricing-content li {
+    font-size: 16px;
+
+    color: #868686;
+
+    line-height: 35px;
+  }
+
+  .pricingTable .pricingTable-signup {
+    display: inline- block;
+
+    padding: 8px 40px;
+
+    background: #fca4a7;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #fff;
+
+    text-transform: capitalize;
+
+    border: 2px solid #fca4a7;
+
+    border-radius: 30px;
+
+    transition: all 0.5s ease 0 s;
+  }
+
+  .pricingTable .pricingTable-signup:hover {
+    background: #fff;
+
+    color: #fca4a7;
+  }
+
+  @media only screen and (max-width: 990px) {
+    .pricingTable {
+      margin-bottom: 30px;
+    }
+  }
+</style>
+
+
+
+<style>
+  /*
+    :author: MrLi
+    :date: 2024-10-16
+    :email: 952934650@qq.com
+    :description: 样式重置
+    :version: 1.0
+    :history:
+  */
+
+
+  body {
+    padding-top: 56px;
+    /* 为了给导航栏留出空间 */
+  }
+
+  .sidebar {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    /* 为了给导航栏留出空间 */
+    padding-left: 0;
+    /* 给侧边栏留出空间 */
+
+  }
+
+  .right-center-content {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 90px;
+    /* 为了给导航栏留出空间 */
+    padding-left: 170px;
+    /* 给侧边栏留出空间 */
+  }
+
+  .sidebar a {
+    padding: 15px 8px 15px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+
+  .sidebar.active {
+    width: 250px;
+  }
+
+  .sidebar-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 36px;
+    z-index: 1000;
+  }
+
+  
+  /* 自定义表单样式 */  
+.custom-form {  
+  max-width: 1000px;  
+  margin: 10 auto;  
+  padding: 20px;  
+  border: 1px solid #ddd;  
+  border-radius: 8px;  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
+  background-color: #fff;  
+}  
+
+.custom-form .form-group {  
+  margin-bottom: 1.5rem;  
+}  
+
+.custom-form .form-control {  
+  border: 1px solid #ced4da;  
+  border-radius: 5px;  
+  padding: 10px;  
+  font-size: 1rem;  
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;  
+}  
+
+.custom-form .form-control:focus {  
+  border-color: #80bdff;  
+  outline: none;  
+  box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);  
+}  
+
+.custom-form .form-check-input {  
+  margin-top: .25rem;  
+}  
+
+.custom-form .form-check-label {  
+  font-weight: normal;  
+  cursor: pointer;  
+}  
+
+.custom-form .btn {  
+  border: none;  
+  border-radius: 5px;  
+  padding: 10px 20px;  
+  font-size: 1rem;  
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;  
+}  
+
+.custom-form .btn-primary {  
+  background-color: #007bff;  
+  color: #fff;  
+}  
+
+.custom-form .btn-primary:hover {  
+  background-color: #0056b3;  
+}  
+
+.custom-form .btn-primary:active,  
+.custom-form .btn-primary:focus {  
+  background-color: #00499a;  
+  outline: none;  
+  box-shadow: none;  
+}  
+
+.custom-form .btn-secondary {  
+  background-color: #6c757d;  
+  color: #fff;  
+}  
+
+.custom-form .btn-secondary:hover {  
+  background-color: #5a6268;  
+}  
+
+.custom-form .btn-secondary:active,  
+.custom-form .btn-secondary:focus {  
+  background-color: #545b62;  
+  outline: none;  
+  box-shadow: none;  
+}  
+
+/* 其他自定义样式，如需要 */
+</style>

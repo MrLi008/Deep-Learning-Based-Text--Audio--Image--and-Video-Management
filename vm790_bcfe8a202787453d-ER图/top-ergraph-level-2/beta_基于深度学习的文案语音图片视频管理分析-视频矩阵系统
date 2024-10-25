@@ -1,0 +1,267 @@
+// 基于深度学习的文案语音图片视频管理分析-视频矩阵系统
+digraph "基于深度学习的文案语音图片视频管理分析-视频矩阵系统" {
+	graph [fontname=SimSun]
+	node [fontname=SimSun style=filled]
+	edge [dir=none fontname=SimSun style=solid]
+	8385 [label="视频信息表" color=black fillcolor=lightpink shape=box]
+	8386 [label="视频分类表" color=black fillcolor=lightpink shape=box]
+	8387 [label="视频标签表" color=black fillcolor=lightpink shape=box]
+	8388 [label="视频文件存储表" color=black fillcolor=lightpink shape=box]
+	8389 [label="视频播放记录表" color=black fillcolor=lightpink shape=box]
+	8390 [label="视频评论表" color=black fillcolor=lightpink shape=box]
+	8391 [label="视频点赞表" color=black fillcolor=lightpink shape=box]
+	8392 [label="视频分享表" color=black fillcolor=lightpink shape=box]
+	8393 [label="视频观看时长统计表" color=black fillcolor=lightpink shape=box]
+	8394 [label="视频上传用户表" color=black fillcolor=lightpink shape=box]
+	8395 [label="用户信息表" color=black fillcolor=lightpink shape=box]
+	8396 [label="用户权限表" color=black fillcolor=lightpink shape=box]
+	8397 [label="用户观看历史表" color=black fillcolor=lightpink shape=box]
+	8398 [label="视频审核状态表" color=black fillcolor=lightpink shape=box]
+	8399 [label="视频封面图片表" color=black fillcolor=lightpink shape=box]
+	8400 [label="视频矩阵配置表" color=black fillcolor=lightpink shape=box]
+	8401 [label="视频矩阵节点表" color=black fillcolor=lightpink shape=box]
+	8402 [label="视频矩阵播放记录表" color=black fillcolor=lightpink shape=box]
+	8403 [label="视频关联内容表" color=black fillcolor=lightpink shape=box]
+	8404 [label="视频错误日志表" color=black fillcolor=lightpink shape=box]
+	8405 [label="视频热度统计表" color=black fillcolor=lightpink shape=box]
+	8406 [label="视频推荐算法参数表" color=black fillcolor=lightpink shape=box]
+	8407 [label="视频广告信息表" color=black fillcolor=lightpink shape=box]
+	8408 [label="视频广告播放记录表" color=black fillcolor=lightpink shape=box]
+	8409 [label="视频弹幕表" color=black fillcolor=lightpink shape=box]
+	8410 [label="视频弹幕屏蔽词表" color=black fillcolor=lightpink shape=box]
+	8411 [label="视频多语言字幕表" color=black fillcolor=lightpink shape=box]
+	8412 [label="视频转码任务表" color=black fillcolor=lightpink shape=box]
+	8413 [label="视频分析指标表" color=black fillcolor=lightpink shape=box]
+	8414 [label="视频质量评估表" color=black fillcolor=lightpink shape=box]
+	8415 [label="视频水印信息表" color=black fillcolor=lightpink shape=box]
+	8416 [label="视频版权信息表" color=black fillcolor=lightpink shape=box]
+	8417 [label="系统管理员" color=black fillcolor=lightpink shape=box]
+	3653 [label="关联
+【用户名】" color=black fillcolor=bisque shape=diamond]
+	8395 -> 3653 [label=1 shape=diamond]
+	3653 -> 8385 [label=M shape=diamond]
+	3654 [label="关联
+【分类名称】" color=black fillcolor=bisque shape=diamond]
+	8386 -> 3654 [label=1 shape=diamond]
+	3654 -> 8385 [label=M shape=diamond]
+	3655 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3655 [label=1 shape=diamond]
+	3655 -> 8387 [label=M shape=diamond]
+	3656 [label="关联
+【用户名】" color=black fillcolor=bisque shape=diamond]
+	8395 -> 3656 [label=1 shape=diamond]
+	3656 -> 8387 [label=M shape=diamond]
+	3657 [label="关联
+【用户名】" color=black fillcolor=bisque shape=diamond]
+	8395 -> 3657 [label=1 shape=diamond]
+	3657 -> 8388 [label=M shape=diamond]
+	3658 [label="关联
+【分类名称】" color=black fillcolor=bisque shape=diamond]
+	8386 -> 3658 [label=1 shape=diamond]
+	3658 -> 8388 [label=M shape=diamond]
+	3659 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3659 [label=1 shape=diamond]
+	3659 -> 8389 [label=M shape=diamond]
+	3660 [label="关联
+【用户名】" color=black fillcolor=bisque shape=diamond]
+	8395 -> 3660 [label=1 shape=diamond]
+	3660 -> 8389 [label=M shape=diamond]
+	3661 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3661 [label=1 shape=diamond]
+	3661 -> 8390 [label=M shape=diamond]
+	3662 [label="关联
+【用户名】" color=black fillcolor=bisque shape=diamond]
+	8395 -> 3662 [label=1 shape=diamond]
+	3662 -> 8390 [label=M shape=diamond]
+	3663 [label="关联
+【评论内容】" color=black fillcolor=bisque shape=diamond]
+	8390 -> 3663 [label=1 shape=diamond]
+	3663 -> 8390 [label=M shape=diamond]
+	3664 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3664 [label=1 shape=diamond]
+	3664 -> 8391 [label=M shape=diamond]
+	3665 [label="关联
+【用户名】" color=black fillcolor=bisque shape=diamond]
+	8395 -> 3665 [label=1 shape=diamond]
+	3665 -> 8391 [label=M shape=diamond]
+	3666 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3666 [label=1 shape=diamond]
+	3666 -> 8392 [label=M shape=diamond]
+	3667 [label="关联
+【用户名】" color=black fillcolor=bisque shape=diamond]
+	8395 -> 3667 [label=1 shape=diamond]
+	3667 -> 8392 [label=M shape=diamond]
+	3668 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3668 [label=1 shape=diamond]
+	3668 -> 8393 [label=M shape=diamond]
+	3669 [label="关联
+【用户名】" color=black fillcolor=bisque shape=diamond]
+	8395 -> 3669 [label=1 shape=diamond]
+	3669 -> 8393 [label=M shape=diamond]
+	3670 [label="关联
+【用户名】" color=black fillcolor=bisque shape=diamond]
+	8395 -> 3670 [label=1 shape=diamond]
+	3670 -> 8394 [label=M shape=diamond]
+	3671 [label="关联
+【用户名】" color=black fillcolor=bisque shape=diamond]
+	8395 -> 3671 [label=1 shape=diamond]
+	3671 -> 8396 [label=M shape=diamond]
+	3672 [label="关联
+【关联权限ID】" color=black fillcolor=bisque shape=diamond]
+	8396 -> 3672 [label=1 shape=diamond]
+	3672 -> 8396 [label=M shape=diamond]
+	3673 [label="关联
+【用户名】" color=black fillcolor=bisque shape=diamond]
+	8395 -> 3673 [label=1 shape=diamond]
+	3673 -> 8397 [label=M shape=diamond]
+	3674 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3674 [label=1 shape=diamond]
+	3674 -> 8397 [label=M shape=diamond]
+	3675 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3675 [label=1 shape=diamond]
+	3675 -> 8398 [label=M shape=diamond]
+	3676 [label="关联
+【管理员姓名】" color=black fillcolor=bisque shape=diamond]
+	8417 -> 3676 [label=1 shape=diamond]
+	3676 -> 8398 [label=M shape=diamond]
+	3677 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3677 [label=1 shape=diamond]
+	3677 -> 8399 [label=M shape=diamond]
+	3678 [label="关联
+【用户名】" color=black fillcolor=bisque shape=diamond]
+	8395 -> 3678 [label=1 shape=diamond]
+	3678 -> 8399 [label=M shape=diamond]
+	3679 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3679 [label=1 shape=diamond]
+	3679 -> 8400 [label=M shape=diamond]
+	3680 [label="关联
+【文件名】" color=black fillcolor=bisque shape=diamond]
+	8388 -> 3680 [label=1 shape=diamond]
+	3680 -> 8400 [label=M shape=diamond]
+	3681 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3681 [label=1 shape=diamond]
+	3681 -> 8401 [label=M shape=diamond]
+	3682 [label="关联
+【节点名称】" color=black fillcolor=bisque shape=diamond]
+	8401 -> 3682 [label=1 shape=diamond]
+	3682 -> 8401 [label=M shape=diamond]
+	3683 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3683 [label=1 shape=diamond]
+	3683 -> 8402 [label=M shape=diamond]
+	3684 [label="关联
+【视频矩阵名称】" color=black fillcolor=bisque shape=diamond]
+	8400 -> 3684 [label=1 shape=diamond]
+	3684 -> 8402 [label=M shape=diamond]
+	3685 [label="关联
+【用户名】" color=black fillcolor=bisque shape=diamond]
+	8395 -> 3685 [label=1 shape=diamond]
+	3685 -> 8402 [label=M shape=diamond]
+	3686 [label="关联
+【设备ID关联设备】" color=black fillcolor=bisque shape=diamond]
+	8402 -> 3686 [label=1 shape=diamond]
+	3686 -> 8402 [label=M shape=diamond]
+	3687 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3687 [label=1 shape=diamond]
+	3687 -> 8403 [label=M shape=diamond]
+	3688 [label="关联
+【评论内容】" color=black fillcolor=bisque shape=diamond]
+	8390 -> 3688 [label=1 shape=diamond]
+	3688 -> 8403 [label=M shape=diamond]
+	3689 [label="关联
+【关联时间】" color=black fillcolor=bisque shape=diamond]
+	8403 -> 3689 [label=1 shape=diamond]
+	3689 -> 8403 [label=M shape=diamond]
+	3690 [label="关联
+【用户名】" color=black fillcolor=bisque shape=diamond]
+	8395 -> 3690 [label=1 shape=diamond]
+	3690 -> 8403 [label=M shape=diamond]
+	3691 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3691 [label=1 shape=diamond]
+	3691 -> 8403 [label=M shape=diamond]
+	3692 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3692 [label=1 shape=diamond]
+	3692 -> 8404 [label=M shape=diamond]
+	3693 [label="关联
+【管理员姓名】" color=black fillcolor=bisque shape=diamond]
+	8417 -> 3693 [label=1 shape=diamond]
+	3693 -> 8404 [label=M shape=diamond]
+	3694 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3694 [label=1 shape=diamond]
+	3694 -> 8405 [label=M shape=diamond]
+	3695 [label="关联
+【分类名称】" color=black fillcolor=bisque shape=diamond]
+	8386 -> 3695 [label=1 shape=diamond]
+	3695 -> 8405 [label=M shape=diamond]
+	3696 [label="关联
+【用户名】" color=black fillcolor=bisque shape=diamond]
+	8395 -> 3696 [label=1 shape=diamond]
+	3696 -> 8405 [label=M shape=diamond]
+	3697 [label="关联
+【分类名称】" color=black fillcolor=bisque shape=diamond]
+	8386 -> 3697 [label=1 shape=diamond]
+	3697 -> 8406 [label=M shape=diamond]
+	3698 [label="关联
+【用户名】" color=black fillcolor=bisque shape=diamond]
+	8395 -> 3698 [label=1 shape=diamond]
+	3698 -> 8408 [label=M shape=diamond]
+	3699 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3699 [label=1 shape=diamond]
+	3699 -> 8410 [label=M shape=diamond]
+	3700 [label="关联
+【用户名】" color=black fillcolor=bisque shape=diamond]
+	8395 -> 3700 [label=1 shape=diamond]
+	3700 -> 8410 [label=M shape=diamond]
+	3701 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3701 [label=1 shape=diamond]
+	3701 -> 8411 [label=M shape=diamond]
+	3702 [label="关联
+【用户名】" color=black fillcolor=bisque shape=diamond]
+	8395 -> 3702 [label=1 shape=diamond]
+	3702 -> 8411 [label=M shape=diamond]
+	3703 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3703 [label=1 shape=diamond]
+	3703 -> 8412 [label=M shape=diamond]
+	3704 [label="关联
+【用户名】" color=black fillcolor=bisque shape=diamond]
+	8395 -> 3704 [label=1 shape=diamond]
+	3704 -> 8412 [label=M shape=diamond]
+	3705 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3705 [label=1 shape=diamond]
+	3705 -> 8413 [label=M shape=diamond]
+	3706 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3706 [label=1 shape=diamond]
+	3706 -> 8414 [label=M shape=diamond]
+	3707 [label="关联
+【管理员姓名】" color=black fillcolor=bisque shape=diamond]
+	8417 -> 3707 [label=1 shape=diamond]
+	3707 -> 8414 [label=M shape=diamond]
+	3708 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3708 [label=1 shape=diamond]
+	3708 -> 8415 [label=M shape=diamond]
+	3709 [label="关联
+【视频标题】" color=black fillcolor=bisque shape=diamond]
+	8385 -> 3709 [label=1 shape=diamond]
+	3709 -> 8416 [label=M shape=diamond]
+}

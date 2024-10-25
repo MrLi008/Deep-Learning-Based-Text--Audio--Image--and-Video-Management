@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统 视频矩阵配置表(videomatrixconfig)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomatrixconfig_matrixname_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 视频矩阵名称 ******************** pie_v2***/ init_echart("echart_videomatrixconfig_matrixname_pie_v2",'videomatrixconfig.matrixname_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomatrixconfig_matrixname_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 视频矩阵名称 ******************** pie_v1***/ init_echart("echart_videomatrixconfig_matrixname_pie_v1",'videomatrixconfig.matrixname_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomatrixconfig_matrixname_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 视频矩阵名称 ******************** pie***/ init_echart("echart_videomatrixconfig_matrixname_pie",'videomatrixconfig.matrixname_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videomatrixconfig_matrixname_line" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 视频矩阵名称 ******************** line***/ init_echart("echart_videomatrixconfig_matrixname_line",'videomatrixconfig.matrixname_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomatrixconfig_matrixname_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 视频矩阵名称 ******************** bar***/ init_echart("echart_videomatrixconfig_matrixname_bar",'videomatrixconfig.matrixname_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomatrixconfig_matrixname_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 视频矩阵名称 ******************** bar_v1***/ init_echart("echart_videomatrixconfig_matrixname_bar_v1",'videomatrixconfig.matrixname_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomatrixconfig_description_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 描述信息 ******************** pie_v2***/ init_echart("echart_videomatrixconfig_description_pie_v2",'videomatrixconfig.description_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomatrixconfig_description_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 描述信息 ******************** pie_v1***/ init_echart("echart_videomatrixconfig_description_pie_v1",'videomatrixconfig.description_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomatrixconfig_description_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 描述信息 ******************** pie***/ init_echart("echart_videomatrixconfig_description_pie",'videomatrixconfig.description_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videomatrixconfig_description_line" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 描述信息 ******************** line***/ init_echart("echart_videomatrixconfig_description_line",'videomatrixconfig.description_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomatrixconfig_description_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 描述信息 ******************** bar***/ init_echart("echart_videomatrixconfig_description_bar",'videomatrixconfig.description_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomatrixconfig_description_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 描述信息 ******************** bar_v1***/ init_echart("echart_videomatrixconfig_description_bar_v1",'videomatrixconfig.description_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomatrixconfig_createdat_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 创建时间 ******************** pie_v2***/ init_echart("echart_videomatrixconfig_createdat_pie_v2",'videomatrixconfig.createdat_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomatrixconfig_createdat_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 创建时间 ******************** pie_v1***/ init_echart("echart_videomatrixconfig_createdat_pie_v1",'videomatrixconfig.createdat_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomatrixconfig_createdat_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 创建时间 ******************** pie***/ init_echart("echart_videomatrixconfig_createdat_pie",'videomatrixconfig.createdat_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videomatrixconfig_createdat_line" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 创建时间 ******************** line***/ init_echart("echart_videomatrixconfig_createdat_line",'videomatrixconfig.createdat_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomatrixconfig_createdat_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 创建时间 ******************** bar***/ init_echart("echart_videomatrixconfig_createdat_bar",'videomatrixconfig.createdat_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomatrixconfig_createdat_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 创建时间 ******************** bar_v1***/ init_echart("echart_videomatrixconfig_createdat_bar_v1",'videomatrixconfig.createdat_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomatrixconfig_updatedat_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 更新时间 ******************** pie_v2***/ init_echart("echart_videomatrixconfig_updatedat_pie_v2",'videomatrixconfig.updatedat_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomatrixconfig_updatedat_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 更新时间 ******************** pie_v1***/ init_echart("echart_videomatrixconfig_updatedat_pie_v1",'videomatrixconfig.updatedat_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomatrixconfig_updatedat_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 更新时间 ******************** pie***/ init_echart("echart_videomatrixconfig_updatedat_pie",'videomatrixconfig.updatedat_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videomatrixconfig_updatedat_line" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 更新时间 ******************** line***/ init_echart("echart_videomatrixconfig_updatedat_line",'videomatrixconfig.updatedat_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomatrixconfig_updatedat_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 更新时间 ******************** bar***/ init_echart("echart_videomatrixconfig_updatedat_bar",'videomatrixconfig.updatedat_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomatrixconfig_updatedat_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 更新时间 ******************** bar_v1***/ init_echart("echart_videomatrixconfig_updatedat_bar_v1",'videomatrixconfig.updatedat_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomatrixconfig_layoutconfig_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 布局配置如1x4 ******************** pie_v2***/ init_echart("echart_videomatrixconfig_layoutconfig_pie_v2",'videomatrixconfig.layoutconfig_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomatrixconfig_layoutconfig_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 布局配置如1x4 ******************** pie_v1***/ init_echart("echart_videomatrixconfig_layoutconfig_pie_v1",'videomatrixconfig.layoutconfig_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videomatrixconfig_layoutconfig_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 布局配置如1x4 ******************** pie***/ init_echart("echart_videomatrixconfig_layoutconfig_pie",'videomatrixconfig.layoutconfig_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videomatrixconfig_layoutconfig_line" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 布局配置如1x4 ******************** line***/ init_echart("echart_videomatrixconfig_layoutconfig_line",'videomatrixconfig.layoutconfig_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomatrixconfig_layoutconfig_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 布局配置如1x4 ******************** bar***/ init_echart("echart_videomatrixconfig_layoutconfig_bar",'videomatrixconfig.layoutconfig_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videomatrixconfig_layoutconfig_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频矩阵配置表 布局配置如1x4 ******************** bar_v1***/ init_echart("echart_videomatrixconfig_layoutconfig_bar_v1",'videomatrixconfig.layoutconfig_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

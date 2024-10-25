@@ -1,0 +1,541 @@
+{% extends 'tp_1.html' %}
+
+{% block title %}
+基于深度学习的文案语音图片视频管理分析-视频矩阵系统
+
+{% endblock %}
+{% block header-image %}
+{% include 'header-image.html' %}
+{% endblock %}
+
+{% block body %}
+
+<div class="my-container-margin">
+    <div class="row">
+        <div class="col s6">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8385-tab" data-bs-toggle="tab" data-bs-target="#t-8385-tab-pane" type="button" role="tab" aria-controls="t-8385-tab-pane" aria-selected="true">视频信息表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8386-tab" data-bs-toggle="tab" data-bs-target="#t-8386-tab-pane" type="button" role="tab" aria-controls="t-8386-tab-pane" aria-selected="true">视频分类表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8387-tab" data-bs-toggle="tab" data-bs-target="#t-8387-tab-pane" type="button" role="tab" aria-controls="t-8387-tab-pane" aria-selected="true">视频标签表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8388-tab" data-bs-toggle="tab" data-bs-target="#t-8388-tab-pane" type="button" role="tab" aria-controls="t-8388-tab-pane" aria-selected="true">视频文件存储表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8389-tab" data-bs-toggle="tab" data-bs-target="#t-8389-tab-pane" type="button" role="tab" aria-controls="t-8389-tab-pane" aria-selected="true">视频播放记录表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8390-tab" data-bs-toggle="tab" data-bs-target="#t-8390-tab-pane" type="button" role="tab" aria-controls="t-8390-tab-pane" aria-selected="true">视频评论表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8391-tab" data-bs-toggle="tab" data-bs-target="#t-8391-tab-pane" type="button" role="tab" aria-controls="t-8391-tab-pane" aria-selected="true">视频点赞表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8392-tab" data-bs-toggle="tab" data-bs-target="#t-8392-tab-pane" type="button" role="tab" aria-controls="t-8392-tab-pane" aria-selected="true">视频分享表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8393-tab" data-bs-toggle="tab" data-bs-target="#t-8393-tab-pane" type="button" role="tab" aria-controls="t-8393-tab-pane" aria-selected="true">视频观看时长统计表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8394-tab" data-bs-toggle="tab" data-bs-target="#t-8394-tab-pane" type="button" role="tab" aria-controls="t-8394-tab-pane" aria-selected="true">视频上传用户表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8395-tab" data-bs-toggle="tab" data-bs-target="#t-8395-tab-pane" type="button" role="tab" aria-controls="t-8395-tab-pane" aria-selected="true">用户信息表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8396-tab" data-bs-toggle="tab" data-bs-target="#t-8396-tab-pane" type="button" role="tab" aria-controls="t-8396-tab-pane" aria-selected="true">用户权限表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8397-tab" data-bs-toggle="tab" data-bs-target="#t-8397-tab-pane" type="button" role="tab" aria-controls="t-8397-tab-pane" aria-selected="true">用户观看历史表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8398-tab" data-bs-toggle="tab" data-bs-target="#t-8398-tab-pane" type="button" role="tab" aria-controls="t-8398-tab-pane" aria-selected="true">视频审核状态表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8399-tab" data-bs-toggle="tab" data-bs-target="#t-8399-tab-pane" type="button" role="tab" aria-controls="t-8399-tab-pane" aria-selected="true">视频封面图片表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8400-tab" data-bs-toggle="tab" data-bs-target="#t-8400-tab-pane" type="button" role="tab" aria-controls="t-8400-tab-pane" aria-selected="true">视频矩阵配置表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8401-tab" data-bs-toggle="tab" data-bs-target="#t-8401-tab-pane" type="button" role="tab" aria-controls="t-8401-tab-pane" aria-selected="true">视频矩阵节点表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8402-tab" data-bs-toggle="tab" data-bs-target="#t-8402-tab-pane" type="button" role="tab" aria-controls="t-8402-tab-pane" aria-selected="true">视频矩阵播放记录表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8403-tab" data-bs-toggle="tab" data-bs-target="#t-8403-tab-pane" type="button" role="tab" aria-controls="t-8403-tab-pane" aria-selected="true">视频关联内容表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8404-tab" data-bs-toggle="tab" data-bs-target="#t-8404-tab-pane" type="button" role="tab" aria-controls="t-8404-tab-pane" aria-selected="true">视频错误日志表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8405-tab" data-bs-toggle="tab" data-bs-target="#t-8405-tab-pane" type="button" role="tab" aria-controls="t-8405-tab-pane" aria-selected="true">视频热度统计表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8406-tab" data-bs-toggle="tab" data-bs-target="#t-8406-tab-pane" type="button" role="tab" aria-controls="t-8406-tab-pane" aria-selected="true">视频推荐算法参数表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8407-tab" data-bs-toggle="tab" data-bs-target="#t-8407-tab-pane" type="button" role="tab" aria-controls="t-8407-tab-pane" aria-selected="true">视频广告信息表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8408-tab" data-bs-toggle="tab" data-bs-target="#t-8408-tab-pane" type="button" role="tab" aria-controls="t-8408-tab-pane" aria-selected="true">视频广告播放记录表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8409-tab" data-bs-toggle="tab" data-bs-target="#t-8409-tab-pane" type="button" role="tab" aria-controls="t-8409-tab-pane" aria-selected="true">视频弹幕表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8410-tab" data-bs-toggle="tab" data-bs-target="#t-8410-tab-pane" type="button" role="tab" aria-controls="t-8410-tab-pane" aria-selected="true">视频弹幕屏蔽词表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8411-tab" data-bs-toggle="tab" data-bs-target="#t-8411-tab-pane" type="button" role="tab" aria-controls="t-8411-tab-pane" aria-selected="true">视频多语言字幕表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8412-tab" data-bs-toggle="tab" data-bs-target="#t-8412-tab-pane" type="button" role="tab" aria-controls="t-8412-tab-pane" aria-selected="true">视频转码任务表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8413-tab" data-bs-toggle="tab" data-bs-target="#t-8413-tab-pane" type="button" role="tab" aria-controls="t-8413-tab-pane" aria-selected="true">视频分析指标表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8414-tab" data-bs-toggle="tab" data-bs-target="#t-8414-tab-pane" type="button" role="tab" aria-controls="t-8414-tab-pane" aria-selected="true">视频质量评估表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8415-tab" data-bs-toggle="tab" data-bs-target="#t-8415-tab-pane" type="button" role="tab" aria-controls="t-8415-tab-pane" aria-selected="true">视频水印信息表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8416-tab" data-bs-toggle="tab" data-bs-target="#t-8416-tab-pane" type="button" role="tab" aria-controls="t-8416-tab-pane" aria-selected="true">视频版权信息表</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" ><button class="nav-link " id="t-8417-tab" data-bs-toggle="tab" data-bs-target="#t-8417-tab-pane" type="button" role="tab" aria-controls="t-8417-tab-pane" aria-selected="true">系统管理员</button></li>
+
+<li class="nav-item" role="presentation" style="border: 1px solid #ddd;" >
+    <a class="nav-link "  href="/config_busi/auto_detect" target="_blank">
+        换成你的算法名称
+    </a>
+</li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="my-container-margin" style="display: contents;">
+    <div class="tab-content" id="myTabContent">
+        
+<div class="tab-pane fade show " id="t-8385-tab-pane" role="tabpanel" aria-labelledby="t-8385-tab" tabindex="0">
+视频信息表
+<div>
+<a href="/config_busi/videoinfo" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videoinfo.html' with ins=tab_mc_videoinfo %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videoinfo %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8386-tab-pane" role="tabpanel" aria-labelledby="t-8386-tab" tabindex="0">
+视频分类表
+<div>
+<a href="/config_busi/videocategkwkwory" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videocategkwkwory.html' with ins=tab_mc_videocategkwkwory %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videocategkwkwory %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8387-tab-pane" role="tabpanel" aria-labelledby="t-8387-tab" tabindex="0">
+视频标签表
+<div>
+<a href="/config_busi/videotag" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videotag.html' with ins=tab_mc_videotag %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videotag %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8388-tab-pane" role="tabpanel" aria-labelledby="t-8388-tab" tabindex="0">
+视频文件存储表
+<div>
+<a href="/config_busi/videofilestkwkworage" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videofilestkwkworage.html' with ins=tab_mc_videofilestkwkworage %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videofilestkwkworage %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8389-tab-pane" role="tabpanel" aria-labelledby="t-8389-tab" tabindex="0">
+视频播放记录表
+<div>
+<a href="/config_busi/videoplayreckwkword" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videoplayreckwkword.html' with ins=tab_mc_videoplayreckwkword %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videoplayreckwkword %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8390-tab-pane" role="tabpanel" aria-labelledby="t-8390-tab" tabindex="0">
+视频评论表
+<div>
+<a href="/config_busi/videocomment" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videocomment.html' with ins=tab_mc_videocomment %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videocomment %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8391-tab-pane" role="tabpanel" aria-labelledby="t-8391-tab" tabindex="0">
+视频点赞表
+<div>
+<a href="/config_busi/videolike" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videolike.html' with ins=tab_mc_videolike %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videolike %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8392-tab-pane" role="tabpanel" aria-labelledby="t-8392-tab" tabindex="0">
+视频分享表
+<div>
+<a href="/config_busi/videoshare" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videoshare.html' with ins=tab_mc_videoshare %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videoshare %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8393-tab-pane" role="tabpanel" aria-labelledby="t-8393-tab" tabindex="0">
+视频观看时长统计表
+<div>
+<a href="/config_busi/videoviewduration" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videoviewduration.html' with ins=tab_mc_videoviewduration %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videoviewduration %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8394-tab-pane" role="tabpanel" aria-labelledby="t-8394-tab" tabindex="0">
+视频上传用户表
+<div>
+<a href="/config_busi/videouploader" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videouploader.html' with ins=tab_mc_videouploader %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videouploader %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8395-tab-pane" role="tabpanel" aria-labelledby="t-8395-tab" tabindex="0">
+用户信息表
+<div>
+<a href="/config_busi/userinfo" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_userinfo.html' with ins=tab_mc_userinfo %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_userinfo %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8396-tab-pane" role="tabpanel" aria-labelledby="t-8396-tab" tabindex="0">
+用户权限表
+<div>
+<a href="/config_busi/userpermkwkwission" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_userpermkwkwission.html' with ins=tab_mc_userpermkwkwission %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_userpermkwkwission %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8397-tab-pane" role="tabpanel" aria-labelledby="t-8397-tab" tabindex="0">
+用户观看历史表
+<div>
+<a href="/config_busi/userwatchhkwkwistkwkwory" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_userwatchhkwkwistkwkwory.html' with ins=tab_mc_userwatchhkwkwistkwkwory %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_userwatchhkwkwistkwkwory %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8398-tab-pane" role="tabpanel" aria-labelledby="t-8398-tab" tabindex="0">
+视频审核状态表
+<div>
+<a href="/config_busi/videoauditstatus" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videoauditstatus.html' with ins=tab_mc_videoauditstatus %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videoauditstatus %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8399-tab-pane" role="tabpanel" aria-labelledby="t-8399-tab" tabindex="0">
+视频封面图片表
+<div>
+<a href="/config_busi/videocoverimage" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videocoverimage.html' with ins=tab_mc_videocoverimage %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videocoverimage %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8400-tab-pane" role="tabpanel" aria-labelledby="t-8400-tab" tabindex="0">
+视频矩阵配置表
+<div>
+<a href="/config_busi/videomatrixconfig" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videomatrixconfig.html' with ins=tab_mc_videomatrixconfig %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videomatrixconfig %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8401-tab-pane" role="tabpanel" aria-labelledby="t-8401-tab" tabindex="0">
+视频矩阵节点表
+<div>
+<a href="/config_busi/videomatrixnode" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videomatrixnode.html' with ins=tab_mc_videomatrixnode %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videomatrixnode %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8402-tab-pane" role="tabpanel" aria-labelledby="t-8402-tab" tabindex="0">
+视频矩阵播放记录表
+<div>
+<a href="/config_busi/videomatrixplayreckwkword" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videomatrixplayreckwkword.html' with ins=tab_mc_videomatrixplayreckwkword %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videomatrixplayreckwkword %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8403-tab-pane" role="tabpanel" aria-labelledby="t-8403-tab" tabindex="0">
+视频关联内容表
+<div>
+<a href="/config_busi/videorelatedcontent" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videorelatedcontent.html' with ins=tab_mc_videorelatedcontent %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videorelatedcontent %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8404-tab-pane" role="tabpanel" aria-labelledby="t-8404-tab" tabindex="0">
+视频错误日志表
+<div>
+<a href="/config_busi/videoerrkwkworlog" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videoerrkwkworlog.html' with ins=tab_mc_videoerrkwkworlog %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videoerrkwkworlog %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8405-tab-pane" role="tabpanel" aria-labelledby="t-8405-tab" tabindex="0">
+视频热度统计表
+<div>
+<a href="/config_busi/videopopularity" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videopopularity.html' with ins=tab_mc_videopopularity %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videopopularity %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8406-tab-pane" role="tabpanel" aria-labelledby="t-8406-tab" tabindex="0">
+视频推荐算法参数表
+<div>
+<a href="/config_busi/videorecommendationparams" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videorecommendationparams.html' with ins=tab_mc_videorecommendationparams %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videorecommendationparams %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8407-tab-pane" role="tabpanel" aria-labelledby="t-8407-tab" tabindex="0">
+视频广告信息表
+<div>
+<a href="/config_busi/videoadinfo" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videoadinfo.html' with ins=tab_mc_videoadinfo %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videoadinfo %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8408-tab-pane" role="tabpanel" aria-labelledby="t-8408-tab" tabindex="0">
+视频广告播放记录表
+<div>
+<a href="/config_busi/videoadplayreckwkword" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videoadplayreckwkword.html' with ins=tab_mc_videoadplayreckwkword %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videoadplayreckwkword %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8409-tab-pane" role="tabpanel" aria-labelledby="t-8409-tab" tabindex="0">
+视频弹幕表
+<div>
+<a href="/config_busi/videodanmu" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videodanmu.html' with ins=tab_mc_videodanmu %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videodanmu %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8410-tab-pane" role="tabpanel" aria-labelledby="t-8410-tab" tabindex="0">
+视频弹幕屏蔽词表
+<div>
+<a href="/config_busi/videodanmublockwkwkwords" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videodanmublockwkwkwords.html' with ins=tab_mc_videodanmublockwkwkwords %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videodanmublockwkwkwords %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8411-tab-pane" role="tabpanel" aria-labelledby="t-8411-tab" tabindex="0">
+视频多语言字幕表
+<div>
+<a href="/config_busi/videomultilkwkwingualsubtitles" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videomultilkwkwingualsubtitles.html' with ins=tab_mc_videomultilkwkwingualsubtitles %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videomultilkwkwingualsubtitles %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8412-tab-pane" role="tabpanel" aria-labelledby="t-8412-tab" tabindex="0">
+视频转码任务表
+<div>
+<a href="/config_busi/videotranscodkwkwingtkwkwask" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videotranscodkwkwingtkwkwask.html' with ins=tab_mc_videotranscodkwkwingtkwkwask %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videotranscodkwkwingtkwkwask %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8413-tab-pane" role="tabpanel" aria-labelledby="t-8413-tab" tabindex="0">
+视频分析指标表
+<div>
+<a href="/config_busi/videoanalyskwkwismetrics" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videoanalyskwkwismetrics.html' with ins=tab_mc_videoanalyskwkwismetrics %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videoanalyskwkwismetrics %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8414-tab-pane" role="tabpanel" aria-labelledby="t-8414-tab" tabindex="0">
+视频质量评估表
+<div>
+<a href="/config_busi/videoqualityassessment" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videoqualityassessment.html' with ins=tab_mc_videoqualityassessment %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videoqualityassessment %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8415-tab-pane" role="tabpanel" aria-labelledby="t-8415-tab" tabindex="0">
+视频水印信息表
+<div>
+<a href="/config_busi/videowatermarkinfo" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videowatermarkinfo.html' with ins=tab_mc_videowatermarkinfo %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videowatermarkinfo %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8416-tab-pane" role="tabpanel" aria-labelledby="t-8416-tab" tabindex="0">
+视频版权信息表
+<div>
+<a href="/config_busi/videocopyrightinfo" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_videocopyrightinfo.html' with ins=tab_mc_videocopyrightinfo %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_videocopyrightinfo %}
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8417-tab-pane" role="tabpanel" aria-labelledby="t-8417-tab" tabindex="0">
+系统管理员
+<div>
+<a href="/config_busi/supermanager" target="_blank">
+查看数据
+</a>
+</div>
+<div class="table-responsive">
+<!-- {% include 'tp_table_supermanager.html' with ins=tab_mc_supermanager %} -->
+{% include 'tp_table_v1.html' with ins=tab_mc_supermanager %}
+</div>
+</div>
+ 
+
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+
+CopyRight ©基于深度学习的文案语音图片视频管理分析-视频矩阵系统
+
+{% endblock %}
+
+{% block script-footer %}
+
+{% endblock %}

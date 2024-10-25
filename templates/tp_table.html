@@ -1,0 +1,70 @@
+<a href="/admin/{{appname}}/{{tablename}}/add" target="_blank">添加</a>
+{% if records %}
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+    <tr>
+        {% for param in params %}
+
+        <th>
+            {{param}}
+        </th>
+        {% endfor %}
+        <th>
+            操作
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for record in records %}
+    <tr>
+        {% for val in record.toValues %}
+        <td>
+            <span>
+                {{val}}
+            </span>
+        </td>
+        {% endfor %}
+        <td>
+            <a href="/admin/{{appname}}/{{tablename}}/{{record.id}}/change" target="_blank">
+                修改
+            </a>
+            <form action="/myadmin/op_unit" method="post">
+                {% csrf_token %}
+                <input type="text" name="id" value="{{record.id}}" hidden="hidden" readonly>
+                <input type="text" name="appname" value="{{appname}}" hidden="hidden" readonly>
+                <input type="text" name="tablename" value="{{tablename}}" hidden="hidden" readonly>
+                <input type="text" name="optype" value="delete" hidden="hidden" readonly>
+                <button type="submit">
+                    删除
+                </button>
+            </form>
+            <a href="">
+                预览
+            </a>
+        </td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
+<div>
+    共计{{total_record }}条{{total_page}}页
+    <a href="">
+        首页
+    </a>
+    <a href="">
+        上一页
+    </a>
+    <a href="">
+        下一页
+    </a>
+    <a href="">
+        尾页
+    </a>
+</div>
+{% else %}
+<h3>
+    Empty Data
+</h3>
+{% endif %}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统 视频热度统计表(videopopularity)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_viewcount_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 观看次数 ******************** pie_v2***/ init_echart("echart_videopopularity_viewcount_pie_v2",'videopopularity.viewcount_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_viewcount_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 观看次数 ******************** pie_v1***/ init_echart("echart_videopopularity_viewcount_pie_v1",'videopopularity.viewcount_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_viewcount_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 观看次数 ******************** pie***/ init_echart("echart_videopopularity_viewcount_pie",'videopopularity.viewcount_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videopopularity_viewcount_line" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 观看次数 ******************** line***/ init_echart("echart_videopopularity_viewcount_line",'videopopularity.viewcount_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videopopularity_viewcount_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 观看次数 ******************** bar***/ init_echart("echart_videopopularity_viewcount_bar",'videopopularity.viewcount_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videopopularity_viewcount_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 观看次数 ******************** bar_v1***/ init_echart("echart_videopopularity_viewcount_bar_v1",'videopopularity.viewcount_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_likecount_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 点赞次数 ******************** pie_v2***/ init_echart("echart_videopopularity_likecount_pie_v2",'videopopularity.likecount_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_likecount_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 点赞次数 ******************** pie_v1***/ init_echart("echart_videopopularity_likecount_pie_v1",'videopopularity.likecount_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_likecount_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 点赞次数 ******************** pie***/ init_echart("echart_videopopularity_likecount_pie",'videopopularity.likecount_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videopopularity_likecount_line" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 点赞次数 ******************** line***/ init_echart("echart_videopopularity_likecount_line",'videopopularity.likecount_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videopopularity_likecount_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 点赞次数 ******************** bar***/ init_echart("echart_videopopularity_likecount_bar",'videopopularity.likecount_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videopopularity_likecount_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 点赞次数 ******************** bar_v1***/ init_echart("echart_videopopularity_likecount_bar_v1",'videopopularity.likecount_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_sharecount_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 分享次数 ******************** pie_v2***/ init_echart("echart_videopopularity_sharecount_pie_v2",'videopopularity.sharecount_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_sharecount_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 分享次数 ******************** pie_v1***/ init_echart("echart_videopopularity_sharecount_pie_v1",'videopopularity.sharecount_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_sharecount_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 分享次数 ******************** pie***/ init_echart("echart_videopopularity_sharecount_pie",'videopopularity.sharecount_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videopopularity_sharecount_line" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 分享次数 ******************** line***/ init_echart("echart_videopopularity_sharecount_line",'videopopularity.sharecount_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videopopularity_sharecount_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 分享次数 ******************** bar***/ init_echart("echart_videopopularity_sharecount_bar",'videopopularity.sharecount_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videopopularity_sharecount_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 分享次数 ******************** bar_v1***/ init_echart("echart_videopopularity_sharecount_bar_v1",'videopopularity.sharecount_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_commentcount_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 评论次数 ******************** pie_v2***/ init_echart("echart_videopopularity_commentcount_pie_v2",'videopopularity.commentcount_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_commentcount_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 评论次数 ******************** pie_v1***/ init_echart("echart_videopopularity_commentcount_pie_v1",'videopopularity.commentcount_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_commentcount_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 评论次数 ******************** pie***/ init_echart("echart_videopopularity_commentcount_pie",'videopopularity.commentcount_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videopopularity_commentcount_line" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 评论次数 ******************** line***/ init_echart("echart_videopopularity_commentcount_line",'videopopularity.commentcount_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videopopularity_commentcount_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 评论次数 ******************** bar***/ init_echart("echart_videopopularity_commentcount_bar",'videopopularity.commentcount_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videopopularity_commentcount_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 评论次数 ******************** bar_v1***/ init_echart("echart_videopopularity_commentcount_bar_v1",'videopopularity.commentcount_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_popularitysckwkwore_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 热度评分 ******************** pie_v2***/ init_echart("echart_videopopularity_popularitysckwkwore_pie_v2",'videopopularity.popularitysckwkwore_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_popularitysckwkwore_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 热度评分 ******************** pie_v1***/ init_echart("echart_videopopularity_popularitysckwkwore_pie_v1",'videopopularity.popularitysckwkwore_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_popularitysckwkwore_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 热度评分 ******************** pie***/ init_echart("echart_videopopularity_popularitysckwkwore_pie",'videopopularity.popularitysckwkwore_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videopopularity_popularitysckwkwore_line" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 热度评分 ******************** line***/ init_echart("echart_videopopularity_popularitysckwkwore_line",'videopopularity.popularitysckwkwore_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videopopularity_popularitysckwkwore_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 热度评分 ******************** bar***/ init_echart("echart_videopopularity_popularitysckwkwore_bar",'videopopularity.popularitysckwkwore_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videopopularity_popularitysckwkwore_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 热度评分 ******************** bar_v1***/ init_echart("echart_videopopularity_popularitysckwkwore_bar_v1",'videopopularity.popularitysckwkwore_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_publkwkwishtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 发布时间 ******************** pie_v2***/ init_echart("echart_videopopularity_publkwkwishtime_pie_v2",'videopopularity.publkwkwishtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_publkwkwishtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 发布时间 ******************** pie_v1***/ init_echart("echart_videopopularity_publkwkwishtime_pie_v1",'videopopularity.publkwkwishtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_publkwkwishtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 发布时间 ******************** pie***/ init_echart("echart_videopopularity_publkwkwishtime_pie",'videopopularity.publkwkwishtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videopopularity_publkwkwishtime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 发布时间 ******************** line***/ init_echart("echart_videopopularity_publkwkwishtime_line",'videopopularity.publkwkwishtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videopopularity_publkwkwishtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 发布时间 ******************** bar***/ init_echart("echart_videopopularity_publkwkwishtime_bar",'videopopularity.publkwkwishtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videopopularity_publkwkwishtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 发布时间 ******************** bar_v1***/ init_echart("echart_videopopularity_publkwkwishtime_bar_v1",'videopopularity.publkwkwishtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_updatetime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 更新时间 ******************** pie_v2***/ init_echart("echart_videopopularity_updatetime_pie_v2",'videopopularity.updatetime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_updatetime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 更新时间 ******************** pie_v1***/ init_echart("echart_videopopularity_updatetime_pie_v1",'videopopularity.updatetime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videopopularity_updatetime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 更新时间 ******************** pie***/ init_echart("echart_videopopularity_updatetime_pie",'videopopularity.updatetime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videopopularity_updatetime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 更新时间 ******************** line***/ init_echart("echart_videopopularity_updatetime_line",'videopopularity.updatetime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videopopularity_updatetime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 更新时间 ******************** bar***/ init_echart("echart_videopopularity_updatetime_bar",'videopopularity.updatetime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videopopularity_updatetime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频热度统计表 更新时间 ******************** bar_v1***/ init_echart("echart_videopopularity_updatetime_bar_v1",'videopopularity.updatetime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

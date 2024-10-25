@@ -1,0 +1,64 @@
+{% if ins %}
+<style>  
+    .card {  
+      width: 300px;  
+      border-radius: 10px;  
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+      background-color: #e6f2ff; /* 淡蓝色背景 */  
+      margin: 20px auto;  
+      padding: 20px;  
+      text-align: center;  
+      color: #333;  
+      font-family: Arial, sans-serif;  
+    }  
+    
+    .card h2 {  
+      color: #1e40af; /* 深蓝色标题 */  
+      margin-bottom: 10px;  
+    }  
+    
+    .card p {  
+      line-height: 1.5;  
+    }  
+    
+    .card .button {  
+      display: inline-block;  
+      margin-top: 15px;  
+      padding: 10px 20px;  
+      background-color: #1e40af; /* 深蓝色按钮 */  
+      color: white;  
+      text-decoration: none;  
+      border-radius: 5px;  
+      transition: background-color 0.3s ease;  
+    }  
+    
+    .card .button:hover {  
+      background-color: #18348e; /* 鼠标悬停时的按钮颜色 */  
+    }  
+  </style>  
+  <div class="row">
+  
+  {% for param, record in zip(ins.params, ins.records) %}
+  <!-- 基本的卡片 -->  
+  <div class="col-sm-4">
+  
+  <div class="Card" >  
+      <!-- 卡片图片 -->  
+      <img src="/static/imgs/default.jpg" class="card-img-top" alt="Card Image">  
+      <!-- 卡片主体 -->  
+      <div class="card-body">  
+        <!-- 卡片标题 -->  
+        <h5 class="card-title">详情</h5>  
+        <!-- 卡片文本 -->  
+        <p class="card-text">{{param}}:{{record}}</p>  
+        <!-- 卡片链接 -->  
+        <a href="#" class="btn btn-primary">Go somewhere</a>  
+      </div>  
+  </div>
+  </div>
+  {% endfor %}
+{% else %}
+<h3>
+    Empty Data
+</h3>
+{% endif %}

@@ -1,0 +1,987 @@
+{% extends '../tp.html' %}
+
+{% block title %}
+视频错误日志表
+{% endblock %}
+
+{% block body %}
+  <div class="my-container-margin">
+    <div class="divider"></div>
+    {% csrf_token %}
+    <div class="section">
+      <h4>视频错误日志表</h4>
+      <div>
+        <div class="row">
+          
+          {% if has_add %}
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modalinsert" class="waves-effect waves-light btn">添加</button>
+          {% endif %}
+          <div class="divider"></div>
+        
+        
+          
+<div class="col-sm-10">
+</div>
+<div class="col-sm-2">
+<a href="/config_visual/bi_tpvideoerrkwkworlog" target="_blank" class="waves-effect waves-light btn">
+统计分析
+</a>
+</div>
+        </div>  
+        <div class="section">
+          {% if record %}
+            <h3>Empty Data</h3>
+          {% else %}
+          
+<div class="row custom-form">
+<form action="" method="get">
+
+
+<div class="form-group">
+<label for="videoid">关联视频ID(videoid)</label>
+<select name="videoid_search" id="videoid_search">
+<option value="">未选择</option>
+{% for record in data_mc_videoinfo_58070 %}
+<option value="{{record.value}}">
+<p>{{record.value}}:{{record.label }}</p>
+</option>
+{% endfor %}
+</select>
+</div>
+
+
+
+<div class="form-group">
+<label for="errkwkwortype">错误类型(errkwkwortype)</label>
+<input type="text" class="form-control" name="errkwkwortype_search" id="errkwkwortype_search">
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="form-group">
+<label for="resolvedby">关联解决人(resolvedby)</label>
+<select name="resolvedby_search" id="resolvedby_search">
+<option value="">未选择</option>
+{% for record in data_mc_supermanager_58076 %}
+<option value="{{record.value}}">
+<p>{{record.value}}:{{record.label }}</p>
+</option>
+{% endfor %}
+</select>
+</div>
+
+
+
+<div class="form-group">
+<label for="devicekwkwinfo">设备信息(devicekwkwinfo)</label>
+<input type="text" class="form-control" name="devicekwkwinfo_search" id="devicekwkwinfo_search">
+</div>
+</div>
+
+
+
+<div class="form-group">
+<label for="clientip">客户端IP(clientip)</label>
+<input type="text" class="form-control" name="clientip_search" id="clientip_search">
+</div>
+</div>
+
+
+<div class="col-sm-2">
+<button type="submit" class="btn btn-primary" >
+<i class="fas fa-search">搜索</i>
+</button>
+<a type="reset" class="btn btn-default" href="/config_busi/videoerrkwkworlog">
+<i class="fas fa-eraser">重置</i>
+</a>
+</div>
+</form>
+
+          </div>
+            <table class="table table-striped table-hover table-bordered">
+              <thead>
+                <tr>
+                  
+{% if mcauthfield_videoid.mcauthview %}
+<td>
+关联视频ID
+</td>
+{% endif %}
+
+{% if mcauthfield_errkwkwortype.mcauthview %}
+<td>
+错误类型
+</td>
+{% endif %}
+
+{% if mcauthfield_errkwkwordescription.mcauthview %}
+<td>
+错误描述
+</td>
+{% endif %}
+
+{% if mcauthfield_errkwkwortime.mcauthview %}
+<td>
+错误时间
+</td>
+{% endif %}
+
+{% if mcauthfield_resolved.mcauthview %}
+<td>
+是否已解决
+</td>
+{% endif %}
+
+{% if mcauthfield_resolvedtime.mcauthview %}
+<td>
+解决时间
+</td>
+{% endif %}
+
+{% if mcauthfield_resolvedby.mcauthview %}
+<td>
+关联解决人
+</td>
+{% endif %}
+
+{% if mcauthfield_devicekwkwinfo.mcauthview %}
+<td>
+设备信息
+</td>
+{% endif %}
+
+{% if mcauthfield_clientip.mcauthview %}
+<td>
+客户端IP
+</td>
+{% endif %}
+<th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for record in records %}
+                  <tr>
+                    
+ {% if mcauthfield_videoid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.videoid}}">
+{{record.videoid}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_errkwkwortype.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.errkwkwortype}}">
+{{record.errkwkwortype}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_errkwkwordescription.mcauthview %}
+<td class="text-nowrap-cell">
+
+{% if record.errkwkwordescription %}
+{{record.errkwkwordescription.name}}
+<p title="{{record.errkwkwordescription}}">
+{{record.errkwkwordescription|truncatechars:20}}
+</p>
+{% endif %}
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_errkwkwortime.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.errkwkwortime}}">
+{{record.errkwkwortime}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_resolved.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.resolved}}">
+{{record.resolved}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_resolvedtime.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.resolvedtime}}">
+{{record.resolvedtime}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_resolvedby.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.resolvedby}}">
+{{record.resolvedby}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_devicekwkwinfo.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.devicekwkwinfo}}">
+{{record.devicekwkwinfo}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_clientip.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.clientip}}">
+{{record.clientip}}
+</p>
+
+</td>
+{% endif %}
+ <td>
+                      {% if has_upd %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalupdate">修改</button>
+                      {% endif %}
+                      {% if has_del %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalremove">删除</button>
+                      {% endif %}
+                      {% if has_view %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalpreview">查看</button>
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block modal %}
+  <!-- Modal Structure -->
+
+  {% if has_add %}
+    <div id="modalinsert" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">
+              <h4>添加</h4>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="custom-form">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="add" hidden />{% csrf_token %}<div class="">
+        {% if mcauthfield_videoid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="videoid" class="form-label form-group">关联视频ID</label>
+
+<select class="form-select form-select-lg mb-3" name="videoid" id="videoid" {% if not mcauthfield_videoid.mcisblank %}required {% endif %} data-name="insert"> <option value="" selected>未选择</option> {% for record in data_mc_videoinfo_58070 %} 
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+ {% endfor %}
+</select>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_errkwkwortype.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="errkwkwortype" class="form-label form-group">错误类型</label>
+
+<input type="text" class="form-control form-control-lg" name="errkwkwortype" id="errkwkwortype"{% if not mcauthfield_errkwkwortype.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_errkwkwordescription.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="errkwkwordescription" class="form-label form-group">错误描述</label>
+
+<textarea class="form-control form-control-lg" name="errkwkwordescription" id="errkwkwordescription" {% if not mcauthfield_errkwkwordescription.mcisblank %}required {% endif %}data-name="insert"></textarea>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_errkwkwortime.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="errkwkwortime" class="form-label form-group">错误时间</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_resolved.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="resolved" class="form-label form-group">是否已解决</label>
+
+<select class="form-select form-select-lg mb-3" name="resolved" id="resolved" {% if not mcauthfield_resolved.mcisblank %}required {% endif %} data-name="insert">
+<option value="True" selected >是</option>
+<option value="False">否</option>
+</select>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_resolvedtime.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="resolvedtime" class="form-label form-group">解决时间</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_resolvedby.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="resolvedby" class="form-label form-group">关联解决人</label>
+
+<select class="form-select form-select-lg mb-3" name="resolvedby" id="resolvedby" {% if not mcauthfield_resolvedby.mcisblank %}required {% endif %} data-name="insert"> <option value="" selected>未选择</option> {% for record in data_mc_supermanager_58076 %} 
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+ {% endfor %}
+</select>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_devicekwkwinfo.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="devicekwkwinfo" class="form-label form-group">设备信息</label>
+
+<input type="text" class="form-control form-control-lg" name="devicekwkwinfo" id="devicekwkwinfo"{% if not mcauthfield_devicekwkwinfo.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_clientip.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="clientip" class="form-label form-group">客户端IP</label>
+
+<input type="text" class="form-control form-control-lg" name="clientip" id="clientip"{% if not mcauthfield_clientip.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="modal-action modal-close btn-primary btn waves-effect waves-light">提交</button>
+                  <button type="reset" class="modal-action modal-close btn-default btn waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_upd %}
+    <div id="modalupdate" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">修改</div>
+          </div>
+          <div class="modal-body">
+            <div class="custom-form">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="upd" hidden />{% csrf_token %}<input type="text" name="_id_upd" value="" data-name="update_id" hidden />
+                <div class="">
+           {% if mcauthfield_videoid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="videoid_upd"
+class="form-label form-group">
+关联视频ID(videoid)
+</label>
+
+<select class="form-select form-select-lg mb-3" name="videoid"
+id="videoid_upd"
+{% if not mcauthfield_videoid.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_videoid.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+<option value="">未选择</option>
+{% for record in data_mc_videoinfo_58070 %}
+
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+
+{% endfor %}
+</select>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_errkwkwortype.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="errkwkwortype_upd"
+class="form-label form-group">
+错误类型(errkwkwortype)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="errkwkwortype"
+id="errkwkwortype_upd"
+placeholder="错误类型"
+{% if not mcauthfield_errkwkwortype.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_errkwkwortype.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_errkwkwordescription.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="errkwkwordescription_upd"
+class="form-label form-group">
+错误描述(errkwkwordescription)
+</label>
+
+<textarea type="text" class="validate form-control form-control-lg"
+name="errkwkwordescription"
+id="errkwkwordescription_upd"
+placeholder="错误描述"
+{% if not mcauthfield_errkwkwordescription.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_errkwkwordescription.mcauthchange %}
+readonly
+{% endif %}
+data-name="update"></textarea>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_errkwkwortime.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="errkwkwortime_upd"
+class="form-label form-group">
+错误时间(errkwkwortime)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_resolved.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="resolved_upd"
+class="form-label form-group">
+是否已解决(resolved)
+</label>
+
+<select class="form-select form-select-lg mb-3" name="resolved"
+id="resolved_upd"
+{% if not mcauthfield_resolved.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_resolved.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+<option value="True" selected>是</option>
+<option value="False">否</option>
+</select>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_resolvedtime.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="resolvedtime_upd"
+class="form-label form-group">
+解决时间(resolvedtime)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_resolvedby.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="resolvedby_upd"
+class="form-label form-group">
+关联解决人(resolvedby)
+</label>
+
+<select class="form-select form-select-lg mb-3" name="resolvedby"
+id="resolvedby_upd"
+{% if not mcauthfield_resolvedby.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_resolvedby.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+<option value="">未选择</option>
+{% for record in data_mc_supermanager_58076 %}
+
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+
+{% endfor %}
+</select>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_devicekwkwinfo.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="devicekwkwinfo_upd"
+class="form-label form-group">
+设备信息(devicekwkwinfo)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="devicekwkwinfo"
+id="devicekwkwinfo_upd"
+placeholder="设备信息"
+{% if not mcauthfield_devicekwkwinfo.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_devicekwkwinfo.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_clientip.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="clientip_upd"
+class="form-label form-group">
+客户端IP(clientip)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="clientip"
+id="clientip_upd"
+placeholder="客户端IP"
+{% if not mcauthfield_clientip.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_clientip.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">提交</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_del %}
+    <div id="modalremove" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">删除</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>确认删除这条记录吗?</p>
+          </div>
+          <div class="modal-footer">
+            <div class="row custom-form">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="del" hidden />{% csrf_token %}<input type="text" name="_id" value="" data-name="remove" hidden />
+
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">确认</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_view %}
+    <div id="modalpreview" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <h4>预览</h4>
+          <div class="">
+            
+{% if mcauthfield_videoid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">关联视频ID</p>
+
+<p id="videoid_view">
+{{record.videoid|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_errkwkwortype.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">错误类型</p>
+
+<p id="errkwkwortype_view">
+{{record.errkwkwortype|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_errkwkwordescription.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">错误描述</p>
+
+<p id="errkwkwordescription_view">
+{{record.errkwkwordescription|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_errkwkwortime.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">错误时间</p>
+
+<p id="errkwkwortime_view">
+{{record.errkwkwortime|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_resolved.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">是否已解决</p>
+
+<p id="resolved_view">
+{{record.resolved|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_resolvedtime.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">解决时间</p>
+
+<p id="resolvedtime_view">
+{{record.resolvedtime|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_resolvedby.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">关联解决人</p>
+
+<p id="resolvedby_view">
+{{record.resolvedby|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_devicekwkwinfo.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">设备信息</p>
+
+<p id="devicekwkwinfo_view">
+{{record.devicekwkwinfo|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_clientip.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">客户端IP</p>
+
+<p id="clientip_view">
+{{record.clientip|safe }}
+</p>
+
+</div>
+{% endif %}
+<div class="modal-footer">
+              <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">关闭</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block script-footer %}
+<script>
+  function myreset(){
+window.location.href= "/config_busi/videoerrkwkworlog";
+};
+if (document.getElementById("modalupdate")){
+document.getElementById("modalupdate").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/videoerrkwkworlog',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+{% if mcauthfield_videoid.mcauthview %}
+$("#videoid_upd").val(resp.ins.videoid);
+{% endif %}
+
+{% if mcauthfield_errkwkwortype.mcauthview %}
+$("#errkwkwortype_upd").val(resp.ins.errkwkwortype);
+{% endif %}
+
+{% if mcauthfield_errkwkwordescription.mcauthview %}
+$("#errkwkwordescription_upd").val(resp.ins.errkwkwordescription);
+{% endif %}
+
+{% if mcauthfield_errkwkwortime.mcauthview %}
+$("#errkwkwortime_upd").val(resp.ins.errkwkwortime);
+{% endif %}
+
+{% if mcauthfield_resolved.mcauthview %}
+$("#resolved_upd").val(resp.ins.resolved);
+{% endif %}
+
+{% if mcauthfield_resolvedtime.mcauthview %}
+$("#resolvedtime_upd").val(resp.ins.resolvedtime);
+{% endif %}
+
+{% if mcauthfield_resolvedby.mcauthview %}
+$("#resolvedby_upd").val(resp.ins.resolvedby);
+{% endif %}
+
+{% if mcauthfield_devicekwkwinfo.mcauthview %}
+$("#devicekwkwinfo_upd").val(resp.ins.devicekwkwinfo);
+{% endif %}
+
+{% if mcauthfield_clientip.mcauthview %}
+$("#clientip_upd").val(resp.ins.clientip);
+{% endif %}
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+function upd(_id){
+let data = {
+optype:'get',
+_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value,
+
+{% if mcauthfield_videoid.mcauthchange %}
+videoid:$("#videoid_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_errkwkwortype.mcauthchange %}
+errkwkwortype:$("#errkwkwortype_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_errkwkwordescription.mcauthchange %}
+errkwkwordescription:$("#errkwkwordescription_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_errkwkwortime.mcauthchange %}
+errkwkwortime:$("#errkwkwortime_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_resolved.mcauthchange %}
+resolved:$("#resolved_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_resolvedtime.mcauthchange %}
+resolvedtime:$("#resolvedtime_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_resolvedby.mcauthchange %}
+resolvedby:$("#resolvedby_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_devicekwkwinfo.mcauthchange %}
+devicekwkwinfo:$("#devicekwkwinfo_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_clientip.mcauthchange %}
+clientip:$("#clientip_upd]").val(),
+{% endif %}
+
+}
+$.ajax({
+url: '/config_busi/videoerrkwkworlog',
+method: 'post',
+data: data,
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+if (document.getElementById("modalpreview")) {
+document.getElementById("modalpreview").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/videoerrkwkworlog',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+
+
+{% if mcauthfield_videoid.mcauthview %}
+document.getElementById("videoid_view").innerHTML=resp.ins.videoid;
+{% endif %}
+
+
+
+
+{% if mcauthfield_errkwkwortype.mcauthview %}
+document.getElementById("errkwkwortype_view").innerHTML=resp.ins.errkwkwortype;
+{% endif %}
+
+
+
+
+{% if mcauthfield_errkwkwordescription.mcauthview %}
+document.getElementById("errkwkwordescription_view").innerHTML=resp.ins.errkwkwordescription;
+{% endif %}
+
+
+
+
+{% if mcauthfield_errkwkwortime.mcauthview %}
+document.getElementById("errkwkwortime_view").innerHTML=resp.ins.errkwkwortime;
+{% endif %}
+
+
+
+
+{% if mcauthfield_resolved.mcauthview %}
+document.getElementById("resolved_view").innerHTML=resp.ins.resolved;
+{% endif %}
+
+
+
+
+{% if mcauthfield_resolvedtime.mcauthview %}
+document.getElementById("resolvedtime_view").innerHTML=resp.ins.resolvedtime;
+{% endif %}
+
+
+
+
+{% if mcauthfield_resolvedby.mcauthview %}
+document.getElementById("resolvedby_view").innerHTML=resp.ins.resolvedby;
+{% endif %}
+
+
+
+
+{% if mcauthfield_devicekwkwinfo.mcauthview %}
+document.getElementById("devicekwkwinfo_view").innerHTML=resp.ins.devicekwkwinfo;
+{% endif %}
+
+
+
+
+{% if mcauthfield_clientip.mcauthview %}
+document.getElementById("clientip_view").innerHTML=resp.ins.clientip;
+{% endif %}
+
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+if (document.getElementById("modalremove")) {
+document.getElementById("modalremove").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=remove]").val(_id);
+});
+};
+function del(_id){
+$.ajax({
+url: '/config_busi/videoerrkwkworlog',
+method: 'post',
+data: {optype:'del',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+</script>
+{% endblock %}

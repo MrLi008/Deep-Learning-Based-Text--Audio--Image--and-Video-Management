@@ -1,0 +1,989 @@
+{% extends '../tp.html' %}
+
+{% block title %}
+视频矩阵节点表
+{% endblock %}
+
+{% block body %}
+  <div class="my-container-margin">
+    <div class="divider"></div>
+    {% csrf_token %}
+    <div class="section">
+      <h4>视频矩阵节点表</h4>
+      <div>
+        <div class="row">
+          
+          {% if has_add %}
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modalinsert" class="waves-effect waves-light btn">添加</button>
+          {% endif %}
+          <div class="divider"></div>
+        
+        
+          
+<div class="col-sm-10">
+</div>
+<div class="col-sm-2">
+<a href="/config_visual/bi_tpvideomatrixnode" target="_blank" class="waves-effect waves-light btn">
+统计分析
+</a>
+</div>
+        </div>  
+        <div class="section">
+          {% if record %}
+            <h3>Empty Data</h3>
+          {% else %}
+          
+<div class="row custom-form">
+<form action="" method="get">
+
+
+<div class="form-group">
+<label for="nodename">节点名称(nodename)</label>
+<input type="text" class="form-control" name="nodename_search" id="nodename_search">
+</div>
+</div>
+
+
+
+<div class="form-group">
+<label for="videosourceid">关联视频源ID(videosourceid)</label>
+<select name="videosourceid_search" id="videosourceid_search">
+<option value="">未选择</option>
+{% for record in data_mc_videoinfo_58044 %}
+<option value="{{record.value}}">
+<p>{{record.value}}:{{record.label }}</p>
+</option>
+{% endfor %}
+</select>
+</div>
+
+
+
+<div class="form-group">
+<label for="videokwkwfkwkwormat">视频格式(videokwkwfkwkwormat)</label>
+<input type="text" class="form-control" name="videokwkwfkwkwormat_search" id="videokwkwfkwkwormat_search">
+</div>
+</div>
+
+
+
+<div class="form-group">
+<label for="resolution">分辨率(resolution)</label>
+<input type="text" class="form-control" name="resolution_search" id="resolution_search">
+</div>
+</div>
+
+
+
+<div class="form-group">
+<label for="status">状态如在线、离线、维护中(status)</label>
+<input type="text" class="form-control" name="status_search" id="status_search">
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="form-group">
+<label for="parentnodeid">关联父节点ID用于示节点之间的层级关系(parentnodeid)</label>
+<select name="parentnodeid_search" id="parentnodeid_search">
+<option value="">未选择</option>
+{% for record in data_mc_videomatrixnode_58050 %}
+<option value="{{record.value}}">
+<p>{{record.value}}:{{record.label }}</p>
+</option>
+{% endfor %}
+</select>
+</div>
+
+
+
+
+<div class="col-sm-2">
+<button type="submit" class="btn btn-primary" >
+<i class="fas fa-search">搜索</i>
+</button>
+<a type="reset" class="btn btn-default" href="/config_busi/videomatrixnode">
+<i class="fas fa-eraser">重置</i>
+</a>
+</div>
+</form>
+
+          </div>
+            <table class="table table-striped table-hover table-bordered">
+              <thead>
+                <tr>
+                  
+{% if mcauthfield_nodename.mcauthview %}
+<td>
+节点名称
+</td>
+{% endif %}
+
+{% if mcauthfield_videosourceid.mcauthview %}
+<td>
+关联视频源ID
+</td>
+{% endif %}
+
+{% if mcauthfield_videokwkwfkwkwormat.mcauthview %}
+<td>
+视频格式
+</td>
+{% endif %}
+
+{% if mcauthfield_resolution.mcauthview %}
+<td>
+分辨率
+</td>
+{% endif %}
+
+{% if mcauthfield_status.mcauthview %}
+<td>
+状态如在线、离线、维护中
+</td>
+{% endif %}
+
+{% if mcauthfield_createtime.mcauthview %}
+<td>
+创建时间
+</td>
+{% endif %}
+
+{% if mcauthfield_updatetime.mcauthview %}
+<td>
+更新时间
+</td>
+{% endif %}
+
+{% if mcauthfield_parentnodeid.mcauthview %}
+<td>
+关联父节点ID用于示节点之间的层级关系
+</td>
+{% endif %}
+
+{% if mcauthfield_description.mcauthview %}
+<td>
+描述信息
+</td>
+{% endif %}
+<th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for record in records %}
+                  <tr>
+                    
+ {% if mcauthfield_nodename.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.nodename}}">
+{{record.nodename}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_videosourceid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.videosourceid}}">
+{{record.videosourceid}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_videokwkwfkwkwormat.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.videokwkwfkwkwormat}}">
+{{record.videokwkwfkwkwormat}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_resolution.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.resolution}}">
+{{record.resolution}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_status.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.status}}">
+{{record.status}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_createtime.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.createtime}}">
+{{record.createtime}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_updatetime.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.updatetime}}">
+{{record.updatetime}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_parentnodeid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.parentnodeid}}">
+{{record.parentnodeid}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_description.mcauthview %}
+<td class="text-nowrap-cell">
+
+{% if record.description %}
+{{record.description.name}}
+<p title="{{record.description}}">
+{{record.description|truncatechars:20}}
+</p>
+{% endif %}
+
+</td>
+{% endif %}
+ <td>
+                      {% if has_upd %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalupdate">修改</button>
+                      {% endif %}
+                      {% if has_del %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalremove">删除</button>
+                      {% endif %}
+                      {% if has_view %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalpreview">查看</button>
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block modal %}
+  <!-- Modal Structure -->
+
+  {% if has_add %}
+    <div id="modalinsert" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">
+              <h4>添加</h4>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="custom-form">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="add" hidden />{% csrf_token %}<div class="">
+        {% if mcauthfield_nodename.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="nodename" class="form-label form-group">节点名称</label>
+
+<input type="text" class="form-control form-control-lg" name="nodename" id="nodename"{% if not mcauthfield_nodename.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_videosourceid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="videosourceid" class="form-label form-group">关联视频源ID</label>
+
+<select class="form-select form-select-lg mb-3" name="videosourceid" id="videosourceid" {% if not mcauthfield_videosourceid.mcisblank %}required {% endif %} data-name="insert"> <option value="" selected>未选择</option> {% for record in data_mc_videoinfo_58044 %} 
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+ {% endfor %}
+</select>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_videokwkwfkwkwormat.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="videokwkwfkwkwormat" class="form-label form-group">视频格式</label>
+
+<input type="text" class="form-control form-control-lg" name="videokwkwfkwkwormat" id="videokwkwfkwkwormat"{% if not mcauthfield_videokwkwfkwkwormat.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_resolution.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="resolution" class="form-label form-group">分辨率</label>
+
+<input type="text" class="form-control form-control-lg" name="resolution" id="resolution"{% if not mcauthfield_resolution.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_status.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="status" class="form-label form-group">状态如在线、离线、维护中</label>
+
+<input type="text" class="form-control form-control-lg" name="status" id="status"{% if not mcauthfield_status.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_createtime.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="createtime" class="form-label form-group">创建时间</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_updatetime.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="updatetime" class="form-label form-group">更新时间</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_parentnodeid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="parentnodeid" class="form-label form-group">关联父节点ID用于示节点之间的层级关系</label>
+
+<select class="form-select form-select-lg mb-3" name="parentnodeid" id="parentnodeid" {% if not mcauthfield_parentnodeid.mcisblank %}required {% endif %} data-name="insert"> <option value="" selected>未选择</option> {% for record in data_mc_videomatrixnode_58050 %} 
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+ {% endfor %}
+</select>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_description.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="description" class="form-label form-group">描述信息</label>
+
+<textarea class="form-control form-control-lg" name="description" id="description" {% if not mcauthfield_description.mcisblank %}required {% endif %}data-name="insert"></textarea>
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="modal-action modal-close btn-primary btn waves-effect waves-light">提交</button>
+                  <button type="reset" class="modal-action modal-close btn-default btn waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_upd %}
+    <div id="modalupdate" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">修改</div>
+          </div>
+          <div class="modal-body">
+            <div class="custom-form">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="upd" hidden />{% csrf_token %}<input type="text" name="_id_upd" value="" data-name="update_id" hidden />
+                <div class="">
+           {% if mcauthfield_nodename.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="nodename_upd"
+class="form-label form-group">
+节点名称(nodename)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="nodename"
+id="nodename_upd"
+placeholder="节点名称"
+{% if not mcauthfield_nodename.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_nodename.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_videosourceid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="videosourceid_upd"
+class="form-label form-group">
+关联视频源ID(videosourceid)
+</label>
+
+<select class="form-select form-select-lg mb-3" name="videosourceid"
+id="videosourceid_upd"
+{% if not mcauthfield_videosourceid.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_videosourceid.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+<option value="">未选择</option>
+{% for record in data_mc_videoinfo_58044 %}
+
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+
+{% endfor %}
+</select>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_videokwkwfkwkwormat.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="videokwkwfkwkwormat_upd"
+class="form-label form-group">
+视频格式(videokwkwfkwkwormat)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="videokwkwfkwkwormat"
+id="videokwkwfkwkwormat_upd"
+placeholder="视频格式"
+{% if not mcauthfield_videokwkwfkwkwormat.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_videokwkwfkwkwormat.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_resolution.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="resolution_upd"
+class="form-label form-group">
+分辨率(resolution)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="resolution"
+id="resolution_upd"
+placeholder="分辨率"
+{% if not mcauthfield_resolution.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_resolution.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_status.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="status_upd"
+class="form-label form-group">
+状态如在线、离线、维护中(status)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="status"
+id="status_upd"
+placeholder="状态如在线、离线、维护中"
+{% if not mcauthfield_status.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_status.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_createtime.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="createtime_upd"
+class="form-label form-group">
+创建时间(createtime)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_updatetime.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="updatetime_upd"
+class="form-label form-group">
+更新时间(updatetime)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_parentnodeid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="parentnodeid_upd"
+class="form-label form-group">
+关联父节点ID用于示节点之间的层级关系(parentnodeid)
+</label>
+
+<select class="form-select form-select-lg mb-3" name="parentnodeid"
+id="parentnodeid_upd"
+{% if not mcauthfield_parentnodeid.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_parentnodeid.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+<option value="">未选择</option>
+{% for record in data_mc_videomatrixnode_58050 %}
+
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+
+{% endfor %}
+</select>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_description.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="description_upd"
+class="form-label form-group">
+描述信息(description)
+</label>
+
+<textarea type="text" class="validate form-control form-control-lg"
+name="description"
+id="description_upd"
+placeholder="描述信息"
+{% if not mcauthfield_description.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_description.mcauthchange %}
+readonly
+{% endif %}
+data-name="update"></textarea>
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">提交</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_del %}
+    <div id="modalremove" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">删除</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>确认删除这条记录吗?</p>
+          </div>
+          <div class="modal-footer">
+            <div class="row custom-form">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="del" hidden />{% csrf_token %}<input type="text" name="_id" value="" data-name="remove" hidden />
+
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">确认</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_view %}
+    <div id="modalpreview" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <h4>预览</h4>
+          <div class="">
+            
+{% if mcauthfield_nodename.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">节点名称</p>
+
+<p id="nodename_view">
+{{record.nodename|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_videosourceid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">关联视频源ID</p>
+
+<p id="videosourceid_view">
+{{record.videosourceid|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_videokwkwfkwkwormat.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">视频格式</p>
+
+<p id="videokwkwfkwkwormat_view">
+{{record.videokwkwfkwkwormat|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_resolution.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">分辨率</p>
+
+<p id="resolution_view">
+{{record.resolution|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_status.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">状态如在线、离线、维护中</p>
+
+<p id="status_view">
+{{record.status|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_createtime.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">创建时间</p>
+
+<p id="createtime_view">
+{{record.createtime|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_updatetime.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">更新时间</p>
+
+<p id="updatetime_view">
+{{record.updatetime|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_parentnodeid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">关联父节点ID用于示节点之间的层级关系</p>
+
+<p id="parentnodeid_view">
+{{record.parentnodeid|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_description.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">描述信息</p>
+
+<p id="description_view">
+{{record.description|safe }}
+</p>
+
+</div>
+{% endif %}
+<div class="modal-footer">
+              <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">关闭</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block script-footer %}
+<script>
+  function myreset(){
+window.location.href= "/config_busi/videomatrixnode";
+};
+if (document.getElementById("modalupdate")){
+document.getElementById("modalupdate").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/videomatrixnode',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+{% if mcauthfield_nodename.mcauthview %}
+$("#nodename_upd").val(resp.ins.nodename);
+{% endif %}
+
+{% if mcauthfield_videosourceid.mcauthview %}
+$("#videosourceid_upd").val(resp.ins.videosourceid);
+{% endif %}
+
+{% if mcauthfield_videokwkwfkwkwormat.mcauthview %}
+$("#videokwkwfkwkwormat_upd").val(resp.ins.videokwkwfkwkwormat);
+{% endif %}
+
+{% if mcauthfield_resolution.mcauthview %}
+$("#resolution_upd").val(resp.ins.resolution);
+{% endif %}
+
+{% if mcauthfield_status.mcauthview %}
+$("#status_upd").val(resp.ins.status);
+{% endif %}
+
+{% if mcauthfield_createtime.mcauthview %}
+$("#createtime_upd").val(resp.ins.createtime);
+{% endif %}
+
+{% if mcauthfield_updatetime.mcauthview %}
+$("#updatetime_upd").val(resp.ins.updatetime);
+{% endif %}
+
+{% if mcauthfield_parentnodeid.mcauthview %}
+$("#parentnodeid_upd").val(resp.ins.parentnodeid);
+{% endif %}
+
+{% if mcauthfield_description.mcauthview %}
+$("#description_upd").val(resp.ins.description);
+{% endif %}
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+function upd(_id){
+let data = {
+optype:'get',
+_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value,
+
+{% if mcauthfield_nodename.mcauthchange %}
+nodename:$("#nodename_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_videosourceid.mcauthchange %}
+videosourceid:$("#videosourceid_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_videokwkwfkwkwormat.mcauthchange %}
+videokwkwfkwkwormat:$("#videokwkwfkwkwormat_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_resolution.mcauthchange %}
+resolution:$("#resolution_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_status.mcauthchange %}
+status:$("#status_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_createtime.mcauthchange %}
+createtime:$("#createtime_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_updatetime.mcauthchange %}
+updatetime:$("#updatetime_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_parentnodeid.mcauthchange %}
+parentnodeid:$("#parentnodeid_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_description.mcauthchange %}
+description:$("#description_upd]").val(),
+{% endif %}
+
+}
+$.ajax({
+url: '/config_busi/videomatrixnode',
+method: 'post',
+data: data,
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+if (document.getElementById("modalpreview")) {
+document.getElementById("modalpreview").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/videomatrixnode',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+
+
+{% if mcauthfield_nodename.mcauthview %}
+document.getElementById("nodename_view").innerHTML=resp.ins.nodename;
+{% endif %}
+
+
+
+
+{% if mcauthfield_videosourceid.mcauthview %}
+document.getElementById("videosourceid_view").innerHTML=resp.ins.videosourceid;
+{% endif %}
+
+
+
+
+{% if mcauthfield_videokwkwfkwkwormat.mcauthview %}
+document.getElementById("videokwkwfkwkwormat_view").innerHTML=resp.ins.videokwkwfkwkwormat;
+{% endif %}
+
+
+
+
+{% if mcauthfield_resolution.mcauthview %}
+document.getElementById("resolution_view").innerHTML=resp.ins.resolution;
+{% endif %}
+
+
+
+
+{% if mcauthfield_status.mcauthview %}
+document.getElementById("status_view").innerHTML=resp.ins.status;
+{% endif %}
+
+
+
+
+{% if mcauthfield_createtime.mcauthview %}
+document.getElementById("createtime_view").innerHTML=resp.ins.createtime;
+{% endif %}
+
+
+
+
+{% if mcauthfield_updatetime.mcauthview %}
+document.getElementById("updatetime_view").innerHTML=resp.ins.updatetime;
+{% endif %}
+
+
+
+
+{% if mcauthfield_parentnodeid.mcauthview %}
+document.getElementById("parentnodeid_view").innerHTML=resp.ins.parentnodeid;
+{% endif %}
+
+
+
+
+{% if mcauthfield_description.mcauthview %}
+document.getElementById("description_view").innerHTML=resp.ins.description;
+{% endif %}
+
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+if (document.getElementById("modalremove")) {
+document.getElementById("modalremove").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=remove]").val(_id);
+});
+};
+function del(_id){
+$.ajax({
+url: '/config_busi/videomatrixnode',
+method: 'post',
+data: {optype:'del',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+</script>
+{% endblock %}

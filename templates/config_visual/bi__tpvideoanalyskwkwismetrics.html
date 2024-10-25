@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统 视频分析指标表(videoanalyskwkwismetrics)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_analyskwkwistime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 分析时间 ******************** pie_v2***/ init_echart("echart_videoanalyskwkwismetrics_analyskwkwistime_pie_v2",'videoanalyskwkwismetrics.analyskwkwistime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_analyskwkwistime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 分析时间 ******************** pie_v1***/ init_echart("echart_videoanalyskwkwismetrics_analyskwkwistime_pie_v1",'videoanalyskwkwismetrics.analyskwkwistime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_analyskwkwistime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 分析时间 ******************** pie***/ init_echart("echart_videoanalyskwkwismetrics_analyskwkwistime_pie",'videoanalyskwkwismetrics.analyskwkwistime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_analyskwkwistime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 分析时间 ******************** line***/ init_echart("echart_videoanalyskwkwismetrics_analyskwkwistime_line",'videoanalyskwkwismetrics.analyskwkwistime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_analyskwkwistime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 分析时间 ******************** bar***/ init_echart("echart_videoanalyskwkwismetrics_analyskwkwistime_bar",'videoanalyskwkwismetrics.analyskwkwistime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_analyskwkwistime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 分析时间 ******************** bar_v1***/ init_echart("echart_videoanalyskwkwismetrics_analyskwkwistime_bar_v1",'videoanalyskwkwismetrics.analyskwkwistime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_viewcount_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 观看次数 ******************** pie_v2***/ init_echart("echart_videoanalyskwkwismetrics_viewcount_pie_v2",'videoanalyskwkwismetrics.viewcount_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_viewcount_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 观看次数 ******************** pie_v1***/ init_echart("echart_videoanalyskwkwismetrics_viewcount_pie_v1",'videoanalyskwkwismetrics.viewcount_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_viewcount_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 观看次数 ******************** pie***/ init_echart("echart_videoanalyskwkwismetrics_viewcount_pie",'videoanalyskwkwismetrics.viewcount_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_viewcount_line" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 观看次数 ******************** line***/ init_echart("echart_videoanalyskwkwismetrics_viewcount_line",'videoanalyskwkwismetrics.viewcount_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_viewcount_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 观看次数 ******************** bar***/ init_echart("echart_videoanalyskwkwismetrics_viewcount_bar",'videoanalyskwkwismetrics.viewcount_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_viewcount_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 观看次数 ******************** bar_v1***/ init_echart("echart_videoanalyskwkwismetrics_viewcount_bar_v1",'videoanalyskwkwismetrics.viewcount_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_likecount_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 点赞次数 ******************** pie_v2***/ init_echart("echart_videoanalyskwkwismetrics_likecount_pie_v2",'videoanalyskwkwismetrics.likecount_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_likecount_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 点赞次数 ******************** pie_v1***/ init_echart("echart_videoanalyskwkwismetrics_likecount_pie_v1",'videoanalyskwkwismetrics.likecount_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_likecount_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 点赞次数 ******************** pie***/ init_echart("echart_videoanalyskwkwismetrics_likecount_pie",'videoanalyskwkwismetrics.likecount_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_likecount_line" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 点赞次数 ******************** line***/ init_echart("echart_videoanalyskwkwismetrics_likecount_line",'videoanalyskwkwismetrics.likecount_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_likecount_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 点赞次数 ******************** bar***/ init_echart("echart_videoanalyskwkwismetrics_likecount_bar",'videoanalyskwkwismetrics.likecount_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_likecount_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 点赞次数 ******************** bar_v1***/ init_echart("echart_videoanalyskwkwismetrics_likecount_bar_v1",'videoanalyskwkwismetrics.likecount_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_sharecount_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 分享次数 ******************** pie_v2***/ init_echart("echart_videoanalyskwkwismetrics_sharecount_pie_v2",'videoanalyskwkwismetrics.sharecount_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_sharecount_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 分享次数 ******************** pie_v1***/ init_echart("echart_videoanalyskwkwismetrics_sharecount_pie_v1",'videoanalyskwkwismetrics.sharecount_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_sharecount_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 分享次数 ******************** pie***/ init_echart("echart_videoanalyskwkwismetrics_sharecount_pie",'videoanalyskwkwismetrics.sharecount_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_sharecount_line" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 分享次数 ******************** line***/ init_echart("echart_videoanalyskwkwismetrics_sharecount_line",'videoanalyskwkwismetrics.sharecount_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_sharecount_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 分享次数 ******************** bar***/ init_echart("echart_videoanalyskwkwismetrics_sharecount_bar",'videoanalyskwkwismetrics.sharecount_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_sharecount_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 分享次数 ******************** bar_v1***/ init_echart("echart_videoanalyskwkwismetrics_sharecount_bar_v1",'videoanalyskwkwismetrics.sharecount_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_commentcount_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 评论次数 ******************** pie_v2***/ init_echart("echart_videoanalyskwkwismetrics_commentcount_pie_v2",'videoanalyskwkwismetrics.commentcount_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_commentcount_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 评论次数 ******************** pie_v1***/ init_echart("echart_videoanalyskwkwismetrics_commentcount_pie_v1",'videoanalyskwkwismetrics.commentcount_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_commentcount_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 评论次数 ******************** pie***/ init_echart("echart_videoanalyskwkwismetrics_commentcount_pie",'videoanalyskwkwismetrics.commentcount_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_commentcount_line" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 评论次数 ******************** line***/ init_echart("echart_videoanalyskwkwismetrics_commentcount_line",'videoanalyskwkwismetrics.commentcount_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_commentcount_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 评论次数 ******************** bar***/ init_echart("echart_videoanalyskwkwismetrics_commentcount_bar",'videoanalyskwkwismetrics.commentcount_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_commentcount_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 评论次数 ******************** bar_v1***/ init_echart("echart_videoanalyskwkwismetrics_commentcount_bar_v1",'videoanalyskwkwismetrics.commentcount_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_bouncerate_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 跳出率 ******************** pie_v2***/ init_echart("echart_videoanalyskwkwismetrics_bouncerate_pie_v2",'videoanalyskwkwismetrics.bouncerate_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_bouncerate_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 跳出率 ******************** pie_v1***/ init_echart("echart_videoanalyskwkwismetrics_bouncerate_pie_v1",'videoanalyskwkwismetrics.bouncerate_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_bouncerate_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 跳出率 ******************** pie***/ init_echart("echart_videoanalyskwkwismetrics_bouncerate_pie",'videoanalyskwkwismetrics.bouncerate_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_bouncerate_line" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 跳出率 ******************** line***/ init_echart("echart_videoanalyskwkwismetrics_bouncerate_line",'videoanalyskwkwismetrics.bouncerate_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_bouncerate_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 跳出率 ******************** bar***/ init_echart("echart_videoanalyskwkwismetrics_bouncerate_bar",'videoanalyskwkwismetrics.bouncerate_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_bouncerate_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 跳出率 ******************** bar_v1***/ init_echart("echart_videoanalyskwkwismetrics_bouncerate_bar_v1",'videoanalyskwkwismetrics.bouncerate_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_averagewatchtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 平均观看时长 ******************** pie_v2***/ init_echart("echart_videoanalyskwkwismetrics_averagewatchtime_pie_v2",'videoanalyskwkwismetrics.averagewatchtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_averagewatchtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 平均观看时长 ******************** pie_v1***/ init_echart("echart_videoanalyskwkwismetrics_averagewatchtime_pie_v1",'videoanalyskwkwismetrics.averagewatchtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_averagewatchtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 平均观看时长 ******************** pie***/ init_echart("echart_videoanalyskwkwismetrics_averagewatchtime_pie",'videoanalyskwkwismetrics.averagewatchtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_averagewatchtime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 平均观看时长 ******************** line***/ init_echart("echart_videoanalyskwkwismetrics_averagewatchtime_line",'videoanalyskwkwismetrics.averagewatchtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_averagewatchtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 平均观看时长 ******************** bar***/ init_echart("echart_videoanalyskwkwismetrics_averagewatchtime_bar",'videoanalyskwkwismetrics.averagewatchtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_averagewatchtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 平均观看时长 ******************** bar_v1***/ init_echart("echart_videoanalyskwkwismetrics_averagewatchtime_bar_v1",'videoanalyskwkwismetrics.averagewatchtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_engagementrate_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 互动率 ******************** pie_v2***/ init_echart("echart_videoanalyskwkwismetrics_engagementrate_pie_v2",'videoanalyskwkwismetrics.engagementrate_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_engagementrate_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 互动率 ******************** pie_v1***/ init_echart("echart_videoanalyskwkwismetrics_engagementrate_pie_v1",'videoanalyskwkwismetrics.engagementrate_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_engagementrate_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 互动率 ******************** pie***/ init_echart("echart_videoanalyskwkwismetrics_engagementrate_pie",'videoanalyskwkwismetrics.engagementrate_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_engagementrate_line" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 互动率 ******************** line***/ init_echart("echart_videoanalyskwkwismetrics_engagementrate_line",'videoanalyskwkwismetrics.engagementrate_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_engagementrate_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 互动率 ******************** bar***/ init_echart("echart_videoanalyskwkwismetrics_engagementrate_bar",'videoanalyskwkwismetrics.engagementrate_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videoanalyskwkwismetrics_engagementrate_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频分析指标表 互动率 ******************** bar_v1***/ init_echart("echart_videoanalyskwkwismetrics_engagementrate_bar_v1",'videoanalyskwkwismetrics.engagementrate_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+    </div>
+  </body>
+</html>

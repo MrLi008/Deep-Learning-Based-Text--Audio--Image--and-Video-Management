@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统 视频评论表(videocomment)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videocomment_content_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 评论内容 ******************** pie_v2***/ init_echart("echart_videocomment_content_pie_v2",'videocomment.content_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videocomment_content_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 评论内容 ******************** pie_v1***/ init_echart("echart_videocomment_content_pie_v1",'videocomment.content_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videocomment_content_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 评论内容 ******************** pie***/ init_echart("echart_videocomment_content_pie",'videocomment.content_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videocomment_content_line" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 评论内容 ******************** line***/ init_echart("echart_videocomment_content_line",'videocomment.content_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videocomment_content_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 评论内容 ******************** bar***/ init_echart("echart_videocomment_content_bar",'videocomment.content_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videocomment_content_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 评论内容 ******************** bar_v1***/ init_echart("echart_videocomment_content_bar_v1",'videocomment.content_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videocomment_createtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 创建时间 ******************** pie_v2***/ init_echart("echart_videocomment_createtime_pie_v2",'videocomment.createtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videocomment_createtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 创建时间 ******************** pie_v1***/ init_echart("echart_videocomment_createtime_pie_v1",'videocomment.createtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videocomment_createtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 创建时间 ******************** pie***/ init_echart("echart_videocomment_createtime_pie",'videocomment.createtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videocomment_createtime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 创建时间 ******************** line***/ init_echart("echart_videocomment_createtime_line",'videocomment.createtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videocomment_createtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 创建时间 ******************** bar***/ init_echart("echart_videocomment_createtime_bar",'videocomment.createtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videocomment_createtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 创建时间 ******************** bar_v1***/ init_echart("echart_videocomment_createtime_bar_v1",'videocomment.createtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videocomment_likecount_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 点赞数 ******************** pie_v2***/ init_echart("echart_videocomment_likecount_pie_v2",'videocomment.likecount_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videocomment_likecount_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 点赞数 ******************** pie_v1***/ init_echart("echart_videocomment_likecount_pie_v1",'videocomment.likecount_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videocomment_likecount_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 点赞数 ******************** pie***/ init_echart("echart_videocomment_likecount_pie",'videocomment.likecount_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videocomment_likecount_line" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 点赞数 ******************** line***/ init_echart("echart_videocomment_likecount_line",'videocomment.likecount_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videocomment_likecount_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 点赞数 ******************** bar***/ init_echart("echart_videocomment_likecount_bar",'videocomment.likecount_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videocomment_likecount_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 点赞数 ******************** bar_v1***/ init_echart("echart_videocomment_likecount_bar_v1",'videocomment.likecount_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videocomment_replycount_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 回复数 ******************** pie_v2***/ init_echart("echart_videocomment_replycount_pie_v2",'videocomment.replycount_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videocomment_replycount_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 回复数 ******************** pie_v1***/ init_echart("echart_videocomment_replycount_pie_v1",'videocomment.replycount_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videocomment_replycount_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 回复数 ******************** pie***/ init_echart("echart_videocomment_replycount_pie",'videocomment.replycount_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videocomment_replycount_line" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 回复数 ******************** line***/ init_echart("echart_videocomment_replycount_line",'videocomment.replycount_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videocomment_replycount_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 回复数 ******************** bar***/ init_echart("echart_videocomment_replycount_bar",'videocomment.replycount_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videocomment_replycount_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频评论表 回复数 ******************** bar_v1***/ init_echart("echart_videocomment_replycount_bar_v1",'videocomment.replycount_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

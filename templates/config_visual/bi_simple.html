@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    <script>
+      function init_echart(echart_id, optype, url, condition,polar={}) {
+        // 初始化图表
+        data = condition
+        data['optype'] = optype
+        data['csrfmiddlewaretoken'] = document.querySelector('[name=csrfmiddlewaretoken]').value
+        $.ajax({
+          url: url,
+          method: 'post',
+          data: data,
+          success: (res) => {
+            console.log(res)
+            let chart = echarts.init(document.getElementById(echart_id))
+            let chartoptions = res.ins;
+            chart.setOption(chartoptions);
+          },
+          error: (err) => {}
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统</h3>
+        </div>
+      </div>
+      {% csrf_token %}__mark_templates_bi_simple_echart
+    </div>
+  </body>
+</html>

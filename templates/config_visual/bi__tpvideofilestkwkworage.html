@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基于深度学习的文案语音图片视频管理分析-视频矩阵系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">基于深度学习的文案语音图片视频管理分析-视频矩阵系统 视频文件存储表(videofilestkwkworage)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videofilestkwkworage_uploadtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 上传时间 ******************** pie_v2***/ init_echart("echart_videofilestkwkworage_uploadtime_pie_v2",'videofilestkwkworage.uploadtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videofilestkwkworage_uploadtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 上传时间 ******************** pie_v1***/ init_echart("echart_videofilestkwkworage_uploadtime_pie_v1",'videofilestkwkworage.uploadtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videofilestkwkworage_uploadtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 上传时间 ******************** pie***/ init_echart("echart_videofilestkwkworage_uploadtime_pie",'videofilestkwkworage.uploadtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videofilestkwkworage_uploadtime_line" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 上传时间 ******************** line***/ init_echart("echart_videofilestkwkworage_uploadtime_line",'videofilestkwkworage.uploadtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videofilestkwkworage_uploadtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 上传时间 ******************** bar***/ init_echart("echart_videofilestkwkworage_uploadtime_bar",'videofilestkwkworage.uploadtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videofilestkwkworage_uploadtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 上传时间 ******************** bar_v1***/ init_echart("echart_videofilestkwkworage_uploadtime_bar_v1",'videofilestkwkworage.uploadtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videofilestkwkworage_duration_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 视频时长单位秒 ******************** pie_v2***/ init_echart("echart_videofilestkwkworage_duration_pie_v2",'videofilestkwkworage.duration_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videofilestkwkworage_duration_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 视频时长单位秒 ******************** pie_v1***/ init_echart("echart_videofilestkwkworage_duration_pie_v1",'videofilestkwkworage.duration_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videofilestkwkworage_duration_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 视频时长单位秒 ******************** pie***/ init_echart("echart_videofilestkwkworage_duration_pie",'videofilestkwkworage.duration_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videofilestkwkworage_duration_line" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 视频时长单位秒 ******************** line***/ init_echart("echart_videofilestkwkworage_duration_line",'videofilestkwkworage.duration_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videofilestkwkworage_duration_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 视频时长单位秒 ******************** bar***/ init_echart("echart_videofilestkwkworage_duration_bar",'videofilestkwkworage.duration_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videofilestkwkworage_duration_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 视频时长单位秒 ******************** bar_v1***/ init_echart("echart_videofilestkwkworage_duration_bar_v1",'videofilestkwkworage.duration_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videofilestkwkworage_resolution_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 分辨率例如1920x1080 ******************** pie_v2***/ init_echart("echart_videofilestkwkworage_resolution_pie_v2",'videofilestkwkworage.resolution_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videofilestkwkworage_resolution_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 分辨率例如1920x1080 ******************** pie_v1***/ init_echart("echart_videofilestkwkworage_resolution_pie_v1",'videofilestkwkworage.resolution_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videofilestkwkworage_resolution_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 分辨率例如1920x1080 ******************** pie***/ init_echart("echart_videofilestkwkworage_resolution_pie",'videofilestkwkworage.resolution_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videofilestkwkworage_resolution_line" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 分辨率例如1920x1080 ******************** line***/ init_echart("echart_videofilestkwkworage_resolution_line",'videofilestkwkworage.resolution_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videofilestkwkworage_resolution_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 分辨率例如1920x1080 ******************** bar***/ init_echart("echart_videofilestkwkworage_resolution_bar",'videofilestkwkworage.resolution_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videofilestkwkworage_resolution_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 分辨率例如1920x1080 ******************** bar_v1***/ init_echart("echart_videofilestkwkworage_resolution_bar_v1",'videofilestkwkworage.resolution_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videofilestkwkworage_kwkwfkwkwormat_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 视频格式例如mp4 ******************** pie_v2***/ init_echart("echart_videofilestkwkworage_kwkwfkwkwormat_pie_v2",'videofilestkwkworage.kwkwfkwkwormat_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videofilestkwkworage_kwkwfkwkwormat_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 视频格式例如mp4 ******************** pie_v1***/ init_echart("echart_videofilestkwkworage_kwkwfkwkwormat_pie_v1",'videofilestkwkworage.kwkwfkwkwormat_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_videofilestkwkworage_kwkwfkwkwormat_pie" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 视频格式例如mp4 ******************** pie***/ init_echart("echart_videofilestkwkworage_kwkwfkwkwormat_pie",'videofilestkwkworage.kwkwfkwkwormat_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_videofilestkwkworage_kwkwfkwkwormat_line" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 视频格式例如mp4 ******************** line***/ init_echart("echart_videofilestkwkworage_kwkwfkwkwormat_line",'videofilestkwkworage.kwkwfkwkwormat_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videofilestkwkworage_kwkwfkwkwormat_bar" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 视频格式例如mp4 ******************** bar***/ init_echart("echart_videofilestkwkworage_kwkwfkwkwormat_bar",'videofilestkwkworage.kwkwfkwkwormat_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_videofilestkwkworage_kwkwfkwkwormat_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 视频文件存储表 视频格式例如mp4 ******************** bar_v1***/ init_echart("echart_videofilestkwkworage_kwkwfkwkwormat_bar_v1",'videofilestkwkworage.kwkwfkwkwormat_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
